@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="kk.chromsystems">
+
+  <five:registerPackage package="." initialize=".initialize" />
+  <include package=".browser" />
+  <include file="skins.zcml" />
+  <include file="profiles.zcml" />
+  <i18n:registerTranslations directory="locales" />
+
+  <!-- Declare marker interface, so that it is available in ZMI -->
+  <interface interface="kk.chromsystems.interfaces.static.IStaticEnabled" />
+  <interface interface="kk.chromsystems.interfaces.static_gc.IStaticGCEnabled" />
+
+</configure>

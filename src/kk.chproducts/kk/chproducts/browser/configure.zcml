@@ -1,0 +1,55 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="kk.chproducts">
+    
+    <browser:page
+        for="..interfaces.IProduct"
+        name="view"
+        class=".product.ProductView"
+        permission="zope2.View"
+        />
+    <browser:page
+        for="..interfaces.ICSFolder"
+        name="view"
+        class=".csfolder.CSFolderView"
+        permission="zope2.View"
+        />
+      <browser:page
+        for="..interfaces.ICSFolder"
+        name="tabular_list"
+        class=".csfolder.CSFolderTabularView"
+        permission="zope2.View"
+        />
+    <browser:page
+        for="..interfaces.ICSPDF"
+        name="view"
+        class=".cspdf.CSPDFView"
+        permission="zope2.View"
+        />
+    
+    <browser:page 
+    	for = "*"
+    	name="search_products"
+    	class= ".search.SearchForm" 
+    	permission="zope2.View" />
+    <browser:page 
+    	for = "*"
+    	name="search_results_products"
+    	class= ".search.SearchResultsView" 
+    	permission="zope2.View"
+     />
+	 <browser:page 
+	 	name="keywords"
+	 	for = "*"
+	 	class=".search.SearchForm"
+	 	permission = "zope2.View"
+	    attribute="getKeywordsString"
+	 />
+	 <browser:page
+	 	name="abc"
+	 	for = "*"
+	 	class =".abc.ABCView" 
+	 	permission = "zope2.View"
+	 	/>
+</configure>

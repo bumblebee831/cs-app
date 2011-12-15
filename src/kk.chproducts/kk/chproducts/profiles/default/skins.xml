@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_skins" meta_type="Plone Skins Tool">
+ <object name="chromsystems_products_skins" meta_type="Filesystem Directory View"
+    directory="kk.chproducts:skins/chromsystems_products_skins"/>
+
+ <skin-path name="*">
+  <layer name="chromsystems_products_skins" insert-after="custom" />
+ </skin-path>
+</object>

@@ -1,0 +1,130 @@
+/* <dtml-with base_properties> (do not remove this :) */
+/* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
+/* root element for tabs  */ 
+
+.pane {
+	padding: 10px 0px 10px 0px !important;
+}
+.pane ul {
+	list-style-image: none;
+	list-style-type: disc;
+	margin: 0px 0px 15px 15px !important;
+}
+
+div.pane-container ul.tabs { 
+	margin:0;
+	padding:10px 10px 0px 0px;
+	list-style:none !important;
+	height:27px;
+	border-bottom:5px solid #cccccc;	
+}
+
+/* single tab */
+div.pane-container ul.tabs li { 
+	float:left;
+	background: url(++resource++kk.chromsystems.images/tabr-left-both.gif) no-repeat left top transparent;
+	margin:0px 1px 0px 0px !important;
+	padding:0 0 0 3px !important;
+}
+
+/* link inside the tab. uses a background image */
+div.pane-container ul.tabs a {
+	float:left;
+	display:block;
+	width:.1em;
+	background: url(++resource++kk.chromsystems.images/tabr-right-both.gif) no-repeat right top;
+	padding:5px 9px 5px 6px;
+	text-decoration:none;
+	font-weight:bold;
+	color:#333333;
+	font-size: 100%;
+	font-family: Arial;
+}
+
+div.pane-container > ul.tabs a {width:auto;}
+
+div.pane-container ul.tabs a:active {
+      outline:none;
+}
+
+div.pane-container ul.tabs li.current {
+      background-position:0 -150px;
+      border-width:0;
+}
+
+div.pane-container ul.tabs li.current a {
+      background-position:100% -150px;
+      padding-bottom: 5px;
+      border-width:0;
+      color:#333;
+}
+
+div.pane-container ul.tabs li:hover,
+div.pane-container ul.tabs li:hover a {
+      background-position:0 -150px;
+      border-width:0;
+      color:#333;
+}
+
+div.pane-container ul.tabs li:hover a {
+      background-position:100% -150px;
+}
+
+/* initially all panes are hidden */ 
+div.pane-container div.pane {
+      display:none;		
+      padding:15px 0px 15px 0px;
+      border:0px solid #999;
+      border-top:0;
+      font-size:12px;
+      background-color:#fff;
+}
+
+div.pane-container {
+      margin-bottom: 1em;
+}
+
+/*this is simply an edit marker, hide it normally*/
+hr.pane-break {
+      display: none;
+}
+
+/* display for editing */
+body#content hr.pane-break,
+body.kupu hr.pane-break,
+body.mceContentBody hr.pane-break {
+      display: block;
+      background-color: white;
+      color: white;
+      border-top:5px dashed black;
+      height: 5px;
+      margin:0.5em 0 1em;
+}
+
+/* body#content targets FCKEditor */
+body#content h2.content-tab,
+body.kupu h2.content-tab,
+body.mceContentBody h2.content-tab,
+body#content h2.default-content-tab,
+body.kupu h2.default-content-tab,
+body.mceContentBody h2.default-content-tab {
+      display:block;
+      background:url(&dtml-portal_url;/tabr_right_both.gif) no-repeat left top;
+      border-bottom: none;
+      padding:5px 15px 4px 6px;
+      text-decoration:none;
+      font-weight:bold;
+      color:#765;
+      width: auto;
+}
+
+body#content h2.default-content-tab,
+body.kupu h2.default-content-tab,
+body.mceContentBody h2.default-content-tab {
+      background-position: left -150px;
+      color: #333;
+}
+
+button.kupu-inserthorizontalrule {background-image: url(&dtml-portal_url;/plonekupuimages/hr.gif);}
+
+/* </dtml-with> */

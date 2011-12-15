@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<object>
+
+  <order manager="plone.portalheader" skinname="chromsystems" based-on="Plone Classic Theme">
+    <viewlet name="kk.chromsystems.site_actions" insert-before="*" />
+    <viewlet name="plone.app.i18n.locales.languageselector" insert-after="kk.chromsystems.site_actions" />
+    <viewlet name="kk.kk_searchbox" insert-after="plone.app.i18n.locales.languageselector" />
+    <viewlet name="plone.logo" insert-after="kk.kk_searchbox" />
+  </order>
+
+  <order manager="plone.abovecontent" skinname="chromsystems" based-on="Plone Classic Theme">
+    <viewlet name="Products.Carousel.viewlet" insert-before="*" />
+    <viewlet name="kk.static" insert-after="Products.Carousel.viewlet" />
+    <viewlet name="kk.gc_static" insert-after="kk.static" />
+    <viewlet name="plone.path_bar" insert-after="kk.gc_static" />
+  </order>
+
+  <hidden manager="plone.portalheader" skinname="chromsystems">
+    <viewlet name="plone.personal_bar" />
+    <viewlet name="plone.searchbox" />
+  </hidden> 
+
+  <hidden manager="plone.portalfooter" skinname="chromsystems">
+    <viewlet name="plone.site_actions" />
+  </hidden>
+
+</object>

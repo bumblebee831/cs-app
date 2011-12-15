@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="kk.chromsystems">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="chromsystems"
+      directory="profiles/default"
+      description='Extension profile for the "chromsystems" Plone theme.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="kk.chromsystems.various"
+      title="chromsystems: miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="kk.chromsystems.setuphandlers.setupVarious">
+    <depends name="skins"/>
+  </genericsetup:importStep>
+
+</configure>

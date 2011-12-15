@@ -1,0 +1,121 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+       <link rel="stylesheet" tal:attributes="href string:${here/portal_url}/jquery.autocomplete.css"/>
+       <script type="text/javascript" src="jcarousellite_1.0.1.pack.js" tal:attributes="src string:${here/portal_url}/jquery.autocomplete.pack.js"></script>
+		<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'en'">
+		<div class="products-search form-keywords-autocomplete">
+			<h2>What would you like to analyse with us?</h2>
+			<p>Please enter your parameter here. We will show you all products that we have for your analysis of choice.</p>
+		<form action="search_results_products" method="GET">
+			<div class="form-item input-text">
+			<script type="text/javascript">
+				jq(function() {
+				jq("#autocomplete").autocomplete("keywords", {
+						multiple: true,
+						mustMatch: true,
+						autoFill: true
+				});
+
+				});
+			</script>
+			<input type="text" name="keyword" id="autocomplete"/>
+			<!-- <input type="hidden" value="" name="keyword" id="keyword" /> -->
+			</div>
+			<div class="form-item submit">
+			<input type="submit" value="Search" i18n:attributes="value" />
+			</div>
+			<input type="hidden" name="mode" value="0"/>
+		</form>
+    	</div>
+		</span>
+		<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'de'">
+		<div class="products-search form-keywords-autocomplete">
+			<h2>Was möchten Sie mit uns analysieren?</h2>
+			<p>Bitte geben Sie den Parameter hier ein. Das Suchergebnis zeigt Ihnen alle Produkte dazu.</p>
+		<form action="search_results_products" method="GET">
+			<div class="form-item input-text">
+			<script type="text/javascript">
+				jq(function() {
+				jq("#autocomplete").autocomplete("keywords", {
+						multiple: true,
+						mustMatch: true,
+						autoFill: true
+				});
+
+				});
+			</script>
+			<input type="text" name="keyword" id="autocomplete"/>
+			<!-- <input type="hidden" value="" name="keyword" id="keyword" /> -->
+			</div>
+			<div class="form-item submit">
+			<input type="submit" value="Search" i18n:attributes="value" />
+			</div>
+			<input type="hidden" name="mode" value="0"/>
+		</form>
+    	</div>
+		</span>
+		<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'en'">
+    	<div class="products-search form-keywords">
+			<h2>Select from our data base</h2>
+			<p>Select your parameter from an overview. That will guide you to all products that we have for your analysis of choice.</p>
+		<form action="search_results_products" method="GET" tal:define="keywords view/getKeywords">
+			<div class="form-item input-text">
+				<select name="keyword">
+					<tal:loop tal:repeat="keyword keywords">
+						<option tal:attributes="value keyword" tal:content="keyword" />
+					</tal:loop>
+				</select>
+			</div>
+			<div class="form-item submit">
+				<input type="submit" value="Search" i18n:attributes="value" />
+			</div>
+			<input type="hidden" name="mode" value="1"/>
+		</form>
+		<ul class="abc-start" tal:define="abc view/getABC">
+			<li tal:repeat="item abc">
+				<a href="" tal:define="group_num python:item[0]" tal:attributes="href string:${here/portal_url}/abc/?g=${group_num}" tal:content="python:item[1][0] + '-' +item[1][-1]">A-D</a>
+			</li>
+		</ul>    	
+    	</div>
+		</span>
+		<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'de'">
+    	<div class="products-search form-keywords">
+			<h2>Wählen Sie aus unserer Übersicht.</h2>
+			<p>Suchen Sie sich einen der vorgegebenen Parameter aus. Wir zeigen Ihnen alle Produkte dazu.</p>
+		<form action="search_results_products" method="GET" tal:define="keywords view/getKeywords">
+			<div class="form-item input-text">
+				<select name="keyword">
+					<tal:loop tal:repeat="keyword keywords">
+						<option tal:attributes="value keyword" tal:content="keyword" />
+					</tal:loop>
+				</select>
+			</div>
+			<div class="form-item submit">
+				<input type="submit" value="Search" i18n:attributes="value" />
+			</div>
+			<input type="hidden" name="mode" value="1"/>
+		</form>
+		<ul class="abc-start" tal:define="abc view/getABC;lang python:context.portal_languages.getPreferredLanguage()">
+			<li tal:repeat="item abc">
+				<a href="" tal:define="group_num python:item[0]" tal:attributes="href string:${here/portal_url}/${lang}/abc/?g=${group_num}" tal:content="python:item[1][0] + '-' +item[1][-1]">A-D</a>
+			</li>
+		</ul>    	
+    	</div>
+		</span>
+		
+
+
+    </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

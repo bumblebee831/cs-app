@@ -1,0 +1,86 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="kk.chromsystems">
+
+  <include package="plone.app.portlets" />
+
+  <interface
+      interface=".interfaces.IThemeSpecific"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      name="chromsystems"
+      />
+
+   <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
+      template="templates/navigation.pt"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+   <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.events.IEventsPortlet"
+      template="templates/events.pt"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+   <plone:portletRenderer
+      portlet="plone.app.portlets.portlets.news.INewsPortlet"
+      template="templates/news.pt"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <browser:viewlet
+      name="kk.kk_searchbox"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".kk_searchbox.KKSearchBoxViewlet"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+      />
+
+   <browser:viewlet
+      name="plone.footer"
+      for="*"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      template="templates/footer.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope.Public"
+      />
+
+    <browser:viewlet
+      name="kk.static"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      layer=".interfaces.IThemeSpecific"
+      class=".viewlets.StaticViewlet"
+      permission="zope2.View"
+      />
+
+    <browser:viewlet
+      name="kk.gc_static"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      layer=".interfaces.IThemeSpecific"
+      class=".viewlets.StaticGCViewlet"
+      permission="zope2.View"
+      />
+
+  <!-- Zope 3 browser resources -->
+
+  <browser:resourceDirectory
+      name="kk.chromsystems.images"
+      directory="images"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <browser:resourceDirectory
+      name="kk.chromsystems.stylesheets"
+      directory="stylesheets"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <browser:resourceDirectory
+      name="kk.chromsystems.templates"
+      directory="templates"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+</configure>

@@ -1,0 +1,6 @@
+<layers>
+ <layer
+     name="kk.login_portlet"
+     interface="kk.login_portlet.interfaces.ICustomLoginPortlet"
+     />
+</layers>

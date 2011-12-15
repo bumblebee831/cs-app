@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+	
+	
+		<div class="abc_view" tal:define="
+		                                  group python:request.get('g', 0);
+		                                  keywords python:view.searchKeywords(group);
+										  abc_list view/abc">
+		<table class="abc" tal:define="cols_num python:9;">
+			<tal:row tal:repeat = "row_num python:range(int(modules['math'].ceil(float(len(abc_list))/float(cols_num))))">
+				<tr>
+					<tal:cell tal:repeat = "num python:range(cols_num)">
+						<td tal:define="item_num python:int(row_num*cols_num + num)">
+							<tal:x tal:condition="python:item_num < len(abc_list)">
+								<a href="" 
+									 tal:define="item python:abc_list[item_num]; group_num python:item_num" tal:content="python:item[1][0] + '-' +item[1][-1]"
+									 tal:attributes="href string:${here/absolute_url}/abc/?g=${group_num}" />
+							</tal:x>
+						</td>
+					</tal:cell>
+				</tr>
+			</tal:row>
+		</table>
+		<h2>Suchresultate alphabetisch sortiert.</h2>
+		<p>Ein Klick auf den jeweiligen Link bringt Sie zur Trefferliste aus diesen Bereich.</p> 
+		<ul class="abc_results">
+			<tal:loop tal:repeat="keyword keywords">
+				<li><a href="" tal:attributes="href string:${here/absolute_url}/search_results_products?keyword=${keyword}&mode=0" tal:content="keyword"/></li>
+			</tal:loop>
+			
+		</ul>
+		</div>
+	</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

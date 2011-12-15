@@ -1,0 +1,23 @@
+ <configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="example.customization">
+
+    <!-- We need to include the package of the portlets we are customising -->
+    <include package="plone.app.portlets" />
+
+
+    <plone:portletRenderer
+        portlet="plone.app.portlets.portlets.login.ILoginPortlet"
+        layer="..interfaces.ICustomLoginPortlet"
+        class = ".login.MyRenderer"
+        />
+ 
+
+</configure>
+
+ 
+ 
+
+

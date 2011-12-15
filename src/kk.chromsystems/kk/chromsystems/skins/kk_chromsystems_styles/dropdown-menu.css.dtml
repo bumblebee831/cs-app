@@ -1,0 +1,172 @@
+/* <dtml-with base_properties> (do not remove this :) */
+/* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
+
+#portal-globalnav {
+    position:relative;
+    z-index:3;
+}
+* html #portal-globalnav {
+    height:1%;
+}
+#portal-globalnav li {
+    float:left;
+    margin:0;
+    padding:0;
+}
+#portal-globalnav li a {
+    display:block;   
+    position:relative;
+	text-shadow: -1px -1px 0px #101010, 1px 1px 0px #505050;
+}
+
+#portaltab-index_html ul.submenu,
+#portaltab-weltweit ul.submenu,
+#portaltab-global-contact ul.submenu {
+	display: none;
+} 
+
+/*SUBMENU STYLES*/
+
+#portal-globalnav ul {
+	position: absolute;
+	width: 230px !important;
+	left:-999em;
+	background: #cccccc;
+	border: 1px solid white !important;
+	margin:0;
+	padding: 0px;
+}
+
+*+html #portal-globalnav ul {
+	margin: 0px 0px 0px -80px;
+}
+
+#portal-globalnav li.selected ul.submenu {
+    margin:-1px 0px 0px 0px;
+    z-index:3;
+}
+
+#portal-globalnav ul.submenu li {
+    display:block;
+    width: 100% !important;
+	text-align: left !important;
+}
+
+*html #portal-globalnav ul.submenu li {
+    display:block;
+    width: 100% !important;
+	text-align: left !important;
+}
+
+#portal-globalnav ul.submenu a,
+#portal-globalnav ul.submenu a:hover {
+    margin: 0px !important;
+	font-size: 100% !important;
+    display:block;
+    border: 1px solid white !important;
+	border-width: 0px 0px 1px 0px !important;
+    position:static !important;
+    white-space:nowrap;
+	padding: 10px 20px 10px 20px !important;
+	background:url("++resource++kk.chromsystems.images/arrow-black.gif") no-repeat scroll 95% 50% !important;
+	text-transform: none !important;
+	color: black !important;
+	text-shadow: 1px 1px 0 #efefef;
+	letter-spacing: 0px !important;
+	font-weight: bold;
+}
+
+#portal-globalnav li .submenu a:hover {
+	color: white !important;
+	width: 190px !important;
+	background:url("++resource++kk.chromsystems.images/arrow-grey.gif") no-repeat scroll 95% 50% !important;
+	background-color:  #a33193 !important;
+	text-shadow: none;
+}
+#portal-globalnav li.selected ul.submenu a:hover {
+	color: white !important;
+	width: 190px !important;
+	background:url("++resource++kk.chromsystems.images/arrow-grey.gif") no-repeat scroll 95% 50% !important;
+	background-color:  #a33193 !important;
+}
+
+#portal-globalnav li .submenu .navTreeLevel1 a:hover {
+	color: white !important;
+	width: 360px !important;
+	background:url("++resource++kk.chromsystems.images/arrow-grey.gif") no-repeat scroll 95% 50% !important;
+	background-color:  #a33193 !important;
+}
+
+#portal-globalnav li.selected ul.submenu .navTreeLevel1 a:hover {
+	color: white !important;
+	width: 360px !important;
+	background:url("++resource++kk.chromsystems.images/arrow-grey.gif") no-repeat scroll 95% 50% !important;
+	background-color:  #a33193 !important;
+}
+
+a.hasDropDown {
+    background:url("++resource++kk.chromsystems.images/arrow-black.gif") no-repeat scroll 95% 50% !important;
+}
+
+/* Below we have the same style defined differently 
+** These are for IE7 and IE6 respectively. There is no 
+** possibility to put styles for IE6 and IE7 in the same
+** definition. So we have 2 separate definitions
+*/
+/*:first-child+html #portal-globalnav ul.submenu a {height:1%;}  IE7 fix. */
+* html #portal-globalnav ul.submenu a {height:1%;} /* we all love IE6 ;) */
+
+
+/* side-dropdown menu styles */
+#portal-globalnav li ul ul {
+    z-index:10;
+    top:-1px !important;
+    left:-999em;
+    left:60px !important;
+    margin: 0px 0px 0px 230px !important;
+	width: 400px !important;
+}
+
+#portal-globalnav ul li:hover,
+#portal-globalnav ul li.sfhover {
+    position:relative;
+}
+
+#portal-globalnav li:hover ul ul, 
+#portal-globalnav li:hover ul ul ul, 
+#portal-globalnav li:hover ul ul ul ul,
+#portal-globalnav li.sfhover ul ul, 
+#portal-globalnav li.sfhover ul ul ul,
+#portal-globalnav li.sfhover ul ul ul ul {
+    left:-999em !important;
+}
+
+#portal-globalnav li:hover ul, 
+#portal-globalnav li li:hover ul, 
+#portal-globalnav li li li:hover ul,
+#portal-globalnav li li li li:hover ul, 
+#portal-globalnav li.sfhover ul, 
+#portal-globalnav li li.sfhover ul, 
+#portal-globalnav li li li.sfhover ul,
+#portal-globalnav li li li li.sfhover ul {
+    left:auto !important;
+}
+
+/* clearing global navigation styles */
+#post-sections-clear {
+    height:1px;
+    margin-bottom:-3px;
+}
+
+/* See above for explanation of the below mess styles */
+*:first-child+html #post-sections-clear {margin-bottom:-2px;}
+* html #post-sections-clear {
+    margin-bottom:-2px;
+}
+
+#portal-globalnav .navTreeLevel2 {
+	display: none;
+}
+
+
+/* </dtml-with> */

@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core"
+                    tal:define="q python:request.get('q', ''); 
+                                search python:request.get('search', '0');
+                                results python:view.SearchResults(q, search);
+                    			kssClassesView context/@@kss_field_decorator_view;
+                                getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                                templateId template/getId;
+                                limit_display python:20;
+                                Batch python:modules['Products.CMFPlone'].Batch;
+                        		b_start python:request.get('b_start', 0);
+                        		batch python:Batch(results, limit_display or 100, int(b_start), orphan=1);
+                        		sort_dest python:view.getSortDest(request.get('sort_dest', 'ascending'));
+">
+        <div class="fulltext" tal:content="structure context/getText" />
+		<div class="searchform">
+			<form method="get" action="" >
+				<div class="form-item input-text">
+				<input type="text" name="q" tal:attributes="value q"/>
+				</div>
+				<div class="form-item submit">
+				<input type="submit" value="SUCHEN"/>
+				</div>
+				<input type="hidden" name="search" value="1"/>
+			</form>
+		</div>
+        <table class="cspdf_results" tal:condition="python:len(results)">
+        	<tr>
+        		<th><a href=""  tal:attributes="href string:${here/absolute_url}?q=${q}&sort_on=organiser&sort_dest=${sort_dest}" i18n:translate="organiser">Organiser</a></th>
+       			<th><a href=""  tal:attributes="href string:${here/absolute_url}?q=${q}&sort_on=sortable_title&sort_dest=${sort_dest}" i18n:translate="title">Title</a></th>
+        		<th><a href=""  tal:attributes="href string:${here/absolute_url}?q=${q}&sort_on=parameters&sort_dest=${sort_dest}" i18n:translate="parameters">Parameters</a></th>
+        		<th></th>
+        	</tr>
+        	
+        	<tr tal:repeat = "result batch">
+        		<tal:x tal:define="obj result/getObject">
+        		<td class="organiser">
+        			<span tal:content="obj/getOrganiser" />
+        		</td>
+        		<td class="title">
+        			<a href="" tal:attributes="href string:${obj/absolute_url}/view" tal:content="obj/Title" />
+        			<div class="inst_manual" tal:condition="python:obj.getInst_manual()">
+        				<span i18n:translate="inst_manual">Instruction manual</span>
+        			</div>
+        			<div class="safety_data_sheet" tal:condition="python:obj.getSafety_data_sheet()">
+        				<span i18n:translate="safety_data_sheet">Safety data sheet</span>
+        			</div>
+        		</td>
+        		<td class="parameters">
+        			<span tal:content="obj/getParametersString" />
+        		</td>
+        		<td class="download">
+        			<a href="" tal:attributes="href string:${obj/absolute_url}" i18n:translate="download">Download</a>
+        		</td>
+        		</tal:x>
+        	</tr>
+        </table>
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>

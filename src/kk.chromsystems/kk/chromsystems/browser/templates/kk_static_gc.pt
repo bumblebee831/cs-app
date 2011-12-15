@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<body>
+<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'de'">
+		<div tal:define="use_static_gc view/is_static_gc_enabled">
+			<div class="static-gc" tal:condition="python:use_static_gc == True">
+				<div class="carousel-pager">
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="afrika ">Afrika</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="asien">Asien</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="australien">Australien</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="europa">Europa</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="nordamerika">Nordamerika</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="suedamerika">Südamerika</a>
+						</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+</span>
+
+<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'en'">
+		<div tal:define="use_static_gc view/is_static_gc_enabled">
+			<div class="static-gc" tal:condition="python:use_static_gc == True">
+				<div class="carousel-pager">
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="afrika">Africa</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="asien">Asia</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="australien">Australia</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="europa">Europe</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="nordamerika">North America</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="suedamerika">South America</a>
+						</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+</span>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n" 
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup" 
+    i18n_domain="kk.login_portlet">
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <!-- -*- extra stuff goes here -*- -->
+    <genericsetup:registerProfile
+      name="default"
+      title="kk.login_portlet"
+      directory="profile/default"
+      description='Custom login portlet'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+       <include package=".browser" />
+</configure>

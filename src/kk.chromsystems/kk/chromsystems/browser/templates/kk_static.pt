@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<body>
+<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'de'">
+		<div tal:define="use_static view/is_static_enabled">
+			<div class="static" tal:condition="python:use_static == True">
+				<div class="carousel-pager">
+					<div class="carousel-pager-item tdm">
+						<h3 class="carousel-title">
+							<a href="therapeutisches-drug-monitoring">Therapeutisches Drug Monitoring</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item d3-d2">
+						<h3 class="carousel-title">
+							<a href="vitamin-d3-d2-crosslinks">Vitamin D3/D2 Crosslinks</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item nbs">
+						<h3 class="carousel-title">
+							<a href="neugeborenen-screening">Neugeborenen- Screening</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item ba">
+						<h3 class="carousel-title">
+							<a href="biogene-amine">Biogene Amine</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item vp">
+						<h3 class="carousel-title">
+							<a href="vitaminstatus">Vitaminstatus</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item mos">
+						<h3 class="carousel-title">
+							<a href="monitoring-oxidativerstress">Monitoring Oxidativer Stress</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item hc">
+						<h3 class="carousel-title">
+							<a href="homocystein">Homocystein</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item cdt">
+						<h3 class="carousel-title">
+							<a href="cdt">CDT</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item am">
+						<h3 class="carousel-title">
+							<a href="arbeitsmedizin">Arbeitsmedizin</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item ph">
+						<h3 class="carousel-title">
+							<a href="porphyrie-diagnostik">Porphyrie-Diagnostik</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item ha">
+						<h3 class="carousel-title">
+							<a href="haemoglobin-analytik">Hämoglobin-Analytik</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item is">
+						<h3 class="carousel-title">
+							<a href="instrumente-software">Instrumente &amp; Software</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item dl">
+						<h3 class="carousel-title">
+							<a href="dienstleistungen">Dienstleistungen</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item-extra">
+						<h3 class="carousel-title">
+							<a href="kontrollen"></a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item-extra">
+						<h3 class="carousel-title">
+							<a href="kalibratoren"></a>
+						</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+</span>
+
+<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'en'">
+		<div tal:define="use_static view/is_static_enabled">
+			<div class="static" tal:condition="python:use_static == True">
+				<div class="carousel-pager">
+					<div class="carousel-pager-item tdm">
+						<h3 class="carousel-title">
+							<a href="therapeutisches-drug-monitoring">Therapeutic Drug Monitoring</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="vitamin-d3-d2-crosslinks">Vitamin D3/D2 Crosslinks</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item nbs">
+						<h3 class="carousel-title">
+							<a href="neugeborenen-screening">Newborn Screening</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item ba">
+						<h3 class="carousel-title">
+							<a href="biogene-amine">Biogenic Amines</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item vp">
+						<h3 class="carousel-title">
+							<a href="vitaminstatus">Vitamin Profiling</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item mos">
+						<h3 class="carousel-title">
+							<a href="monitoring-oxidativerstress">Monitoring Oxidative Stress</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item hc">
+						<h3 class="carousel-title">
+							<a href="homocystein">Homocysteine</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item cdt">
+						<h3 class="carousel-title">
+							<a href="cdt">CDT</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item am">
+						<h3 class="carousel-title">
+							<a href="arbeitsmedizin">Occupational Medicine</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item ph">
+						<h3 class="carousel-title">
+							<a href="porphyrie-diagnostik">Porphyrin Profiling</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item ha">
+						<h3 class="carousel-title">
+							<a href="haemoglobin-analytik">Hemoglobin Testing</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item">
+						<h3 class="carousel-title">
+							<a href="instrumente-software is">Instruments &amp; Software</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item dl">
+						<h3 class="carousel-title">
+							<a href="dienstleistungen">Services</a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item-extra">
+						<h3 class="carousel-title">
+							<a href="kontrollen"></a>
+						</h3>
+					</div>
+					<div class="carousel-pager-item-extra">
+						<h3 class="carousel-title">
+							<a href="kalibratoren"></a>
+						</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+</span>
+</body>
+</html>

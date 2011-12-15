@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<object name="portal_catalog">
+ <index name="product_categories" meta_type="KeywordIndex">
+  <indexed_attr value="getCategoriesIndex"/>
+ </index>
+ <index name="organiser" meta_type="FieldIndex">
+  <indexed_attr value="getOrganiser"/>
+ </index>
+ <index name="parameters" meta_type="FieldIndex">
+  <indexed_attr value="getParametersString"/>
+ </index>
+ <index name="getParameter" meta_type="KeywordIndex">
+  <indexed_attr value="getParameter"/>
+ </index>
+</object>

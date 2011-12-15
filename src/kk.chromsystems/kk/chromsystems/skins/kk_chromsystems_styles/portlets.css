@@ -1,0 +1,376 @@
+/* Fallback for edit screen if both columns are hidden */
+.managePortletsFallback {
+    margin: 0 0 0 1em;
+}
+
+/* Main portlet elements */
+.portlet {
+    margin: 0px 0px 10px 0px;
+    border-bottom: 0px;
+    background: transparent !important;
+    border: 0px solid black;
+    padding: 0px;
+	width: 270px;
+}
+
+.portlet a {
+    text-decoration: none;
+	color: black;
+	font-weight: bold;
+	font-size: 85%;
+}
+.portlet a.tile {
+	display: block;
+	color: black;
+	font-weight: bold;
+	font-size: 100%;
+}
+
+.portletItem ul {
+    list-style-type: none
+}
+
+/** @rounded corners for region-content and portlets **/
+
+.portletHeader,
+.portletFooter,
+.portletItem,
+.lastItem {
+    position: relative!important;
+    border: 0px;
+}
+
+.lastItem {
+	padding: 0px 0px 20px 0px !important;
+	border: 0px solid black;
+}
+
+.portletItem p {
+	padding: 5px 0px 5px 0px;
+	margin: 0px;
+}
+
+.portletItem a,
+.portletFooter a {
+    border-bottom: none;
+}
+
+.portletItem a:visited,
+.portletFooter a:visited {
+
+}
+.portletHeader, .managedPortlet .portletHeader {
+    background: url(++resource++kk.chromsystems.images/bg-portlet-header.png) no-repeat left top transparent !important;
+    border: 0px;
+    padding: 12px 0px 15px 15px !important;
+    text-transform: uppercase;
+    font-weight: normal;
+    line-height: 1.6em;
+    height: 20px;
+	margin: 0px;
+	font-size: 110% !important;
+	color: #666666;
+	width: 100%;
+}
+
+
+.portletHeader a, .managedPortlet .portletHeader a {
+	outline: none;
+	color: black !important;
+	font-weight: normal;
+
+}
+.portletItem {
+    margin: 0px 0px 0px 0px;
+    padding: 15px 15px 15px 15px;
+    border: 0px dotted #ccc;
+	background: url(++resource++kk.chromsystems.images/bg-portlet-body.gif) repeat-y left bottom transparent !important;
+} 
+
+.portletItem ol {
+    margin: 0 0 0 1em;
+}
+.portletItemDetails {
+    text-align: left;
+    display: block;
+    color: black;
+	font-size: 110%;
+}
+
+span.portletItemDetails {
+    display: block;
+}
+.portletFooter {
+    background: url(++resource++kk.chromsystems.images/bg-portlet-footer.png) no-repeat left bottom transparent !important;
+    margin: 0;
+    padding: 13px 15px 12px 15px;
+    border: 0px;
+    text-align: left;
+    height: 20px;
+}
+
+
+
+/**@ manage-portlets link **/
+
+.managePortletsLink {
+    text-align: center;
+    background: #ccc;
+}
+
+div.portlets-manager div.section {
+    padding-top: 1em !important;
+}
+
+div.managedPortlet {
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    background-color: transparent;
+}
+
+.managedPortlet .portletHeader {
+    min-height: 3em !important;
+}
+
+.managedPortlet a {
+    text-decoration: underline;
+}
+
+.managedPortletActions {
+    display:block;
+    float:right;
+}
+
+.managedPortletActions a {
+    text-decoration: none;
+}
+
+.managedPortletActions a.up,
+.managedPortletActions a.down {
+    color:blue !important;
+}
+
+.managedPortletActions a.delete {
+    color:red !important;
+}
+
+/* Table of Contents styling - essentially a portlet with smaller fonts and aligned right + limited in width */
+.toc {
+    float: right;
+    width: 30%;
+    font-size: 90%;
+    margin: 0 0 0.5em 0.5em;
+}
+
+.toc .TOC1Digit {
+    margin-left: 1em;
+}
+
+.toc .TOC2Digit {
+    margin-left: 2em;
+}
+
+.toc .TOC3Digit {
+    margin-left: 3em;
+}
+
+/* Static text portlet */
+.portletStaticText ul {
+    list-style-image: url(&dtml-portal_url;/bullet.gif);
+    list-style-type: square; 
+    margin: 0.5em 0 0 1.5em;
+}
+
+.portletStaticText ol {
+    margin: 0.5em 0 0 2em;
+}
+
+/* LiveSearch portlet tweaks, since positioning changes */
+#portal-column-one fieldset.livesearchContainer {
+    right: inherit !important;
+    top: 1.5em !important;
+}
+
+/* New navtree styles */
+
+.portletNavigationTree {
+    padding: 0; 
+    list-style: none !important;
+    list-style-image: none !important; 
+    line-height: 1em;
+	background: #e7f6f6;
+}
+
+.portletNavigationTree .portletItem  {
+	border: 0px solid red !important;
+	margin: 0px 0px 0px 0px !important;
+}
+
+.portletNavigationTree .lastItem {
+	padding: 0px 0px 0px 0px !important;
+	border: 0px solid black;
+}
+
+.portletNavigationTree .portletHeader { 
+	background: url(++resource++kk.chromsystems.images/bg-portlet-navi-header.png) no-repeat left top transparent !important;
+    border: 0px solid red;
+    padding: 12px 0px 10px 15px !important;
+    text-transform: uppercase;
+    font-weight: normal;
+    line-height: 1.6em;
+    height: 20px;
+	margin: 0px;
+	font-size: 110% !important;
+	color: #666666;
+	width: 100%;
+
+}
+
+.navTree {
+    list-style: none; 
+    list-style-image: none; 
+    margin-top: 1px;
+}
+.navTree li {
+    margin: 0px !important;
+	border: 1px dotted #cccccc;
+	border-width: 1px 0px 0px 0px;
+}
+
+.navTreeItem {
+    display: block;
+    padding: 0px;
+    margin: 0;
+	font-size: 90%;
+	font-weight: bold;
+}
+.navTreeItem a,
+dd.portletItem .navTreeItem a {
+    border: 0px !important;
+    display: block;
+    text-decoration: none;
+	padding: 5px 0px 3px 10px !important;
+	background: url(++resource++kk.chromsystems.images/arrow-black.gif) no-repeat 0px 12px;
+	color: black;
+	margin: 0px 0px 0px 0px;
+	font-weight: bold;
+	font-size: 100% !important;
+}
+
+.navTreeItem a:hover { 
+    color: #a33193 !important;
+	background: url(++resource++kk.chromsystems.images/arrow-grey.gif) no-repeat 0px 12px !important;
+}
+
+.navTreeCurrentItem span {
+	color: #a33193 !important;
+	text-transform: none;
+}
+
+.hasChildrens {
+	border: 1px solid red;
+}
+
+.contenttype-formfolder img {
+	display: none;
+}
+
+.contenttype-csfolder img {
+	display: none;
+}
+
+/* Another workaround for broken Internet Explorer */
+* html li.navTreeCurrentItem a,
+* html li.navTreeCurrentItem a:hover {
+    height: 1.6em;
+}
+
+.navTreeLevel0 {
+	margin: 0px 10px 0px 10px !important; 
+	border: 0px solid red !important;
+	text-transform: none;
+}
+
+.navTreeLevel1 { 
+    margin: 0px 0px 0px 0px !important;
+	text-transform: none;
+	font-size: 100% !important;
+	background: #efefef;
+	border: 1px dotted #cccccc;
+	border-width: 0px 1px 0px 1px;
+}
+
+.navTreeItem .navTreeLevel1 li a { 
+	padding-left: 20px !important;
+	background: url(++resource++kk.chromsystems.images/arrow-black.gif) no-repeat 10px 12px !important;
+}
+
+.navTreeLevel2 {
+    margin-left: 0px !important;
+}
+
+.navTreeLevel3 {
+    margin-left: 0px !important;
+}
+
+/*  */
+
+/*  */ 
+
+.ploneCalendar {
+	width: 100%;
+	font-family: Georgia;
+	font-style: italic;
+}
+
+.ploneCalendar tr {
+	text-align: center;
+}
+
+.even { 
+	background: transparent;
+}
+
+#portal-sitemap a {
+	padding: 7px 0px 5px 20px !important;
+}
+
+.portletLogin .portletFooter {
+	margin: -15px 0px 0px 0px;
+}
+
+.portletLogin .field-left {
+	left: 0;
+	margin: 0px 0px 10px 0px;
+	top: 0;
+}
+
+.portletLogin .field-right {
+	border: 0px solid red;
+}
+
+.field-left label {
+	padding: 0px 0px 1px 0px !important;
+	margin: 0px !important;
+	display: block;
+}
+
+.field-right label {
+	padding: 0px 0px 1px 0px !important;
+	margin: 0px !important;
+	display: block;
+}
+
+.portletLogin .formControls {
+	margin: -29px 0px 0px 0px;
+	float: right;
+}
+
+.portletLogin .portletFooter {
+    background: url(++resource++kk.chromsystems.images/bg-portlet-login-footer.png) no-repeat left bottom transparent !important;
+    margin: 0;
+    padding: 0px 15px 0px 15px;
+    border: 0px;
+    text-align: left;
+    height: 5px;
+}
