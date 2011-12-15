@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<object name="portal_memberdata" meta_type="Plone Memberdata Tool">
+ <property name="salutation" type="boolean"></property>
+ <property name="firstname" type="string"></property>
+ <property name="lastname" type="string"></property>
+ <property name="customer" type="string"></property>
+ <property name="company" type="string"></property>
+ <property name="street" type="string"></property>
+ <property name="city" type="string"></property>
+ <property name="zipcode" type="string"></property>
+ <property name="country" type="string"></property>
+ <property name="phone" type="string"></property>
+ <property name="fax" type="string"></property>
+ <property name="comment" type="text"></property>
+</object>

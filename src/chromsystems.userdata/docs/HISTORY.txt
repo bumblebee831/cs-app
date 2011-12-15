@@ -1,0 +1,77 @@
+Changelog
+=========
+
+1.1 (2011-09-09
+-------------------
+
+- Release was missing the new setup handler code (cb)
+
+1.0 (2011-09-07)
+-------------------
+
+- Add handler for edgecases in passwords (cb)
+
+- Finish upload and member add view (cb)
+
+
+1.0b9
+-------------------
+
+- fix wrong schema attribute which prevents startup (cb)
+
+1.0b8
+-------------------
+
+- include dependency on `plone.namedfile` (cb)
+
+1.0b7
+-------------------
+
+- re-release with all sources setup correctly (cb)
+
+1.0b6
+-------------------
+
+- e-factor the configuration in order to make the pacakge installable (cb)
+
+1.0b5
+-------------------
+
+- initialize the package as a zope2 product (cb)
+
+1.0b4
+-------------------
+
+- re-release due to missing docs folder (cb)
+
+1.0b3
+-------------------
+
+- member data importer prepared (cb)
+
+- package cleanup in setup.py (cb)
+
+1.0b2
+-------------------
+
+- add country vocabulary (cb)
+
+- include basic member import view skeleton (cb)
+
+1.0b1
+-------------------
+
+- Include locales translations (cb)
+
+- Include a specific IChromsystemUserdata Layer (cb)
+
+- Subclass the registration form for flexibility (cb)
+
+- Include the default user fields (cb)
+
+- Setup user schema (cb)
+
+1.0dev (unreleased)
+-------------------
+
+- Initial release

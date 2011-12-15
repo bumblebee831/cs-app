@@ -1,0 +1,112 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2011-08-08 11:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: chromsystems.userdata\n"
+
+#: ./../userschema.py:30
+msgid "Frau"
+msgstr ""
+
+#: ./../userschema.py:31
+msgid "Herr"
+msgstr ""
+
+#. Default: "Registration form"
+#: ./../customregistration.py:15
+msgid "heading_registration_form"
+msgstr ""
+
+#. Default: "Tick this box to indicate that you have found, read and accepted the terms of use for this site. "
+#: ./../userschema.py:86
+msgid "help_accept"
+msgstr ""
+
+#. Default: "If you have any comments concerning your registration, please leave them here."
+#: ./../userschema.py:79
+msgid "help_comments"
+msgstr ""
+
+#. Default: "Please enter your customer identification."
+#: ./../userschema.py:46
+msgid "help_customer"
+msgstr ""
+
+#. Default: "Accept terms of use"
+#: ./../userschema.py:85
+msgid "label_accept"
+msgstr ""
+
+#. Default: "City"
+#: ./../userschema.py:59
+msgid "label_city"
+msgstr ""
+
+#. Default: "Comments"
+#: ./../userschema.py:78
+msgid "label_comments"
+msgstr ""
+
+#. Default: "Company"
+#: ./../userschema.py:51
+msgid "label_company"
+msgstr ""
+
+#. Default: "Country"
+#: ./../userschema.py:66
+msgid "label_country"
+msgstr ""
+
+#. Default: "Customer"
+#: ./../userschema.py:45
+msgid "label_customer"
+msgstr ""
+
+#. Default: "Fax number"
+#: ./../userschema.py:74
+msgid "label_fax"
+msgstr ""
+
+#. Default: "First name"
+#: ./../userschema.py:37
+msgid "label_firstname"
+msgstr ""
+
+#. Default: "Last name"
+#: ./../userschema.py:41
+msgid "label_lastname"
+msgstr ""
+
+#. Default: "Telephone number"
+#: ./../userschema.py:70
+msgid "label_phone"
+msgstr ""
+
+#. Default: "Salutation"
+#: ./../userschema.py:28
+msgid "label_salutation"
+msgstr ""
+
+#. Default: "Street"
+#: ./../userschema.py:55
+msgid "label_street"
+msgstr ""
+
+#. Default: "Zipcode"
+#: ./../userschema.py:63
+msgid "label_zipcode"
+msgstr ""
+

@@ -1,0 +1,10 @@
+<layers>
+    
+    <!-- Custom Browser layer -->
+    
+    <layer
+        name="chromsystems.userdata.layer"
+        interface="chromsystems.userdata.interfaces.IChromsystemsUserdata"
+        />
+
+</layers>

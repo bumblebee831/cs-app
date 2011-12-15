@@ -1,0 +1,109 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: chromsystems.userdata\n"
+"POT-Creation-Date: 2011-08-08 11:28+0000\n"
+"PO-Revision-Date: 2011-08-08 13:35+0100\n"
+"Last-Translator: Christoph Boehner <cb@vorwaerts-werbung.de>\n"
+"Language-Team: VW Development Team <cb@vorwaerts-werbung.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: chromsystems.userdata\n"
+
+#: ./../userschema.py:30
+msgid "Frau"
+msgstr "Frau"
+
+#: ./../userschema.py:31
+msgid "Herr"
+msgstr "Herr"
+
+#. Default: "Registration form"
+#: ./../customregistration.py:15
+msgid "heading_registration_form"
+msgstr "Registrierung"
+
+#. Default: "Tick this box to indicate that you have found, read and accepted the terms of use for this site. "
+#: ./../userschema.py:86
+msgid "help_accept"
+msgstr "Bitte bestätigen Sie, dass Sie unsere Allgemeinen Geschäftsbedingungen gelesen haben und akzeptieren."
+
+#. Default: "If you have any comments concerning your registration, please leave them here."
+#: ./../userschema.py:79
+msgid "help_comments"
+msgstr "Falls Sie weitere Anmerkungen zu Ihrer Anmeldung haben, können Sie uns diese hier übermitteln."
+
+#. Default: "Please enter your customer identification."
+#: ./../userschema.py:46
+msgid "help_customer"
+msgstr "Bitte tragen Sie hier, falls vorhanden, Ihre Kundennummer ein."
+
+#. Default: "Accept terms of use"
+#: ./../userschema.py:85
+msgid "label_accept"
+msgstr "AGB akzeptieren"
+
+#. Default: "City"
+#: ./../userschema.py:59
+msgid "label_city"
+msgstr "Stadt"
+
+#. Default: "Comments"
+#: ./../userschema.py:78
+msgid "label_comments"
+msgstr "Kommentare"
+
+#. Default: "Company"
+#: ./../userschema.py:51
+msgid "label_company"
+msgstr "Firma"
+
+#. Default: "Country"
+#: ./../userschema.py:66
+msgid "label_country"
+msgstr "Land"
+
+#. Default: "Customer"
+#: ./../userschema.py:45
+msgid "label_customer"
+msgstr "Kundennummer"
+
+#. Default: "Fax number"
+#: ./../userschema.py:74
+msgid "label_fax"
+msgstr "Fax"
+
+#. Default: "First name"
+#: ./../userschema.py:37
+msgid "label_firstname"
+msgstr "Vorname"
+
+#. Default: "Last name"
+#: ./../userschema.py:41
+msgid "label_lastname"
+msgstr "Nachname"
+
+#. Default: "Telephone number"
+#: ./../userschema.py:70
+msgid "label_phone"
+msgstr "Telefon"
+
+#. Default: "Salutation"
+#: ./../userschema.py:28
+msgid "label_salutation"
+msgstr "Anrede"
+
+#. Default: "Street"
+#: ./../userschema.py:55
+msgid "label_street"
+msgstr "Strasse und Hausnummer"
+
+#. Default: "Zipcode"
+#: ./../userschema.py:63
+msgid "label_zipcode"
+msgstr "Postleitzahl"
+
