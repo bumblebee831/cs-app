@@ -26,8 +26,16 @@ setup(name='chromsystems.globalcontacts',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'plone.app.dexterity',
+          'Products.CMFPlone',
+          'plone.app.dexterity [grok]',
+          'plone.app.referenceablebehavior',
+          'plone.app.relationfield',
           'plone.namedfile [blobs]',
+          'plone.app.registry',
+          'plone.app.z3cform',
+          'plone.app.contentlisting',
+          'zope.annotation',
+          'five.globalrequest',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
