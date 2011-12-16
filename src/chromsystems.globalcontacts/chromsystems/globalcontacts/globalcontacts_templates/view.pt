@@ -8,15 +8,32 @@
 <body>
 
 <metal:main fill-slot="content-core">
-  <metal:content-core define-macro="content-core">
+  <metal:content-core define-macro="content-core"
+        tal:define="Batch python:modules['Products.CMFPlone'].Batch;
+                    b_size python:10;b_start python:0;b_start request/b_start | b_start;">
 
-    <h2>
-        Rendered from 
-        globalcontacts_templates/<span tal:replace="template/id" />
-    </h2>
-
-
-    <div tal:content="context/Title">Title inserted here</div>
+    <div class="contacts-listing"
+        tal:condition="vie/has_contacts"
+        tal:define="items view/contained_contacts;
+                    batch python:Batch(items, b_size, int(b_start), orphan=1);">
+        
+        <tal:block tal:repeat="item batch">
+            <div class="contact-item">
+                <h2><span tal:replace="item/slutation" />
+                    <span tal:replace="item/Title" />
+                </h2>
+                <p tal:condition="item/countries">
+                    <strong>Countries:</strong>
+                    <tal:countries tal:repeat="country item/countries">
+                        <span tal:replace="country" />
+                    </tal:countries>
+                </p>
+                <a href="" tal:attributes="href item/getURL">
+                    View Contact Information</a>
+            </div>
+        </tal:block>
+        
+    </div>
     
   </metal:content-core>
 </metal:main>
