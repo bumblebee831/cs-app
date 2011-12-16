@@ -27,8 +27,11 @@ class IContact(form.Schema, IImageScaleTraversable):
     """
     A contact person.
     """
-
-    form.model("models/contact.xml")
+    title = schema.TextLine(
+        title=_(u"Contact Name"),
+        description=_(u"Enter a title for this contact."),
+        required=True,
+    )
 
 
 class Contact(dexterity.Item):

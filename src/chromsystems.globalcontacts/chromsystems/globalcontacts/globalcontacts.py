@@ -28,16 +28,12 @@ class IGlobalContacts(form.Schema, IImageScaleTraversable):
     A collection of contact persons.
     """
 
-    form.model("models/globalcontacts.xml")
-
 
 class GlobalContacts(dexterity.Container):
     grok.implements(IGlobalContacts)
 
-    # Add your class methods and properties here
 
-
-class SampleView(grok.View):
+class View(grok.View):
     grok.context(IGlobalContacts)
     grok.require('zope2.View')
     grok.name('view')
