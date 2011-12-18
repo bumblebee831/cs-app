@@ -6,6 +6,7 @@ from zope.component import getMultiAdapter
 from zope.schema.vocabulary import getVocabularyRegistry
 from z3c.form import group, field, button
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
+from z3c.form.browser.radio import RadioWidget
 
 from Acquisition import aq_inner
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -69,11 +70,22 @@ class IEnquiry(form.Schema):
         title=_(u'Email'),
         required=True,
     )
+    requested_material = schema.FrozenSet(
+        title=_(u"Requested Material"),
+        value_type=schema.Choice(
+            vocabulary=u"chromsystems.globalcontacts.AvailableMaterial",
+        )
+    )
     message = schema.Text(
         title=_(u"Message"),
         required=False,
     )
-    form.widget(vitamin_profiling=CheckBoxFieldWidget)
+    drug_monitoring = schema.FrozenSet(
+        title=_(u"Therapeutic Drug Monitoring"),
+        value_type=schema.Choice(
+            vocabulary=u"chromsystems.globalcontacts.DrugMonitoring",
+        )
+    )
     vitamin_profiling = schema.FrozenSet(
         title=_(u"Vitamin Profiling"),
         value_type=schema.Choice(
@@ -89,22 +101,26 @@ class ContactGroup(group.Group):
         'salutation', 'firstname', 'lastname', 'institution', 'street',
         'postalcode', 'city', 'country', 'phone', 'fax', 'email',
         )
+    #fields['salutation'].widgetFactory = RadioWidget
 
 
 class PreferencesGroup(group.Group):
     label=u"Enter Preferences"
     description=u"Enter your preferences below"
     fields=field.Fields(IEnquiry).select(
-        'message',
+        'requested_material', 'message',
         )
+    fields['requested_material'].widgetFactory = CheckBoxFieldWidget
 
 
 class InterestsGroup(group.Group):
     label=u"Area of Interest"
     description=u"Please select your area of interest"
     fields=field.Fields(IEnquiry).select(
-        'vitamin_profiling',
+        'drug_monitoring', 'vitamin_profiling',
         )
+    fields['drug_monitoring'].widgetFactory = CheckBoxFieldWidget
+    fields['vitamin_profiling'].widgetFactory = CheckBoxFieldWidget
 
 
 class EnquiryForm(group.GroupForm, form.Form):
@@ -155,14 +171,14 @@ class EnquiryForm(group.GroupForm, form.Form):
         body = ViewPageTemplateFile("enquiry_email.pt")(self, **options)
         # send email
         mailhost = getToolByName(self.context, 'MailHost')
-        mailhost.send(body, mto=mto, mfrom=envelope_from, subject=subject, charset='utf-8')
+        mailhost.send(body, mto=mto, mfrom=envelope_from, subject=subject,
+                      charset='utf-8')
 
         IStatusMessage(self.request).addStatusMessage(
-            _(u"Your email has been forwarded.", "info")
-            )
+            _(u"Your email has been forwarded.", "info"))
 
         return self.request.response.redirect(context_url)
-    
+
     def contact_info(self):
         context = aq_inner(self.context)
         catalog = getToolByName(context, 'portal_catalog')
@@ -199,4 +215,3 @@ class EnquiryForm(group.GroupForm, form.Form):
             'chromsystems.userdata.CountryList')
         term = countries_vocabulary.getTerm(country)
         return term.title
-        
