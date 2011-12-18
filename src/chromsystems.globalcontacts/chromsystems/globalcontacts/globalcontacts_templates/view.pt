@@ -11,15 +11,25 @@
   <metal:content-core define-macro="content-core"
         tal:define="Batch python:modules['Products.CMFPlone'].Batch;
                     b_size python:10;b_start python:0;b_start request/b_start | b_start;">
-
+    
     <div class="contacts-listing"
-        tal:condition="vie/has_contacts"
+        tal:define="items view/contacts">
+        <tal:contacts tal:repeat="item items">
+            <h2 tal:content="item/title" />
+            <img tal:replace="item/imageTag" />
+            <a href="" tal:attributes="href item/url">
+                View Contact Details</a>
+        </tal:contacts>
+    </div>
+    
+    <div class="contacts-listing"
+        tal:condition="view/has_contacts"
         tal:define="items view/contained_contacts;
                     batch python:Batch(items, b_size, int(b_start), orphan=1);">
         
         <tal:block tal:repeat="item batch">
             <div class="contact-item">
-                <h2><span tal:replace="item/slutation" />
+                <h2><span tal:replace="item/salutation" />
                     <span tal:replace="item/Title" />
                 </h2>
                 <p tal:condition="item/countries">

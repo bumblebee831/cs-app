@@ -39,12 +39,16 @@ class IContact(form.Schema, IImageScaleTraversable):
         default=u"Frau",
         required=True,
     )
-    image = NamedBlobFile(
+    phone = schema.TextLine(
+        title=_(u"Phone"),
+        required=True,
+    )
+    image = NamedBlobImage(
         title=_(u"Portrait Image"),
         description=_(u"Upload a portrait of the contact person."),
         required=True,
     )
-    form.widget(countries=AutocompleteMultiFieldWidget)
+    #form.widget(countries=AutocompleteMultiFieldWidget)
     countries = schema.Set(
         title=_(u"Country"),
         description=_(u"Please select the countries this contact is "
