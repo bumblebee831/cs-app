@@ -3,4 +3,5 @@
  <index name="countries" meta_type="KeywordIndex">
   <indexed_attr value="countries" />
  </index>
+ <column value="countries" />
 </object>

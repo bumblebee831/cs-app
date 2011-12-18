@@ -10,8 +10,14 @@
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
   
-    <div tal:content="context/Title">Title inserted here</div>
-    
+    <h2><span tal:replace="context/salutation" />
+        <span tal:content="context/Title">Title inserted here</span>
+    </h2>
+    <p><strong>Email:</strong>
+        <span tal:replace="context/email" /><br />
+        <strong>Phone:</strong>
+        <span tal:replace="context/phone" />
+    </p>
         <img tal:define="scales context/@@images;
                          portrait python:scales.scale('image', scale='tile');"
             tal:condition="portrait"
@@ -20,9 +26,14 @@
                             height portrait/height" />
         
         <h2>Contact for:</h2>
-        <ul>
-        <li tal:repeat="country context/countries">
-            <span tal:replace="country" />
+        <ul tal:define="here_url context/absolute_url">
+        <li tal:repeat="country view/prettyprinted_countries">
+            <strong tal:content="country/title">Country</strong>:
+            <a href=""
+                tal:define="value country/value"
+                tal:attributes="href python:here_url+'/@@enquiry?contact='+value">
+                View enquiry form
+            </a>
         </li>
         </ul>
     
