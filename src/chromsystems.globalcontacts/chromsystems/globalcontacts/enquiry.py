@@ -2,6 +2,8 @@ from five import grok
 from plone.directives import form
 
 from zope import schema
+from zope.component import getMultiAdapter
+from zope.schema.vocabulary import getVocabularyRegistry
 from z3c.form import button
 
 from Acquisition import aq_inner
@@ -9,6 +11,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from Products.statusmessages.interfaces import IStatusMessage
 from Products.CMFCore.interfaces import IContentish
+
+from chromsystems.globalcontacts.contact import IContact
 from chromsystems.globalcontacts import MessageFactory as _
 
 
@@ -106,7 +110,7 @@ class EnquiryForm(form.SchemaForm):
         context_url = self.context.absolute_url()
         mto = self.context.email
         envelope_from = data['email']
-        subject = _(u'Regeneration Deutschland: Anfrage von %s') % data['name']
+        subject = _(u'Anfrage von %s') % data['name']
         options = dict(email = data['email'],
                        name = data['name'],
                        message = data['message'],
@@ -125,6 +129,38 @@ class EnquiryForm(form.SchemaForm):
     
     def contact_info(self):
         context = aq_inner(self.context)
+        catalog = getToolByName(context, 'portal_catalog')
         self.contact = self.request.get('contact', '')
         if self.contact:
-            return self.contact
+            results = catalog(object_provides=IContact.__identifier__,
+                              review_state='published',
+                              countries=self.contact)
+            if results:
+                result = results[0]
+                obj = result.getObject()
+                info = dict(
+                    title=obj.Title(),
+                    salutation=obj.salutation,
+                    email=obj.email,
+                    phone=obj.phone,
+                    imageTag=self.constructImageTag(obj),
+                    country=self.prettyprint_country(self.contact),
+                )
+                return info
+
+    def constructImageTag(self, obj):
+        scales = getMultiAdapter((obj, self.request), name='images')
+        scale = scales.scale('image', scale='thumb')
+        imageTag = None
+        if scale is not None:
+            imageTag = scale.tag()
+        return imageTag
+
+    def prettyprint_country(self, country):
+        context = aq_inner(self.context)
+        vr = getVocabularyRegistry()
+        countries_vocabulary = vr.get(context,
+            'chromsystems.userdata.CountryList')
+        term = countries_vocabulary.getTerm(country)
+        return term.title
+        
