@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registry>
+    <record name="chromsystems.globalcontacts.alcoholAbuseMarkers">
+        <field type="plone.registry.field.Tuple">
+            <title>Bio-markers for alcohol abuse</title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>CDT Fast Elution</element>
+            <element>CDT</element>
+        </value>
+    </record>
+    <record name="chromsystems.globalcontacts.therapeuticDrugMonitoring">
+        <field type="plone.registry.field.Tuple">
+            <title>Therapeutic Drug Monitoring</title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>Amiodarone/Desethylamiodarone</element>
+            <element>Antidepressants 1, MassTox LC-MS/MS Analysis</element>
+            <element>Antidepressants 2/Psychostimulants, MassTox LC-MS/MS Analysis</element>
+            <element>Anti-HIV Drugs</element>
+            <element>Antiepileptic Drugs</element>
+            <element>Benzodiazepines, Tricyclic Antidepressants</element>
+            <element>Imatinib, Dasatinib, Nilotinib</element>
+            <element>Immunosuppressants, MassTox LC-MS/MS Analysis</element>
+            <element>Itraconazole, Posaconazole, Voriconazole</element>
+            <element>Levetiracetam (Keppra)</element>
+            <element>Mycophenolic Acid</element>
+            <element>Mycophenolic Acid, MassTox LC-MS/MS Analysis</element>
+            <element>Neuroleptics 1, MassTox LC-MS/MS Analysis</element>
+            <element>Neuroleptics 2, MassTox LC-MS/MS Analysis</element>
+            <element>Olanzapine/Desmethylolanzapine</element>
+            <element>Rufinamide, Felbamate, Lacosamide</element>
+        </value>
+    </record>
+    <record name="chromsystems.globalcontacts.monitoringOxidativeStress">
+        <field type="plone.regisry.field.Tuple">
+            <title>Monitoring Oxidative Stress</title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>Malondialdehyde</element>
+            <element>Vitamin C</element>
+            <element>Glutathione</element>
+            <element>Coenzyme Q10</element>
+            <element>Beta-Carotene</element>
+        </value>
+    </record>
+    <record name="chromsystems.globalcontacts.vitaminProfiling">
+        <field type="plone.regisry.field.Tuple">
+            <title>Vitamin Profiling</title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>Vitamins B1/B6</element>
+            <element>Vitamin B1</element>
+            <element>Vitamin B2</element>
+            <element>Vitamin B6</element>
+            <element>Vitamins A/E</element>
+        </value>
+    </record>
+    <record name="chromsystems.globalcontacts.arteriosclerosisRiskFactors">
+        <field type="plone.regisry.field.Tuple">
+            <title>Risk Factor for Arteriosclerosis</title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>Homocysteine</element>
+        </value>
+    </record>
+    <record name="chromsystems.globalcontacts.porphyrinsDiagnosis">
+        <field type="plone.regisry.field.Tuple">
+            <title>Diagnosis of Porphyrins</title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>Porphyrins</element>
+        </value>
+    </record>
+    <record name="chromsystems.globalcontacts.osteoporosisDiagnosis">
+        <field type="plone.regisry.field.Tuple">
+            <title>Osteoporosis Diagnosis</title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>MassChrom 25-OH-Vitamin D3/D2, LC-MS/MS Analysis</element>
+            <element>25-OH-Vitamin D3/D2 HPLC Analysis</element>
+            <element>Crosslinks</element>
+        </value>
+    </record>
+    <record name="chromsystems.globalcontacts.hemoglobinTesting">
+        <field type="plone.regisry.field.Tuple">
+            <title>Hemoglobin Testing</title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>Hemoglobin Variants</element>
+            <element>Beta-Thalassemia Testing</element>
+            <element>Hemoglobin A1c</element>
+        </value>
+    </record>
+    <record name="chromsystems.globalcontacts.biogenicAmines">
+        <field type="plone.regisry.field.Tuple">
+            <title>Biogenic Amines (Phaeochromocytoma)</title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>Catecholamines</element>
+            <element>Metanephrines</element>
+            <element>VMA, HVA, 5-HIAA</element>
+            <element>Serotonin</element>
+        </value>
+    </record>
+</registry>
