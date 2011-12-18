@@ -4,7 +4,8 @@ from plone.directives import form
 from zope import schema
 from zope.component import getMultiAdapter
 from zope.schema.vocabulary import getVocabularyRegistry
-from z3c.form import button
+from z3c.form import group, field, button
+from z3c.form.browser.checkbox import CheckBoxFieldWidget
 
 from Acquisition import aq_inner
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -72,9 +73,41 @@ class IEnquiry(form.Schema):
         title=_(u"Message"),
         required=False,
     )
+    form.widget(vitamin_profiling=CheckBoxFieldWidget)
+    vitamin_profiling = schema.FrozenSet(
+        title=_(u"Vitamin Profiling"),
+        value_type=schema.Choice(
+            vocabulary=u"chromsystems.globalcontacts.VitaminProfiling",
+        )
+    )
 
 
-class EnquiryForm(form.SchemaForm):
+class ContactGroup(group.Group):
+    label=u"Contact Details"
+    description=u"Enter your contact details below"
+    fields=field.Fields(IEnquiry).select(
+        'salutation', 'firstname', 'lastname', 'institution', 'street',
+        'postalcode', 'city', 'country', 'phone', 'fax', 'email',
+        )
+
+
+class PreferencesGroup(group.Group):
+    label=u"Enter Preferences"
+    description=u"Enter your preferences below"
+    fields=field.Fields(IEnquiry).select(
+        'message',
+        )
+
+
+class InterestsGroup(group.Group):
+    label=u"Area of Interest"
+    description=u"Please select your area of interest"
+    fields=field.Fields(IEnquiry).select(
+        'vitamin_profiling',
+        )
+
+
+class EnquiryForm(group.GroupForm, form.Form):
     grok.context(IContentish)
     grok.require('zope2.View')
     grok.name('enquiry')
@@ -85,6 +118,9 @@ class EnquiryForm(form.SchemaForm):
 
     label = _(u"Contact")
     description = _(u"Please fill out the form to send an enquiry.")
+
+    groups = (ContactGroup, PreferencesGroup, InterestsGroup)
+    enable_form_tabbing = False
 
     def updateActions(self):
         super(EnquiryForm, self).updateActions()
