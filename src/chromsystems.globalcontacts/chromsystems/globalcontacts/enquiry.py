@@ -2,7 +2,11 @@ from five import grok
 from plone.directives import form
 
 from zope import schema
+from zope.schema.interfaces import IContextSourceBinder
+
 from zope.component import getMultiAdapter
+from zope.component import queryUtility
+from zope.schema.vocabulary import SimpleVocabulary
 from zope.schema.vocabulary import getVocabularyRegistry
 from z3c.form import group, field, button
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
@@ -13,9 +17,25 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from Products.statusmessages.interfaces import IStatusMessage
 from Products.CMFCore.interfaces import IContentish
+from plone.registry.interfaces import IRegistry
 
 from chromsystems.globalcontacts.contact import IContact
 from chromsystems.globalcontacts import MessageFactory as _
+
+
+class RegistrySource(object):
+    grok.implements(IContextSourceBinder)
+
+    def __init__(self, key):
+        self.key = key
+
+    def __call__(self, context):
+        registry = queryUtility(IRegistry)
+        terms = []
+        if registry is not None:
+            for value in registry.get(self.key, ()):
+                terms.append(SimpleVocabulary.createTerm(value, value.encode('utf-8'), value))
+        return SimpleVocabulary(terms)
 
 
 class IEnquiry(form.Schema):
@@ -80,10 +100,23 @@ class IEnquiry(form.Schema):
         title=_(u"Message"),
         required=False,
     )
+    newborn_screening = schema.FrozenSet(
+        title=_(u"Newborn Screening"),
+        value_type=schema.Choice(
+            vocabulary=u"chromsystems.globalcontacts.NewbornScreening",
+        )
+    )
     drug_monitoring = schema.FrozenSet(
         title=_(u"Therapeutic Drug Monitoring"),
         value_type=schema.Choice(
             vocabulary=u"chromsystems.globalcontacts.DrugMonitoring",
+        )
+    )
+    alcohol_abuse = schema.Set(
+        title=_(u"Bio-markers for alcohol abuse"),
+        value_type=schema.Choice(
+            source=RegistrySource(
+            'chromsystems.globalcontacts.alcoholAbuseMarkers'),
         )
     )
     vitamin_profiling = schema.FrozenSet(
@@ -117,9 +150,12 @@ class InterestsGroup(group.Group):
     label=u"Area of Interest"
     description=u"Please select your area of interest"
     fields=field.Fields(IEnquiry).select(
-        'drug_monitoring', 'vitamin_profiling',
+        'newborn_screening', 'drug_monitoring', 'alcohol_abuse',
+        'vitamin_profiling',
         )
+    fields['newborn_screening'].widgetFactory = CheckBoxFieldWidget
     fields['drug_monitoring'].widgetFactory = CheckBoxFieldWidget
+    fields['alcohol_abuse'].widgetFactory = CheckBoxFieldWidget
     fields['vitamin_profiling'].widgetFactory = CheckBoxFieldWidget
 
 

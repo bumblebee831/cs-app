@@ -20,6 +20,24 @@ grok.global_utility(AvailableMaterialVocabulary,
                     name=u"chromsystems.globalcontacts.AvailableMaterial")
 
 
+class NewbornScreeningVocabulary(object):
+    grok.implements(IVocabularyFactory)
+
+    def __call__(self, context):
+        TYPES = {
+        _(u'MassChrom Amino Acids and Acylcarnitines, LC-MS/MS Analysis'):
+            'MassChrom Amino Acids and Acylcarnitines, LC-MS/MS Analysis',
+        _(u'MassChrom Amino Acids and Acylcarnitines/Non Derivatised, '
+          u'LC-MS/MS Analysis'):
+        'MassChrom Amino Acids and Acylcarnitines/Non Derivatised,'
+        'LC-MS/MS Analysis',
+        }
+        return SimpleVocabulary([SimpleTerm(value, title=title)
+                                for title, value in TYPES.iteritems()])
+grok.global_utility(NewbornScreeningVocabulary,
+                    name=u"chromsystems.globalcontacts.NewbornScreening")
+
+
 class DrugMonitoringVocabulary(object):
     grok.implements(IVocabularyFactory)
 
