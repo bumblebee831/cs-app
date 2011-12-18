@@ -123,6 +123,13 @@ class IEnquiry(form.Schema):
             'chromsystems.globalcontacts.alcoholAbuseMarkers'),
         )
     )
+    oxidative_stress_monitoring = schema.FrozenSet(
+        title=_(u"Monitoring Oxidative Stress"),
+        value_type=schema.Choice(
+            source=RegistrySource(
+            'chromsystems.globalcontacts.monitoringOxidativeStress'),
+        )
+    )
     vitamin_profiling = schema.FrozenSet(
         title=_(u"Vitamin Profiling"),
         value_type=schema.Choice(
@@ -130,11 +137,18 @@ class IEnquiry(form.Schema):
             'chromsystems.globalcontacts.alcoholAbuseMarkers'),
         )
     )
-    oxidative_stress_monitoring = schema.FrozenSet(
-        title=_(u"Monitoring Oxidative Stress"),
+    arteriosclerosis = schema.FrozenSet(
+        title=_(u"Risk Factors for Arteriosclerosis"),
         value_type=schema.Choice(
             source=RegistrySource(
-            'chromsystems.globalcontacts.monitoringOxidativeStress'),
+            'chromsystems.globalcontacts.arteriosclerosisRiskFactors'),
+        )
+    )
+    porphyrins_diagnosis = schema.FrozenSet(
+        title=_(u"Diagnosis for Porphyrins"),
+        value_type=schema.Choice(
+            source=RegistrySource(
+            'chromsystems.globalcontacts.porphyrinsDiagnosis'),
         )
     )
 
@@ -162,13 +176,16 @@ class InterestsGroup(group.Group):
     description=u"Please select your area of interest"
     fields=field.Fields(IEnquiry).select(
         'newborn_screening', 'drug_monitoring', 'alcohol_abuse',
-        'vitamin_profiling', 'oxidative_stress_monitoring',
+        'oxidative_stress_monitoring', 'vitamin_profiling',
+        'arteriosclerosis', 'porphyrins_diagnosis',
         )
     fields['newborn_screening'].widgetFactory = CheckBoxFieldWidget
     fields['drug_monitoring'].widgetFactory = CheckBoxFieldWidget
     fields['alcohol_abuse'].widgetFactory = CheckBoxFieldWidget
-    fields['vitamin_profiling'].widgetFactory = CheckBoxFieldWidget
     fields['oxidative_stress_monitoring'].widgetFactory = CheckBoxFieldWidget
+    fields['vitamin_profiling'].widgetFactory = CheckBoxFieldWidget
+    fields['arteriosclerosis'].widgetFactory = CheckBoxFieldWidget
+    fields['porphyrins_diagnosis'].widgetFactory = CheckBoxFieldWidget
 
 
 class EnquiryForm(group.GroupForm, form.Form):
