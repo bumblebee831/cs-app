@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <registry>
-    <record name="chromsystems.globalcontacts.alcoholAbuseMarkers">
+    <record name="chromsystems.globalcontacts.newbornScreening">
         <field type="plone.registry.field.Tuple">
-            <title>Bio-markers for alcohol abuse</title>
+            <title>Newborn Screening</title>
             <value_type type="plone.registry.field.TextLine" />
         </field>
         <value>
-            <element>CDT Fast Elution</element>
-            <element>CDT</element>
+            <element>MassChrom Amino Acids and Acylcarnitines, LC-MS/MS Analysis</element>
+            <element>MassChrom Amino Acids and Acylcarnitines/Non Derivatised, LC-MS/MS Analysis</element>
         </value>
     </record>
     <record name="chromsystems.globalcontacts.therapeuticDrugMonitoring">
@@ -32,6 +32,16 @@
             <element>Neuroleptics 2, MassTox LC-MS/MS Analysis</element>
             <element>Olanzapine/Desmethylolanzapine</element>
             <element>Rufinamide, Felbamate, Lacosamide</element>
+        </value>
+    </record>
+    <record name="chromsystems.globalcontacts.alcoholAbuseMarkers">
+        <field type="plone.registry.field.Tuple">
+            <title>Bio-markers for alcohol abuse</title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>CDT Fast Elution</element>
+            <element>CDT</element>
         </value>
     </record>
     <record name="chromsystems.globalcontacts.monitoringOxidativeStress">
@@ -110,6 +120,52 @@
             <element>Metanephrines</element>
             <element>VMA, HVA, 5-HIAA</element>
             <element>Serotonin</element>
+        </value>
+    </record>
+    <record name="chromsystems.globalcontacts.controls">
+        <field type="plone.regisry.field.Tuple">
+            <title>Controls</title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>Quality Assurance</element>
+            <element>Therapeutic Drug Monitoring</element>
+        </value>
+    </record>
+    <record name="chromsystems.globalcontacts.calibration">
+        <field type="plone.regisry.field.Tuple">
+            <title>Calibration</title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>Calibrators</element>
+            <element>3PLUS1 Multilevel Calibrator Sets</element>
+            <element>6PLUS1 Multilevel Calibrator Sets</element>
+        </value>
+    </record>
+    <record name="chromsystems.globalcontacts.occupationalMedicine ">
+        <field type="plone.regisry.field.Tuple">
+            <title>Occupational Medicine </title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>Hippuric Acid, Methylhippuric Acid, Mandelic Acid, Phenylglyoxylic Acid</element>
+            <element>t,t-Muconic Acid</element>
+            <element>o-Cresol, p-Cresol, Phenol</element>
+        </value>
+    </record>
+    <record name="chromsystems.globalcontacts.instrumentsAndSoftware">
+        <field type="plone.regisry.field.Tuple">
+            <title>HPLC Instruments and Software</title>
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element>Electrochemical Detector CLC 100</element>
+            <element>Programmable Autosampler CLC 200</element>
+            <element>HPLC Pump CLC 300</element>
+            <element>HPLC Gradient Pump CLC 330</element>
+            <element>UV-VIS Detector CLC 400</element>
+            <element>Chromsystems Data System Control and Analysis Software</element>
         </value>
     </record>
 </registry>

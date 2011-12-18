@@ -34,7 +34,9 @@ class RegistrySource(object):
         terms = []
         if registry is not None:
             for value in registry.get(self.key, ()):
-                terms.append(SimpleVocabulary.createTerm(value, value.encode('utf-8'), value))
+                terms.append(
+                    SimpleVocabulary.createTerm(
+                        value, value.encode('utf-8'), value))
         return SimpleVocabulary(terms)
 
 
@@ -97,19 +99,21 @@ class IEnquiry(form.Schema):
         )
     )
     message = schema.Text(
-        title=_(u"Message"),
+        title=_(u"Your Message"),
         required=False,
     )
     newborn_screening = schema.FrozenSet(
         title=_(u"Newborn Screening"),
         value_type=schema.Choice(
-            vocabulary=u"chromsystems.globalcontacts.NewbornScreening",
+            source=RegistrySource(
+            'chromsystems.globalcontacts.newbornScreening'),
         )
     )
     drug_monitoring = schema.FrozenSet(
         title=_(u"Therapeutic Drug Monitoring"),
         value_type=schema.Choice(
-            vocabulary=u"chromsystems.globalcontacts.DrugMonitoring",
+        source=RegistrySource(
+            'chromsystems.globalcontacts.therapeuticDrugMonitoring'),
         )
     )
     alcohol_abuse = schema.Set(
@@ -122,7 +126,15 @@ class IEnquiry(form.Schema):
     vitamin_profiling = schema.FrozenSet(
         title=_(u"Vitamin Profiling"),
         value_type=schema.Choice(
-            vocabulary=u"chromsystems.globalcontacts.VitaminProfiling",
+            source=RegistrySource(
+            'chromsystems.globalcontacts.alcoholAbuseMarkers'),
+        )
+    )
+    oxidative_stress_monitoring = schema.FrozenSet(
+        title=_(u"Monitoring Oxidative Stress"),
+        value_type=schema.Choice(
+            source=RegistrySource(
+            'chromsystems.globalcontacts.monitoringOxidativeStress'),
         )
     )
 
@@ -134,8 +146,7 @@ class ContactGroup(group.Group):
         'salutation', 'firstname', 'lastname', 'institution', 'street',
         'postalcode', 'city', 'country', 'phone', 'fax', 'email',
         )
-    #fields['salutation'].widgetFactory = RadioWidget
-
+#fields['salutation'].widgetFactory = RadioWidget
 
 class PreferencesGroup(group.Group):
     label=u"Enter Preferences"
@@ -151,12 +162,13 @@ class InterestsGroup(group.Group):
     description=u"Please select your area of interest"
     fields=field.Fields(IEnquiry).select(
         'newborn_screening', 'drug_monitoring', 'alcohol_abuse',
-        'vitamin_profiling',
+        'vitamin_profiling', 'oxidative_stress_monitoring',
         )
     fields['newborn_screening'].widgetFactory = CheckBoxFieldWidget
     fields['drug_monitoring'].widgetFactory = CheckBoxFieldWidget
     fields['alcohol_abuse'].widgetFactory = CheckBoxFieldWidget
     fields['vitamin_profiling'].widgetFactory = CheckBoxFieldWidget
+    fields['oxidative_stress_monitoring'].widgetFactory = CheckBoxFieldWidget
 
 
 class EnquiryForm(group.GroupForm, form.Form):
