@@ -45,11 +45,11 @@ class View(grok.View):
             imageTag = None
             if scale is not None:
                 imageTag = scale.tag()
-            import pdb; pdb.set_trace( )
             results.append({
                     'url': contact.absolute_url(),
                     'title': contact.title,
-                    'summary': contact.description,
+                    'phone': contact.phone,
+                    'email': contact.email,
                     'imageTag': imageTag,
                 })
         return results

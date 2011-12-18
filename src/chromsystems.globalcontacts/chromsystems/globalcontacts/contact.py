@@ -1,14 +1,17 @@
+from Acquisition import aq_inner
 from five import grok
 from plone.directives import dexterity, form
 
 from zope import schema
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+from zope.schema.vocabulary import getVocabularyRegistry
 
 from zope.interface import invariant, Invalid
 
 from z3c.form import group, field
 
+from plone.indexer import indexer
 from plone.namedfile.interfaces import IImageScaleTraversable
 from plone.namedfile.field import NamedImage, NamedFile
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
@@ -43,6 +46,11 @@ class IContact(form.Schema, IImageScaleTraversable):
         title=_(u"Phone"),
         required=True,
     )
+    email = schema.TextLine(
+        title=_(u"Email"),
+        description=_(u"Enter email address used in enquiry forms."),
+        required=True,
+    )
     image = NamedBlobImage(
         title=_(u"Portrait Image"),
         description=_(u"Upload a portrait of the contact person."),
@@ -59,6 +67,14 @@ class IContact(form.Schema, IImageScaleTraversable):
     )
 
 
+@indexer(IContact)
+def contactCountriesIndexer(obj):
+    if obj.countries is None:
+        return None
+    return obj.countries
+grok.global_adapter(contactCountriesIndexer, name="countries")
+
+
 class Contact(dexterity.Item):
     grok.implements(IContact)
 
@@ -67,3 +83,19 @@ class View(grok.View):
     grok.context(IContact)
     grok.require('zope2.View')
     grok.name('view')
+
+    def prettyprinted_countries(self):
+        context = aq_inner(self.context)
+        vr = getVocabularyRegistry()
+        countries_vocabulary = vr.get(context,
+            'chromsystems.userdata.CountryList')
+        countries = context.countries
+        if countries:
+            countrylist = []
+            for country in countries:
+                countryinfo = {}
+                term = countries_vocabulary.getTerm(country)
+                countryinfo['title'] = term.title
+                countryinfo['value'] = term.value
+                countrylist.append(countryinfo)
+            return countrylist
