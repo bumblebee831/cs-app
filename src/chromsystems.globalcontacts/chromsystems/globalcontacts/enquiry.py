@@ -44,6 +44,11 @@ class IEnquiry(form.Schema):
     """ Enquiry form schema composed of several interfaces as a
         group form.
     """
+    #form.mode(contact='hidden')
+    contact = schema.TextLine(
+        title=_(u"Responsible Contact"),
+        required=False,
+    )
     salutation = schema.Choice(
         title=_(u"Salutation"),
         values = [
@@ -207,7 +212,7 @@ class ContactGroup(group.Group):
     description=u"Enter your contact details below"
     fields=field.Fields(IEnquiry).select(
         'salutation', 'firstname', 'lastname', 'institution', 'street',
-        'postalcode', 'city', 'country', 'phone', 'fax', 'email',
+        'postalcode', 'city', 'country', 'phone', 'fax', 'email', 'contact',
         )
 #fields['salutation'].widgetFactory = RadioWidget
 
@@ -253,6 +258,7 @@ class EnquiryForm(group.GroupForm, form.Form):
 
     schema = IEnquiry
     ignoreContext = True
+    ignoreRequest = False
     css_class = 'overlayForm'
 
     label = _(u"Contact")
@@ -260,6 +266,11 @@ class EnquiryForm(group.GroupForm, form.Form):
 
     groups = (ContactGroup, PreferencesGroup, InterestsGroup)
     enable_form_tabbing = False
+
+    def update(self):
+        # disable Plone's editable border
+        self.request.set('disable_border', True)
+        super(EnquiryForm, self).update()
 
     def updateActions(self):
         super(EnquiryForm, self).updateActions()
@@ -283,14 +294,12 @@ class EnquiryForm(group.GroupForm, form.Form):
     def send_email(self, data):
         """ Construct and send an enquiry email. """
         context_url = self.context.absolute_url()
-        mto = self.context.email
+        contactinfo = self.responsible_contact
+        mto = contactinfo['email']
         envelope_from = data['email']
-        subject = _(u'Anfrage von %s') % data['name']
-        options = dict(email = data['email'],
-                       name = data['name'],
-                       message = data['message'],
-                       url = context_url,
-                        )
+        subject = _(u'Anfrage von %s %s') % (
+            data['firstname'], data['lastname'])
+        options = data
         body = ViewPageTemplateFile("enquiry_email.pt")(self, **options)
         # send email
         mailhost = getToolByName(self.context, 'MailHost')
