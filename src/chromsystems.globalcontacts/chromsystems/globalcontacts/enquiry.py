@@ -294,7 +294,7 @@ class EnquiryForm(group.GroupForm, form.Form):
     def send_email(self, data):
         """ Construct and send an enquiry email. """
         context_url = self.context.absolute_url()
-        contactinfo = self.responsible_contact
+        contactinfo = self.contact_info(data['contact'])
         mto = contactinfo['email']
         envelope_from = data['email']
         subject = _(u'Anfrage von %s %s') % (
@@ -307,18 +307,19 @@ class EnquiryForm(group.GroupForm, form.Form):
                       charset='utf-8')
 
         IStatusMessage(self.request).addStatusMessage(
-            _(u"Your email has been forwarded.", "info"))
+            _(u"Your email has been forwarded.", type="info"))
 
         return self.request.response.redirect(context_url)
 
-    def contact_info(self):
+    def contact_info(self, contactinfo=None):
         context = aq_inner(self.context)
         catalog = getToolByName(context, 'portal_catalog')
-        self.contact = self.request.get('contact', '')
-        if self.contact:
+        if contactinfo is None:
+            contactinfo = self.request.get('form.widgets.contact', '')
+        if contactinfo:
             results = catalog(object_provides=IContact.__identifier__,
                               review_state='published',
-                              countries=self.contact)
+                              countries=contactinfo)
             if results:
                 result = results[0]
                 obj = result.getObject()
@@ -328,7 +329,7 @@ class EnquiryForm(group.GroupForm, form.Form):
                     email=obj.email,
                     phone=obj.phone,
                     imageTag=self.constructImageTag(obj),
-                    country=self.prettyprint_country(self.contact),
+                    country=self.prettyprint_country(contactinfo),
                 )
                 return info
 

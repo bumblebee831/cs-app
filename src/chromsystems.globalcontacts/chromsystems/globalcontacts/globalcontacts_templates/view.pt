@@ -9,39 +9,50 @@
 
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core"
-        tal:define="Batch python:modules['Products.CMFPlone'].Batch;
+        tal:define="portal_state context/@@plone_portal_state;
+                    navigation_root portal_state/navigation_root_url;
+                    Batch python:modules['Products.CMFPlone'].Batch;
                     b_size python:10;b_start python:0;b_start request/b_start | b_start;">
     
     <div class="contacts-listing"
-        tal:define="items view/contacts">
-        <tal:contacts tal:repeat="item items">
-            <h2 tal:content="item/title" />
-            <img tal:replace="item/imageTag" />
-            <a href="" tal:attributes="href item/url">
-                View Contact Details</a>
-        </tal:contacts>
-    </div>
-    
-    <div class="contacts-listing"
         tal:condition="view/has_contacts"
-        tal:define="items view/contained_contacts;
+        tal:define="items view/contacts;
                     batch python:Batch(items, b_size, int(b_start), orphan=1);">
-        
-        <tal:block tal:repeat="item batch">
-            <div class="contact-item">
-                <h2><span tal:replace="item/salutation" />
-                    <span tal:replace="item/Title" />
-                </h2>
-                <p tal:condition="item/countries">
-                    <strong>Countries:</strong>
-                    <tal:countries tal:repeat="country item/countries">
-                        <span tal:replace="country" />
-                    </tal:countries>
-                </p>
-                <a href="" tal:attributes="href item/getURL">
-                    View Contact Information</a>
-            </div>
-        </tal:block>
+        <table class="listing">
+            <thead>
+                <tr>
+                <th>Contact Name</th>
+                <th>Countries</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tal:block tal:repeat="item items">
+                <tr>
+                <td class="contact-item">
+                    <div class="image-left">
+                    <img tal:replace="structure item/imageTag" />
+                    </div>
+                    <h2><span tal:replace="item/salutation" />
+                        <span tal:replace="item/title" />
+                    </h2>
+                    <a href="" tal:attributes="href item/url">
+                        View Contact Details</a>
+                </td>
+                <td>
+                    <div tal:condition="item/countries">
+                        <p tal:repeat="country item/countries">
+                            <span tal:replace="country/title" />,
+                            <a href=""
+                                tal:define="value country/value"
+                                tal:attributes="href python:navigation_root+'/@@enquiry?form.widgets.contact='+value"
+                                >Form Link</a>
+                        </p>
+                    </div>
+                </td>
+                </tr>
+                </tal:block>
+            </tbody>
+        </table>
         
     </div>
     

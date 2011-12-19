@@ -31,7 +31,7 @@
             <strong tal:content="country/title">Country</strong>:
             <a href=""
                 tal:define="value country/value"
-                tal:attributes="href python:here_url+'/@@enquiry?contact='+value">
+                tal:attributes="href python:here_url+'/@@enquiry?form.widget.contact='+value">
                 View enquiry form
             </a>
         </li>

@@ -11,7 +11,8 @@
 
     <p>Custom content can be filled / added here.</p>
     
-    <tal:contact tal:define="contact view/contact_info">
+    <tal:contact tal:condition="view/contact_info"
+        tal:define="contact view/contact_info">
     <fieldset>
         <legend>
                 <span tal:replace="contact/country" /> |
