@@ -45,7 +45,7 @@
         </value>
     </record>
     <record name="chromsystems.globalcontacts.monitoringOxidativeStress">
-        <field type="plone.regisry.field.Tuple">
+        <field type="plone.registry.field.Tuple">
             <title>Monitoring Oxidative Stress</title>
             <value_type type="plone.registry.field.TextLine" />
         </field>
@@ -58,7 +58,7 @@
         </value>
     </record>
     <record name="chromsystems.globalcontacts.vitaminProfiling">
-        <field type="plone.regisry.field.Tuple">
+        <field type="plone.registry.field.Tuple">
             <title>Vitamin Profiling</title>
             <value_type type="plone.registry.field.TextLine" />
         </field>
@@ -71,7 +71,7 @@
         </value>
     </record>
     <record name="chromsystems.globalcontacts.arteriosclerosisRiskFactors">
-        <field type="plone.regisry.field.Tuple">
+        <field type="plone.registry.field.Tuple">
             <title>Risk Factor for Arteriosclerosis</title>
             <value_type type="plone.registry.field.TextLine" />
         </field>
@@ -80,7 +80,7 @@
         </value>
     </record>
     <record name="chromsystems.globalcontacts.porphyrinsDiagnosis">
-        <field type="plone.regisry.field.Tuple">
+        <field type="plone.registry.field.Tuple">
             <title>Diagnosis of Porphyrins</title>
             <value_type type="plone.registry.field.TextLine" />
         </field>
@@ -89,7 +89,7 @@
         </value>
     </record>
     <record name="chromsystems.globalcontacts.osteoporosisDiagnosis">
-        <field type="plone.regisry.field.Tuple">
+        <field type="plone.registry.field.Tuple">
             <title>Osteoporosis Diagnosis</title>
             <value_type type="plone.registry.field.TextLine" />
         </field>
@@ -100,7 +100,7 @@
         </value>
     </record>
     <record name="chromsystems.globalcontacts.hemoglobinTesting">
-        <field type="plone.regisry.field.Tuple">
+        <field type="plone.registry.field.Tuple">
             <title>Hemoglobin Testing</title>
             <value_type type="plone.registry.field.TextLine" />
         </field>
@@ -111,7 +111,7 @@
         </value>
     </record>
     <record name="chromsystems.globalcontacts.biogenicAmines">
-        <field type="plone.regisry.field.Tuple">
+        <field type="plone.registry.field.Tuple">
             <title>Biogenic Amines (Phaeochromocytoma)</title>
             <value_type type="plone.registry.field.TextLine" />
         </field>
@@ -123,7 +123,7 @@
         </value>
     </record>
     <record name="chromsystems.globalcontacts.controls">
-        <field type="plone.regisry.field.Tuple">
+        <field type="plone.registry.field.Tuple">
             <title>Controls</title>
             <value_type type="plone.registry.field.TextLine" />
         </field>
@@ -133,7 +133,7 @@
         </value>
     </record>
     <record name="chromsystems.globalcontacts.calibration">
-        <field type="plone.regisry.field.Tuple">
+        <field type="plone.registry.field.Tuple">
             <title>Calibration</title>
             <value_type type="plone.registry.field.TextLine" />
         </field>
@@ -143,9 +143,9 @@
             <element>6PLUS1 Multilevel Calibrator Sets</element>
         </value>
     </record>
-    <record name="chromsystems.globalcontacts.occupationalMedicine ">
-        <field type="plone.regisry.field.Tuple">
-            <title>Occupational Medicine </title>
+    <record name="chromsystems.globalcontacts.occupationalMedicine">
+        <field type="plone.registry.field.Tuple">
+            <title>Occupational Medicine</title>
             <value_type type="plone.registry.field.TextLine" />
         </field>
         <value>
@@ -155,7 +155,7 @@
         </value>
     </record>
     <record name="chromsystems.globalcontacts.instrumentsAndSoftware">
-        <field type="plone.regisry.field.Tuple">
+        <field type="plone.registry.field.Tuple">
             <title>HPLC Instruments and Software</title>
             <value_type type="plone.registry.field.TextLine" />
         </field>

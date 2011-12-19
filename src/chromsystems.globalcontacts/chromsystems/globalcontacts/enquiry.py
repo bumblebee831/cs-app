@@ -151,6 +151,55 @@ class IEnquiry(form.Schema):
             'chromsystems.globalcontacts.porphyrinsDiagnosis'),
         )
     )
+    osteoporosis_diagnosis = schema.FrozenSet(
+        title=_(u"Osteoporosis Diagnosis"),
+        value_type=schema.Choice(
+            source=RegistrySource(
+            'chromsystems.globalcontacts.osteoporosisDiagnosis'),
+        )
+    )
+    hemoglobin_testing = schema.FrozenSet(
+        title=_(u"Hemoglobin Testing"),
+        value_type=schema.Choice(
+            source=RegistrySource(
+            'chromsystems.globalcontacts.hemoglobinTesting'),
+        )
+    )
+    biogenic_amines = schema.FrozenSet(
+        title=_(u"Biogenic Amines (Phaeochromocytoma)"),
+        value_type=schema.Choice(
+            source=RegistrySource(
+            'chromsystems.globalcontacts.biogenicAmines'),
+        )
+    )
+    controls = schema.FrozenSet(
+        title=_(u"Controls"),
+        value_type=schema.Choice(
+            source=RegistrySource(
+            'chromsystems.globalcontacts.controls'),
+        )
+    )
+    calibration = schema.FrozenSet(
+        title=_(u"Calibration"),
+        value_type=schema.Choice(
+            source=RegistrySource(
+            'chromsystems.globalcontacts.calibration'),
+        )
+    )
+    occupational_medicine = schema.FrozenSet(
+        title=_(u"Occupational Medicine"),
+        value_type=schema.Choice(
+            source=RegistrySource(
+            'chromsystems.globalcontacts.occupationalMedicine'),
+        )
+    )
+    hplc = schema.FrozenSet(
+        title=_(u"HPLC Instruments and Software"),
+        value_type=schema.Choice(
+            source=RegistrySource(
+            'chromsystems.globalcontacts.instrumentsAndSoftware'),
+        )
+    )
 
 
 class ContactGroup(group.Group):
@@ -177,7 +226,9 @@ class InterestsGroup(group.Group):
     fields=field.Fields(IEnquiry).select(
         'newborn_screening', 'drug_monitoring', 'alcohol_abuse',
         'oxidative_stress_monitoring', 'vitamin_profiling',
-        'arteriosclerosis', 'porphyrins_diagnosis',
+        'arteriosclerosis', 'porphyrins_diagnosis', 'osteoporosis_diagnosis',
+        'hemoglobin_testing', 'biogenic_amines', 'controls', 'calibration',
+        'occupational_medicine', 'hplc',
         )
     fields['newborn_screening'].widgetFactory = CheckBoxFieldWidget
     fields['drug_monitoring'].widgetFactory = CheckBoxFieldWidget
@@ -186,6 +237,13 @@ class InterestsGroup(group.Group):
     fields['vitamin_profiling'].widgetFactory = CheckBoxFieldWidget
     fields['arteriosclerosis'].widgetFactory = CheckBoxFieldWidget
     fields['porphyrins_diagnosis'].widgetFactory = CheckBoxFieldWidget
+    fields['osteoporosis_diagnosis'].widgetFactory = CheckBoxFieldWidget
+    fields['hemoglobin_testing'].widgetFactory = CheckBoxFieldWidget
+    fields['biogenic_amines'].widgetFactory = CheckBoxFieldWidget
+    fields['controls'].widgetFactory = CheckBoxFieldWidget
+    fields['calibration'].widgetFactory = CheckBoxFieldWidget
+    fields['occupational_medicine'].widgetFactory = CheckBoxFieldWidget
+    fields['hplc'].widgetFactory = CheckBoxFieldWidget
 
 
 class EnquiryForm(group.GroupForm, form.Form):
