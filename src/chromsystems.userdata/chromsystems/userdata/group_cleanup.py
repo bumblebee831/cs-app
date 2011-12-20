@@ -16,7 +16,7 @@ class CleanupWordwideGroup(grok.View):
         portal_groups = getToolByName(context, 'portal_groups')
         users = context.acl_users.getUsers()
         for user in users:
-            portal_groups.addPrincipalToGroup(user.getUserName(), 'worldwide')
+            portal_groups.addPrincipalToGroup(user.getUserName(), 'Worldwide')
 
     def render(self):
         return 'Updated worldwide group to contain all user records'
