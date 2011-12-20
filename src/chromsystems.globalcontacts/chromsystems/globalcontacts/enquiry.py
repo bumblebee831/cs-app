@@ -12,7 +12,7 @@ from z3c.form import group, field, button
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from z3c.form.browser.radio import RadioWidget
 
-from Acquisition import aq_inner
+from Acquisition import aq_inner, aq_parent
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from Products.statusmessages.interfaces import IStatusMessage
@@ -101,7 +101,8 @@ class IEnquiry(form.Schema):
         title=_(u"Requested Material"),
         value_type=schema.Choice(
             vocabulary=u"chromsystems.globalcontacts.AvailableMaterial",
-        )
+        ),
+        required=True,
     )
     message = schema.Text(
         title=_(u"Your Message"),
@@ -112,103 +113,117 @@ class IEnquiry(form.Schema):
         value_type=schema.Choice(
             source=RegistrySource(
             'chromsystems.globalcontacts.newbornScreening'),
-        )
+        ),
+        required=False,
     )
     drug_monitoring = schema.FrozenSet(
         title=_(u"Therapeutic Drug Monitoring"),
         value_type=schema.Choice(
         source=RegistrySource(
             'chromsystems.globalcontacts.therapeuticDrugMonitoring'),
-        )
+        ),
+        required=False,
     )
     alcohol_abuse = schema.Set(
         title=_(u"Bio-markers for alcohol abuse"),
         value_type=schema.Choice(
             source=RegistrySource(
             'chromsystems.globalcontacts.alcoholAbuseMarkers'),
-        )
+        ),
+        required=False,
     )
     oxidative_stress_monitoring = schema.FrozenSet(
         title=_(u"Monitoring Oxidative Stress"),
         value_type=schema.Choice(
             source=RegistrySource(
             'chromsystems.globalcontacts.monitoringOxidativeStress'),
-        )
+        ),
+        required=False,
     )
     vitamin_profiling = schema.FrozenSet(
         title=_(u"Vitamin Profiling"),
         value_type=schema.Choice(
             source=RegistrySource(
             'chromsystems.globalcontacts.alcoholAbuseMarkers'),
-        )
+        ),
+        required=False,
     )
     arteriosclerosis = schema.FrozenSet(
         title=_(u"Risk Factors for Arteriosclerosis"),
         value_type=schema.Choice(
             source=RegistrySource(
             'chromsystems.globalcontacts.arteriosclerosisRiskFactors'),
-        )
+        ),
+        required=False,
     )
     porphyrins_diagnosis = schema.FrozenSet(
         title=_(u"Diagnosis for Porphyrins"),
         value_type=schema.Choice(
             source=RegistrySource(
             'chromsystems.globalcontacts.porphyrinsDiagnosis'),
-        )
+        ),
+        required=False,
     )
     osteoporosis_diagnosis = schema.FrozenSet(
         title=_(u"Osteoporosis Diagnosis"),
         value_type=schema.Choice(
             source=RegistrySource(
             'chromsystems.globalcontacts.osteoporosisDiagnosis'),
-        )
+        ),
+        required=False,
     )
     hemoglobin_testing = schema.FrozenSet(
         title=_(u"Hemoglobin Testing"),
         value_type=schema.Choice(
             source=RegistrySource(
             'chromsystems.globalcontacts.hemoglobinTesting'),
-        )
+        ),
+        required=False,
     )
     biogenic_amines = schema.FrozenSet(
         title=_(u"Biogenic Amines (Phaeochromocytoma)"),
         value_type=schema.Choice(
             source=RegistrySource(
             'chromsystems.globalcontacts.biogenicAmines'),
-        )
+        ),
+        required=False,
     )
     controls = schema.FrozenSet(
         title=_(u"Controls"),
         value_type=schema.Choice(
             source=RegistrySource(
             'chromsystems.globalcontacts.controls'),
-        )
+        ),
+        required=False,
     )
     calibration = schema.FrozenSet(
         title=_(u"Calibration"),
         value_type=schema.Choice(
             source=RegistrySource(
             'chromsystems.globalcontacts.calibration'),
-        )
+        ),
+        required=False,
     )
     occupational_medicine = schema.FrozenSet(
         title=_(u"Occupational Medicine"),
         value_type=schema.Choice(
             source=RegistrySource(
             'chromsystems.globalcontacts.occupationalMedicine'),
-        )
+        ),
+        required=False,
     )
     hplc = schema.FrozenSet(
         title=_(u"HPLC Instruments and Software"),
         value_type=schema.Choice(
             source=RegistrySource(
             'chromsystems.globalcontacts.instrumentsAndSoftware'),
-        )
+        ),
+        required=False,
     )
 
 
 class ContactGroup(group.Group):
-    label=u"Contact Details"
+    label=u"Contact Detrequired=False,ails"
     description=u"Enter your contact details below"
     fields=field.Fields(IEnquiry).select(
         'salutation', 'firstname', 'lastname', 'institution', 'street',
@@ -311,27 +326,20 @@ class EnquiryForm(group.GroupForm, form.Form):
 
         return self.request.response.redirect(context_url)
 
-    def contact_info(self, contactinfo=None):
+    def contact_info(self):
         context = aq_inner(self.context)
-        catalog = getToolByName(context, 'portal_catalog')
-        if contactinfo is None:
-            contactinfo = self.request.get('form.widgets.contact', '')
-        if contactinfo:
-            results = catalog(object_provides=IContact.__identifier__,
-                              review_state='published',
-                              countries=contactinfo)
-            if results:
-                result = results[0]
-                obj = result.getObject()
-                info = dict(
-                    title=obj.Title(),
-                    salutation=obj.salutation,
-                    email=obj.email,
-                    phone=obj.phone,
-                    imageTag=self.constructImageTag(obj),
-                    country=self.prettyprint_country(contactinfo),
-                )
-                return info
+        related_contact = context.contact.to_object
+        if related_contact:
+            #result = results[0]
+            obj = related_contact
+            info = dict(
+                title=obj.Title(),
+                salutation=obj.salutation,
+                email=obj.email,
+                phone=obj.phone,
+                imageTag=self.constructImageTag(obj),
+            )
+            return info
 
     def constructImageTag(self, obj):
         scales = getMultiAdapter((obj, self.request), name='images')

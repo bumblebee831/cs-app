@@ -15,7 +15,7 @@
         tal:define="contact view/contact_info">
     <fieldset>
         <legend>
-                <span tal:replace="contact/country" /> |
+                <span tal:replace="context/Title" /> |
                 <span tal:replace="contact/salutation" />
                 <span tal:replace="contact/title" /> |
                 Phone: <span tal:replace="structure contact/phone" />
@@ -27,10 +27,16 @@
                 <h3><span tal:replace="contact/salutation" />
                     <span tal:replace="contact/title" />
                         is Sales Manager for
-                    <span tal:replace="contact/country" />
+                    <span tal:replace="context/Title" />
                 </h3>
-                <p>Put source string infotext here that should be translated via
-                    the i18n:translate machinery</p>
+                <p i18n:translate="">
+                    Please fill out the form below to send an enquiry
+                </p>
+                <p i18n:translate="">Your  request will immediately be passed
+                    over to our regional distributor to  contact you.
+                </p>
+                <p class="pull-right"><span class="required" title="Erforderlich"> ■
+                    </span> = required</p>
         </div>
     </fieldset>
     </tal:contact>

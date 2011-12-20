@@ -8,6 +8,7 @@
   -->
 <object name="portal_types" meta_type="Plone Types Tool">
   <!-- -*- extra stuff goes here -*- -->
+  <object name="chromsystems.globalcontacts.contactformlink" meta_type="Dexterity FTI" />
   <object name="chromsystems.globalcontacts.contact" meta_type="Dexterity FTI" />
   <object name="chromsystems.globalcontacts.globalcontacts" meta_type="Dexterity FTI" />
 </object>

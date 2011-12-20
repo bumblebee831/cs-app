@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="chromsystems.globalcontacts">
+<body>
+
+<metal:main fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+
+    <h2>
+        Rendered from 
+        contactformlink_templates/<span tal:replace="template/id" />
+    </h2>
+
+    <p><strong>Note:</strong><br />
+        This view should normally not be accessed and any visitor who
+        has no "cmf.ModifyPortalContent" permission will be
+        redirected to the enquiry form.</p>
+    
+    <div tal:condition="context/contact">
+        <label i18n:translate="contact">Contact:</label>
+        <span tal:content="context/presenter/to_object/Title | nothing" />
+        <a href="" tal:attributes="href context/contact/to_object/absolute_url">
+            View related Contact</a>
+    </div>
+    
+    <pre tal:content="view/form_url" />
+    
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

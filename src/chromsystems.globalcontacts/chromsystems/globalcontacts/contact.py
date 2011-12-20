@@ -51,6 +51,12 @@ class IContact(form.Schema, IImageScaleTraversable):
         description=_(u"Enter email address used in enquiry forms."),
         required=True,
     )
+    additional_email = schema.TextLine(
+        title=_(u"BCC Email Adresses"),
+        description=_(u"Enter optional additional email addresses "
+                      u"seperated by commas."),
+        required=False,
+    )
     image = NamedBlobImage(
         title=_(u"Portrait Image"),
         description=_(u"Upload a portrait of the contact person."),
