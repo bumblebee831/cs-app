@@ -309,8 +309,8 @@ class EnquiryForm(group.GroupForm, form.Form):
     def send_email(self, data):
         """ Construct and send an enquiry email. """
         context_url = self.context.absolute_url()
-        contactinfo = self.contact_info(data['contact'])
-        mto = contactinfo['email']
+        contactinfo = self.context.contact.to_object
+        mto = contactinfo.email
         envelope_from = data['email']
         subject = _(u'Anfrage von %s %s') % (
             data['firstname'], data['lastname'])
