@@ -16,20 +16,26 @@
             <value_type type="plone.registry.field.TextLine" />
         </field>
         <value>
+            <element>Antidepressants 1, LC-MS/MS Analysis</element>
+            <element>Antidepressants 2/Psychostimulants, LC-MS/MS Analysis</element>
+            <element>Antiepileptic Drugs, LC-MS/MS Analysis</element>
+            <element>Benzodiazepines 1, LC-MS/MS Analysis</element>
+            <element>Benzodiazepines 2, LC-MS/MS Analysis</element>
+            <element>Mycophenolic Acid, LC-MS/MS Analysis</element>
+            <element>Neuroleptics 1, LC-MS/MS Analysis</element>
+            <element>Neuroleptics 2, LC-MS/MS Analysis</element>
+            <element>Tricyclic Antidepressants TCA 1, LC-MS/MS Analysis</element>
+            <element>Tricyclic Antidepressants TCA 2, LC-MS/MS Analysis</element>
             <element>Amiodarone/Desethylamiodarone</element>
-            <element>Antidepressants 1, MassTox LC-MS/MS Analysis</element>
-            <element>Antidepressants 2/Psychostimulants, MassTox LC-MS/MS Analysis</element>
             <element>Anti-HIV Drugs</element>
             <element>Antiepileptic Drugs</element>
             <element>Benzodiazepines, Tricyclic Antidepressants</element>
             <element>Imatinib, Dasatinib, Nilotinib</element>
-            <element>Immunosuppressants, MassTox LC-MS/MS Analysis</element>
+            <element>Immunosuppressants ONEMinute Test, MassTox(R) LC-MS/MS Analysis</element>
+            <element>Immunosuppressants, MassTox(R) LC-MS/MS Analysis</element>
             <element>Itraconazole, Posaconazole, Voriconazole</element>
-            <element>Levetiracetam (Keppra)</element>
+            <element>Levetiracetam (Keppra(R))</element>
             <element>Mycophenolic Acid</element>
-            <element>Mycophenolic Acid, MassTox LC-MS/MS Analysis</element>
-            <element>Neuroleptics 1, MassTox LC-MS/MS Analysis</element>
-            <element>Neuroleptics 2, MassTox LC-MS/MS Analysis</element>
             <element>Olanzapine/Desmethylolanzapine</element>
             <element>Rufinamide, Felbamate, Lacosamide</element>
         </value>
@@ -96,6 +102,7 @@
         <value>
             <element>MassChrom 25-OH-Vitamin D3/D2, LC-MS/MS Analysis</element>
             <element>25-OH-Vitamin D3/D2 HPLC Analysis</element>
+            <element>25-OH-Vitamin D3/D2 Online Method, HPLC Analysis</element>
             <element>Crosslinks</element>
         </value>
     </record>
