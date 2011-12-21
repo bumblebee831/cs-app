@@ -315,6 +315,7 @@ class EnquiryForm(group.GroupForm, form.Form):
         subject = _(u'Anfrage von %s %s') % (
             data['firstname'], data['lastname'])
         options = data
+        import pdb; pdb.set_trace( )
         body = ViewPageTemplateFile("enquiry_email.pt")(self, **options)
         # send email
         mailhost = getToolByName(self.context, 'MailHost')

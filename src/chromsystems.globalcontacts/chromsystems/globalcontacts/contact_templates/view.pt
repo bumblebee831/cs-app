@@ -15,6 +15,10 @@
     </h2>
     <p><strong>Email:</strong>
         <span tal:replace="context/email" /><br />
+        <tal:bcc tal:condition="context/additional_email">
+        <strong>BCC:</strong>
+        <span tal:replace="context/additional_email" />
+        </tal:bcc>
         <strong>Phone:</strong>
         <span tal:replace="context/phone" />
     </p>
@@ -24,18 +28,6 @@
             tal:attributes="src portrait/url;
                             width portrait/width;
                             height portrait/height" />
-        
-        <h2>Contact for:</h2>
-        <ul tal:define="here_url context/absolute_url">
-        <li tal:repeat="country view/prettyprinted_countries">
-            <strong tal:content="country/title">Country</strong>:
-            <a href=""
-                tal:define="value country/value"
-                tal:attributes="href python:here_url+'/@@enquiry?form.widget.contact='+value">
-                View enquiry form
-            </a>
-        </li>
-        </ul>
     
   </metal:content-core>
 </metal:main>
