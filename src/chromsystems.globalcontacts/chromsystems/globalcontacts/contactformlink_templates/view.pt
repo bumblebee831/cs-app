@@ -10,15 +10,11 @@
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
-    <h2>
-        Rendered from 
-        contactformlink_templates/<span tal:replace="template/id" />
-    </h2>
-
     <p><strong>Note:</strong><br />
-        This view should normally not be accessed and any visitor who
-        has no "cmf.ModifyPortalContent" permission will be
-        redirected to the enquiry form.</p>
+        Since your member account has the necessary permissions you
+        see this view instead of being taken directly to the
+        enquiry form.
+    </p>
     
     <div tal:condition="context/contact">
         <label i18n:translate="contact">Contact:</label>
