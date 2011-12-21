@@ -35,19 +35,10 @@
                     <h2><span tal:replace="item/salutation" />
                         <span tal:replace="item/title" />
                     </h2>
-                    <a href="" tal:attributes="href item/url">
-                        View Contact Details</a>
                 </td>
                 <td>
-                    <div tal:condition="item/countries">
-                        <p tal:repeat="country item/countries">
-                            <span tal:replace="country/title" />,
-                            <a href=""
-                                tal:define="value country/value"
-                                tal:attributes="href python:navigation_root+'/@@enquiry?form.widgets.contact='+value"
-                                >Form Link</a>
-                        </p>
-                    </div>
+                    <a href="" tal:attributes="href item/url">
+                        View Contact Details</a>
                 </td>
                 </tr>
                 </tal:block>

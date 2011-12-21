@@ -24,11 +24,13 @@ class IContactFormLink(form.Schema):
     title = schema.TextLine(
         title=_(u"Title"),
         description=_(u"This is most probably a country name."),
+        required=True,
     )
 
     description = schema.Text(
         title=_(u"Description"),
         description=_(u"Optional textual description for this item."),
+        required=False,
     )
 
     form.widget(contact=AutocompleteFieldWidget)

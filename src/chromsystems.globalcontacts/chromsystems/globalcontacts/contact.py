@@ -3,7 +3,6 @@ from five import grok
 from plone.directives import dexterity, form
 
 from zope import schema
-from zope.schema.vocabulary import getVocabularyRegistry
 
 from plone.indexer import indexer
 from plone.namedfile.interfaces import IImageScaleTraversable
@@ -49,16 +48,6 @@ class IContact(form.Schema, IImageScaleTraversable):
         description=_(u"Upload a portrait of the contact person."),
         required=True,
     )
-    #form.widget(countries=AutocompleteMultiFieldWidget)
-    countries = schema.Set(
-        title=_(u"Country"),
-        description=_(u"Please select the countries this contact is "
-                      u"responsible for"),
-        value_type = schema.Choice(
-            vocabulary=u"chromsystems.userdata.CountryList",
-        ),
-        required=False,
-    )
 
 
 @indexer(IContact)
@@ -77,19 +66,3 @@ class View(grok.View):
     grok.context(IContact)
     grok.require('zope2.View')
     grok.name('view')
-
-    def prettyprinted_countries(self):
-        context = aq_inner(self.context)
-        vr = getVocabularyRegistry()
-        countries_vocabulary = vr.get(context,
-            'chromsystems.userdata.CountryList')
-        countries = context.countries
-        if countries:
-            countrylist = []
-            for country in countries:
-                countryinfo = {}
-                term = countries_vocabulary.getTerm(country)
-                countryinfo['title'] = term.title
-                countryinfo['value'] = term.value
-                countrylist.append(countryinfo)
-            return countrylist
