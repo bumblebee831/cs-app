@@ -12,14 +12,13 @@ from z3c.form import group, field, button
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from z3c.form.browser.radio import RadioWidget
 
-from Acquisition import aq_inner, aq_parent
+from Acquisition import aq_inner
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from Products.statusmessages.interfaces import IStatusMessage
 from Products.CMFCore.interfaces import IContentish
 from plone.registry.interfaces import IRegistry
 
-from chromsystems.globalcontacts.contact import IContact
 from chromsystems.globalcontacts import MessageFactory as _
 
 
@@ -317,10 +316,9 @@ class EnquiryForm(group.GroupForm, form.Form):
         mailhost = getToolByName(self.context, 'MailHost')
         mailhost.send(body, mto=mto, mfrom=envelope_from, subject=subject,
                       charset='utf-8')
-
         IStatusMessage(self.request).addStatusMessage(
-            _(u"Your email has been forwarded.", type="info"))
-        import pdb; pdb.set_trace( )
+            _(u"Your email has been forwarded."),
+            type="info")
         return self.request.response.redirect(context_url)
 
     def contact_info(self):

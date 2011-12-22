@@ -28,95 +28,52 @@ Email: <span tal:omit-tag="" tal:content="options/email" />
 Requested Material:
 -------------------
 <tal:block tal:repeat="item options/requested_material">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
+- <span tal:omit-tag="" tal:content="item" /></tal:block>
 
 Area of Interest:
 -----------------
 <div tal:condition="options/newborn_screening" tal:omit-tag="">
-Newborn Screening
-<tal:block tal:repeat="item options/newborn_screening" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+Newborn Screening<tal:block tal:repeat="item options/newborn_screening" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 <div tal:condition="options/drug_monitoring" tal:omit-tag="">
-Therapeutic Drug Monitoring
-<tal:block tal:repeat="item options/drug_monitoring" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+Therapeutic Drug Monitoring<tal:block tal:repeat="item options/drug_monitoring" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 <div tal:condition="options/alcohol_abuse" tal:omit-tag="">
-Bio-markers for alcohol abuse
-<tal:block tal:repeat="item options/alcohol_abuse" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+Bio-markers for alcohol abuse<tal:block tal:repeat="item options/alcohol_abuse" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 <div tal:condition="options/oxidative_stress_monitoring" tal:omit-tag="">
-Monitoring Oxidative Stress
-<tal:block tal:repeat="item options/oxidative_stress_monitoring" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+Monitoring Oxidative Stress<tal:block tal:repeat="item options/oxidative_stress_monitoring" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 <div tal:condition="options/vitamin_profiling" tal:omit-tag="">
-Vitamin Profiling
-<tal:block tal:repeat="item options/vitamin_profiling" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+Vitamin Profiling<tal:block tal:repeat="item options/vitamin_profiling" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 <div tal:condition="options/arteriosclerosis" tal:omit-tag="">
-Risk Factors for Arteriosclerosis
-<tal:block tal:repeat="item options/arteriosclerosis" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+Risk Factors for Arteriosclerosis<tal:block tal:repeat="item options/arteriosclerosis" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 <div tal:condition="options/porphyrins_diagnosis" tal:omit-tag="">
-Diagnosis for Porphyrins
-<tal:block tal:repeat="item options/porphyrins_diagnosis" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+Diagnosis for Porphyrins<tal:block tal:repeat="item options/porphyrins_diagnosis" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 <div tal:condition="options/osteoporosis_diagnosis" tal:omit-tag="">
-Osteoporosis Diagnosis
-<tal:block tal:repeat="item options/osteoporosis_diagnosis" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+Osteoporosis Diagnosis<tal:block tal:repeat="item options/osteoporosis_diagnosis" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 <div tal:condition="options/hemoglobin_testing" tal:omit-tag="">
-Hemoglobin Testing
-<tal:block tal:repeat="item options/hemoglobin_testing" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+Hemoglobin Testing<tal:block tal:repeat="item options/hemoglobin_testing" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 <div tal:condition="options/biogenic_amines" tal:omit-tag="">
-Biogenic Amines (Phaeochromocytoma)
-<tal:block tal:repeat="item options/biogenic_amines" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+Biogenic Amines (Phaeochromocytoma)<tal:block tal:repeat="item options/biogenic_amines" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 <div tal:condition="options/controls" tal:omit-tag="">
-Controls
-<tal:block tal:repeat="item options/controls" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+Controls<tal:block tal:repeat="item options/controls" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 <div tal:condition="options/calibration" tal:omit-tag="">
-Calibration
-<tal:block tal:repeat="item options/calibration" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+Calibration<tal:block tal:repeat="item options/calibration" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 <div tal:condition="options/occupational_medicine" tal:omit-tag="">
-Occupational Medicine
-<tal:block tal:repeat="item options/occupational_medicine" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+Occupational Medicine<tal:block tal:repeat="item options/occupational_medicine" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 <div tal:condition="options/hplc" tal:omit-tag="">
-HPLC Instruments and Software
-<tal:block tal:repeat="item options/hplc" tal:omit-tag="">
-- <span tal:omit-tag="" tal:content="item" />
-</tal:block>
-</div>
+HPLC Instruments and Software<tal:block tal:repeat="item options/hplc" tal:omit-tag="">
+- <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 
 --
 Enquiry form at
