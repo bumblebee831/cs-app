@@ -53,10 +53,14 @@ class View(grok.View):
     def update(self):
         if not self.can_edit:
             self.request.response.redirect(self.form_url())
-    
+        else:
+            self.request.response.redirect(self.form_url())
+
     @memoize
     def can_edit(self):
-        return bool(getSecurityManager().checkPermission('Portlets: Manage own portlets', self.context))
+        return bool(getSecurityManager().checkPermission(
+                    'Review portal content',
+                    self.context))
 
     def form_url(self):
         context = aq_inner(self.context)

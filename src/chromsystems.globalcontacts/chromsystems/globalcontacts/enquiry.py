@@ -44,11 +44,6 @@ class IEnquiry(form.Schema):
     """ Enquiry form schema composed of several interfaces as a
         group form.
     """
-    #form.mode(contact='hidden')
-    contact = schema.TextLine(
-        title=_(u"Responsible Contact"),
-        required=False,
-    )
     salutation = schema.Choice(
         title=_(u"Salutation"),
         values = [
@@ -223,11 +218,11 @@ class IEnquiry(form.Schema):
 
 
 class ContactGroup(group.Group):
-    label=u"Contact Detrequired=False,ails"
+    label=u"Contact Details"
     description=u"Enter your contact details below"
     fields=field.Fields(IEnquiry).select(
         'salutation', 'firstname', 'lastname', 'institution', 'street',
-        'postalcode', 'city', 'country', 'phone', 'fax', 'email', 'contact',
+        'postalcode', 'city', 'country', 'phone', 'fax', 'email',
         )
 #fields['salutation'].widgetFactory = RadioWidget
 
@@ -315,7 +310,8 @@ class EnquiryForm(group.GroupForm, form.Form):
         subject = _(u'Anfrage von %s %s') % (
             data['firstname'], data['lastname'])
         options = data
-        import pdb; pdb.set_trace( )
+        options['recipientname'] = contactinfo.Title()
+        options['url'] = context_url
         body = ViewPageTemplateFile("enquiry_email.pt")(self, **options)
         # send email
         mailhost = getToolByName(self.context, 'MailHost')
@@ -324,7 +320,7 @@ class EnquiryForm(group.GroupForm, form.Form):
 
         IStatusMessage(self.request).addStatusMessage(
             _(u"Your email has been forwarded.", type="info"))
-
+        import pdb; pdb.set_trace( )
         return self.request.response.redirect(context_url)
 
     def contact_info(self):
