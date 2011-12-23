@@ -46,9 +46,9 @@ class IEnquiry(form.Schema):
     salutation = schema.Choice(
         title=_(u"Salutation"),
         values = [
-            _(u'Frau'),
-            _(u'Herr'), ],
-        default=u'Frau',
+            _(u'Mrs.'),
+            _(u'Mr.'), ],
+        default=u'Mrs.',
         required=True,
     )
     firstname = schema.TextLine(
@@ -85,7 +85,7 @@ class IEnquiry(form.Schema):
     )
     fax = schema.TextLine(
         title=_(u"Fax"),
-        required=True,
+        required=False,
     )
     email = schema.TextLine(
         title=_(u'Email'),
@@ -112,7 +112,7 @@ class IEnquiry(form.Schema):
     )
     drug_monitoring = schema.FrozenSet(
         title=_(u"Therapeutic Drug Monitoring"),
-        description=_(u"MassTox(R) TDM Series A–Parameter Sets, "
+        description=_(u"MassTox(R) TDM Series A-Parameter Sets, "
                       u"LC-MS/MS Analysis"),
         value_type=schema.Choice(
         source=RegistrySource(
