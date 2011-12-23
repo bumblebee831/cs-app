@@ -76,7 +76,6 @@ HPLC Instruments and Software<tal:block tal:repeat="item options/hplc" tal:omit-
 - <span tal:omit-tag="" tal:content="item" /></tal:block></div>
 
 --
-Enquiry form at
-<span tal:omit-tag="" tal:content="options/url | nothing" />
-
+Enquiry form
+http://www.chromsystems.com
 </div>

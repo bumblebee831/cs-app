@@ -304,7 +304,12 @@ class EnquiryForm(group.GroupForm, form.Form):
         """ Construct and send an enquiry email. """
         context_url = self.context.absolute_url()
         contactinfo = self.context.contact.to_object
-        mto = contactinfo.email
+        mailto = contactinfo.email
+        bcc = contactinfo.additional_email
+        if bcc:
+            mto = (u"%s, %s") % (mailto, bcc)
+        else:
+            mto = mailto
         envelope_from = data['email']
         subject = _(u'Anfrage von %s %s') % (
             data['firstname'], data['lastname'])
@@ -319,7 +324,7 @@ class EnquiryForm(group.GroupForm, form.Form):
         IStatusMessage(self.request).addStatusMessage(
             _(u"Your email has been forwarded."),
             type="info")
-        return self.request.response.redirect(context_url)
+        return self.request.response.redirect(context_url+'/@@thank-you')
 
     def contact_info(self):
         context = aq_inner(self.context)

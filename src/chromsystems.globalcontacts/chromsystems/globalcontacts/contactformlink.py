@@ -67,3 +67,8 @@ class View(grok.View):
         context_url = context.absolute_url()
         form_url = context_url + '/@@enquiry'
         return form_url
+
+class ThankYou(grok.View):
+    grok.context(IContactFormLink)
+    grok.require('zope2.View')
+    grok.name('thank-you')
