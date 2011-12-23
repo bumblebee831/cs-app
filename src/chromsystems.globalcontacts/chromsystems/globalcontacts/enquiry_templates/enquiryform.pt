@@ -22,6 +22,7 @@
             <div class="image-left">
                 <img tal:replace="structure contact/imageTag" />
             </div>
+            <tal:block tal:condition="not:contact/text">
                 <h3><span tal:replace="contact/salutation" />
                     <span tal:replace="contact/title" />
                         is Sales Manager for
@@ -33,6 +34,10 @@
                 <p i18n:translate="">Your  request will immediately be passed
                     over to our regional distributor to  contact you.
                 </p>
+            </tal:block>
+            <tal:block tal:condition="contact/text">
+                <div tal:content="structure contact/text/output" />
+            </tal:block>
                 <p class="pull-right"><span class="required" title="Erforderlich"> ■
                     </span> = required</p>
         </div>

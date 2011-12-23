@@ -29,6 +29,10 @@
                             width portrait/width;
                             height portrait/height" />
     
+    <tal:block tal:condition="context/text">
+        <div tal:content="structure context/text/output" />
+    </tal:block>
+    
   </metal:content-core>
 </metal:main>
 

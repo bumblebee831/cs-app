@@ -1,12 +1,11 @@
-from Acquisition import aq_inner
 from five import grok
 from plone.directives import dexterity, form
 
 from zope import schema
 
-from plone.indexer import indexer
 from plone.namedfile.interfaces import IImageScaleTraversable
 from plone.namedfile.field import NamedBlobImage
+from plone.app.textfield import RichText
 
 from chromsystems.globalcontacts import MessageFactory as _
 
@@ -24,8 +23,8 @@ class IContact(form.Schema, IImageScaleTraversable):
     )
     salutation = schema.Choice(
         title=_(u"label_salutation"),
-        values = [_(u"Frau"), _(u"Herr"), ],
-        default=u"Frau",
+        values = [_(u"Mrs"), _(u"Mr"), ],
+        default=u"Mrs",
         required=True,
     )
     phone = schema.TextLine(
@@ -48,14 +47,13 @@ class IContact(form.Schema, IImageScaleTraversable):
         description=_(u"Upload a portrait of the contact person."),
         required=True,
     )
-
-
-@indexer(IContact)
-def contactCountriesIndexer(obj):
-    if obj.countries is None:
-        return None
-    return obj.countries
-grok.global_adapter(contactCountriesIndexer, name="countries")
+    text = RichText(
+        title=_(u"Textual Information"),
+        description=_(u"Enter optional contact information that will be used "
+                      u"in the contact view instead of the auto generated "
+                      u"information based on single fields."),
+        required=False,
+    )
 
 
 class Contact(dexterity.Item):

@@ -339,6 +339,7 @@ class EnquiryForm(group.GroupForm, form.Form):
                 salutation=obj.salutation,
                 email=obj.email,
                 phone=obj.phone,
+                text=obj.text,
                 imageTag=self.constructImageTag(obj),
             )
             return info
