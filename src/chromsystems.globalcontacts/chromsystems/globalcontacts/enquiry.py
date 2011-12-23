@@ -112,6 +112,8 @@ class IEnquiry(form.Schema):
     )
     drug_monitoring = schema.FrozenSet(
         title=_(u"Therapeutic Drug Monitoring"),
+        description=_(u"MassTox(R) TDM Series A–Parameter Sets, "
+                      u"LC-MS/MS Analysis"),
         value_type=schema.Choice(
         source=RegistrySource(
             'chromsystems.globalcontacts.therapeuticDrugMonitoring'),
