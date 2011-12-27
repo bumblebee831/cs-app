@@ -53,8 +53,8 @@ index c8b06f6..49fcff3 100644
          mt = getToolByName(self.context, 'portal_membership')
 diff --git a/plone/app/users/userdataschema.py b/plone/app/users/userdataschema.py
 index e565462..8cf186e 100644
---- /plone/app/users/userdataschema.py
-+++ /plone/app/users/userdataschema.py
+--- plone/app/users/userdataschema.py
++++ plone/app/users/userdataschema.py
 @@ -30,18 +30,6 @@ def getSchema(self):
          return IUserDataSchema
  
