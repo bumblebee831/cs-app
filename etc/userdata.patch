@@ -1,0 +1,103 @@
+diff --git a/plone/app/users/browser/personalpreferences.py b/plone/app/users/browser/personalpreferences.py
+index c8b06f6..49fcff3 100644
+--- /plone/app/users/browser/personalpreferences.py
++++ /plone/app/users/browser/personalpreferences.py
+@@ -1,4 +1,5 @@
+ from Acquisition import aq_inner
++from AccessControl import Unauthorized
+ 
+ from zope.component import getUtility
+ from zope.component import adapts
+@@ -254,6 +255,42 @@ class UserDataPanel(AccountPanelForm):
+     label = _(u'title_personal_information_form', default=u'Personal Information')
+     form_name = _(u'User Data Form')
+ 
++    def validate(self, action, data):
++        errors = super(UserDataPanel, self).validate(action, data)
++
++        if not self.widgets['email'].error():
++            reg_tool = getToolByName(self.context, 'portal_registration')
++            props = getToolByName(self.context, 'portal_properties').site_properties
++            if props.getProperty('use_email_as_login'):
++                err_str = ''
++                try:
++                    id_allowed = reg_tool.isMemberIdAllowed(data['email'])
++                except Unauthorized:
++                    err_str = _('message_email_cannot_change',
++                                u"Sorry, you are not allowed to change your email address.")
++                else:
++
++                    if not id_allowed:
++                        # Keeping your email the same (which happens when you
++                        # change something else on the personalize form) or
++                        # changing it back to your login name, is fine.
++                        membership = getToolByName(self.context, 'portal_membership')
++                        if self.userid:
++                            member = membership.getMemberById(self.userid)
++                        else:
++                            member = membership.getAuthenticatedMember()
++                        if data['email'] not in (member.getId(), member.getUserName()):
++                            err_str = _('message_email_in_use',
++                                        u"The email address you selected is already in use "
++                                         "or is not valid as login name. Please choose "
++                                         "another.")
++
++                if err_str:
++                    errors.append(WidgetInputError('email', u'label_email', err_str))
++                    self.widgets['email'].error = err_str
++
++        return errors
++
+     @property
+     def description(self):
+         mt = getToolByName(self.context, 'portal_membership')
+diff --git a/plone/app/users/userdataschema.py b/plone/app/users/userdataschema.py
+index e565462..8cf186e 100644
+--- /plone/app/users/userdataschema.py
++++ /plone/app/users/userdataschema.py
+@@ -30,18 +30,6 @@ def getSchema(self):
+         return IUserDataSchema
+ 
+ 
+-class CantChangeEmailError(ValidationError):
+-    __doc__ = _('message_email_cannot_change',
+-                u"Sorry, you are not allowed to change your email address.")
+-
+-
+-class EmailInUseError(ValidationError):
+-    __doc__ = _('message_email_in_use',
+-                u"The email address you selected is already in use "
+-                  "or is not valid as login name. Please choose "
+-                  "another.")
+-
+-
+ def checkEmailAddress(value):
+     portal = getUtility(ISiteRoot)
+ 
+@@ -50,26 +38,6 @@ def checkEmailAddress(value):
+         pass
+     else:
+         raise EmailAddressInvalid
+-
+-    # If emails are used as logins, ensure that the address fits all
+-    # constraints.
+-    props = getToolByName(portal, 'portal_properties').site_properties
+-    if props.getProperty('use_email_as_login'):
+-        try:
+-            id_allowed = reg_tool.isMemberIdAllowed(value)
+-        except Unauthorized:
+-            raise CantChangeEmailError
+-        else:
+-            if not id_allowed:
+-                # Keeping your email the same (which happens when you
+-                # change something else on the personalize form) or
+-                # changing it back to your login name, is fine.
+-                membership = getToolByName(portal, 'portal_membership')
+-                if not membership.isAnonymousUser():
+-                    member = membership.getAuthenticatedMember()
+-                    if value in (member.getId(), member.getUserName()):
+-                        return True
+-                raise EmailInUseError
+     return True
+ 
+ 
