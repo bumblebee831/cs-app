@@ -281,6 +281,9 @@ class EnquiryForm(group.GroupForm, form.Form):
     def update(self):
         # disable Plone's editable border
         self.request.set('disable_border', True)
+        lang_query = self.request.get('set_language', None)
+        if lang_query:
+            return self.request.response.redirect(self.context.absolute_url())
         super(EnquiryForm, self).update()
 
     def updateActions(self):
