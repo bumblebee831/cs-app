@@ -33,6 +33,11 @@
         <div tal:content="structure context/text/output" />
     </tal:block>
     
+    <tal:block tal:condition="context/thank_you">
+        <h2>Thank-You Page Content:</h2>
+        <div tal:content="structure context/thank_you/output" />
+    </tal:block>
+    
   </metal:content-core>
 </metal:main>
 

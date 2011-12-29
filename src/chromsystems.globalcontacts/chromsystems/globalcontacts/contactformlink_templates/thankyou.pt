@@ -10,9 +10,8 @@
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
     
-    <tal:block tal:condition="view/contact"
-        tal:define="contact view/contactinfo">
-        <div tal:content="structure contact/thank_you/output" />
+    <tal:block tal:condition="view/contact">
+        <div tal:content="structure view/thank_you" />
     </tal:block>
     
     <tal:block tal:condition="not:view/contact">

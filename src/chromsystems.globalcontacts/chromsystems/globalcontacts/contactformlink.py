@@ -77,4 +77,5 @@ class ThankYou(grok.View):
         context = aq_inner(self.context)
         self.contact = context.contact
         if self.contact:
-            self.contactinfo = self.contact.to_object
+            contact_obj = self.contact.to_object
+            self.thank_you = contact_obj.thank_you.output
