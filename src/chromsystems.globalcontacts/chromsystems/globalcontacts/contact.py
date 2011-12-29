@@ -54,6 +54,12 @@ class IContact(form.Schema, IImageScaleTraversable):
                       u"information based on single fields."),
         required=False,
     )
+    thank_you = RichText(
+        title=_(u"Thank-you Page Text"),
+        description=_(u"Please enter the specific thank-you text for this "
+                      u"contact that will be displayed on form submission."),
+        required=True,
+    )
 
 
 class Contact(dexterity.Item):

@@ -10,6 +10,12 @@
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
     
+    <tal:block tal:condition="view/contact"
+        tal:define="contact view/contactinfo">
+        <div tal:content="structure contact/thank_you/output" />
+    </tal:block>
+    
+    <tal:block tal:condition="not:view/contact">
     <h1 class="documentFirstHeading"
         i18n:translate="">Thank you</h1>
     
@@ -21,6 +27,7 @@
             www.chromsystems.com</a>
         </p>
     </div>
+    </tal:block>
     
   </metal:content-core>
 </metal:main>

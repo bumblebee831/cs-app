@@ -72,3 +72,9 @@ class ThankYou(grok.View):
     grok.context(IContactFormLink)
     grok.require('zope2.View')
     grok.name('thank-you')
+
+    def update(self):
+        context = aq_inner(self.context)
+        self.contact = context.contact
+        if self.contact:
+            self.contactinfo = self.contact.to_object
