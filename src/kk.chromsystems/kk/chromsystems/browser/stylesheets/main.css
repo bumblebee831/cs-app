@@ -1,7 +1,6 @@
 body{background:url(++resource++kk.chromsystems.images/bg.gif) repeat-x #f3f3f3 scroll;padding-top:0 !important;text-align:left;font:69%;color:#333333;margin:0;padding:0;}
 a{outline:none;}
 p{line-height:1.5em;margin:0px;}
-.required{color:#f00f00 !important;}
 hr{background-color:#333333 !important;border:0 none;color:#333333 !important;height:1px;margin:0.5em 0 1em;}
 .hiddenStructure{background:transparent none repeat scroll 0;border:medium none;display:block;height:0px;margin:-1px 0 0 -1px;overflow:hidden;padding:0;width:1px;}
 .visualClear{height:0px !important;}
@@ -239,3 +238,6 @@ fieldset{border:1px solid #ccc;line-height:1.5em;margin:0.1em 0.1;padding:1em 2e
 #archetypes-fieldname-masstox-r-immunosuppressants-oneminute-test-lc-ms-ms-analysis{margin-top:30px !important;}
 #archetypes-fieldname-adresse{float:right !important;}
 #archetypes-fieldname-telefon{float:right !important;}
+.contenttype-chromsystems-globalcontacts-contactformlink img {
+	display: none;
+}
