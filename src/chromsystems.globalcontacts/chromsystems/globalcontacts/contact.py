@@ -47,6 +47,12 @@ class IContact(form.Schema, IImageScaleTraversable):
         description=_(u"Upload a portrait of the contact person."),
         required=True,
     )
+    headline = schema.TextLine(
+        title=_(u"Headline"),
+        description=_(u"Enter headline for the author information. "
+                      u"The country will be appended automatically."),
+        required=False,
+    )
     text = RichText(
         title=_(u"Textual Information"),
         description=_(u"Enter optional contact information that will be used "

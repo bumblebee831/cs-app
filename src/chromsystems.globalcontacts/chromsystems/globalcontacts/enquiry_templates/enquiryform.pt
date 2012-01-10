@@ -36,6 +36,10 @@
                 </p>
             </tal:block>
             <tal:block tal:condition="contact/text">
+                <h3 tal:condition="contact/headline">
+                    <span tal:replace="contact/headline" />
+                    <span tal:replace="context/Title" />
+                </h3>
                 <div tal:content="structure contact/text/output" />
             </tal:block>
                 <p class="pull-right"><span class="required" title="Erforderlich"> ■
