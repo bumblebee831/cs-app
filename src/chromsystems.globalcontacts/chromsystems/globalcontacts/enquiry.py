@@ -335,13 +335,13 @@ class EnquiryForm(group.GroupForm, form.Form):
         context = aq_inner(self.context)
         related_contact = context.contact.to_object
         if related_contact:
-            #result = results[0]
             obj = related_contact
             info = dict(
                 title=obj.Title(),
                 salutation=obj.salutation,
                 email=obj.email,
                 phone=obj.phone,
+                headline=obj.headline,
                 text=obj.text,
                 imageTag=self.constructImageTag(obj),
             )
