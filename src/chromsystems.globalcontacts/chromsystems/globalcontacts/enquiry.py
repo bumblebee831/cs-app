@@ -140,7 +140,7 @@ class IEnquiry(form.Schema):
         title=_(u"Vitamin Profiling"),
         value_type=schema.Choice(
             source=RegistrySource(
-            'chromsystems.globalcontacts.alcoholAbuseMarkers'),
+            'chromsystems.globalcontacts.vitaminProfiling'),
         ),
         required=False,
     )
@@ -240,25 +240,25 @@ class InterestsGroup(group.Group):
     label=u"Area of Interest"
     description=u"Please select your area of interest"
     fields=field.Fields(IEnquiry).select(
-        'newborn_screening', 'drug_monitoring', 'alcohol_abuse',
-        'oxidative_stress_monitoring', 'vitamin_profiling',
-        'arteriosclerosis', 'porphyrins_diagnosis', 'osteoporosis_diagnosis',
-        'hemoglobin_testing', 'biogenic_amines', 'controls', 'calibration',
-        'occupational_medicine', 'hplc',
+        'newborn_screening', 'drug_monitoring', 'osteoporosis_diagnosis',
+        'alcohol_abuse', 'oxidative_stress_monitoring', 'vitamin_profiling',
+        'arteriosclerosis', 'porphyrins_diagnosis',
+        'hemoglobin_testing', 'biogenic_amines', 'occupational_medicine',
+         'controls', 'calibration', 'hplc',
         )
     fields['newborn_screening'].widgetFactory = CheckBoxFieldWidget
     fields['drug_monitoring'].widgetFactory = CheckBoxFieldWidget
+    fields['osteoporosis_diagnosis'].widgetFactory = CheckBoxFieldWidget
     fields['alcohol_abuse'].widgetFactory = CheckBoxFieldWidget
     fields['oxidative_stress_monitoring'].widgetFactory = CheckBoxFieldWidget
     fields['vitamin_profiling'].widgetFactory = CheckBoxFieldWidget
     fields['arteriosclerosis'].widgetFactory = CheckBoxFieldWidget
     fields['porphyrins_diagnosis'].widgetFactory = CheckBoxFieldWidget
-    fields['osteoporosis_diagnosis'].widgetFactory = CheckBoxFieldWidget
     fields['hemoglobin_testing'].widgetFactory = CheckBoxFieldWidget
     fields['biogenic_amines'].widgetFactory = CheckBoxFieldWidget
+    fields['occupational_medicine'].widgetFactory = CheckBoxFieldWidget
     fields['controls'].widgetFactory = CheckBoxFieldWidget
     fields['calibration'].widgetFactory = CheckBoxFieldWidget
-    fields['occupational_medicine'].widgetFactory = CheckBoxFieldWidget
     fields['hplc'].widgetFactory = CheckBoxFieldWidget
 
 
