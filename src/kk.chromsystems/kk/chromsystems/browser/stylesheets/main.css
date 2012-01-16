@@ -104,8 +104,8 @@ dl.portalMessage dt{background-color:#A33193 !important;color:white;float:left;f
 *html #content{border-width:1px 1px 1px 1px;}
 .template-search_products #contentTopLeft,.template-search_products #contentTopRight,.template-search_products #contentBottomLeft,.template-search_products #contentBottomRight{display:none;}
 #content-core table{padding:10px 0px 10px 0px;vertical-align:top;border:0px dotted #cccccc;width:100%;margin:0px !important;}
-#content-core th{padding:10px 35px 10px 10px;vertical-align:top;border:1px solid #cccccc;background:#efefef;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
-#content-core td{padding:10px 35px 10px 10px;vertical-align:top;border:1px solid #cccccc;background:#efefef;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+#content-core th{padding:10px 10px 10px 10px;vertical-align:top;border:1px solid #cccccc;background:#efefef;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+#content-core td{padding:10px 10px 10px 10px;vertical-align:top;border:1px solid #cccccc;background:#efefef;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
 .dialog td{padding:10px 20px 0px 20px !important;vertical-align:top;border:1px solid #cccccc;background:#efefef;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
 .dialog ul{padding:0px 0px 0px 12px !important;}
 .listingBar{background-color:#efefef;border:1px solid #cccccc;clear:both;font-size:94%;margin:1em 0;padding:1em;text-align:center;text-transform:lowercase;vertical-align:top;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
@@ -233,6 +233,11 @@ ul.tabs{list-style:none !important;}
 .cspdf_list_results .download a:link,.cspdf_list_results .download a:visited,.cspdf_list_results .download a:hover{color:white !important;}
 legend{background:none repeat scroll 0 0 transparent;font-size:120%;padding:0.5em;font-weight:bold;}
 label{font-weight:bold;font-size:90%;margin:10px 0px 20px 0px !important;}
+.horizontal {
+	font-weight:bold;
+	font-size:120%;
+	line-height: 2em;
+}
 fieldset{border:1px solid #ccc;line-height:1.5em;margin:0.1em 0.1;padding:1em 2em 1em 2em;width:auto;background:#f8f8f8;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
 .ArchetypesStringWidget{border:0px solid red !important;float:left !important;width:50%;margin:0px 0px 0px 0px !important;padding:0px;clear:none !important;}
 #archetypes-fieldname-masstox-r-immunosuppressants-oneminute-test-lc-ms-ms-analysis{margin-top:30px !important;}
