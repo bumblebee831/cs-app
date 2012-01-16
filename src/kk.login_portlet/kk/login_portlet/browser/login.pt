@@ -125,7 +125,7 @@
 
     <dd class="portletItem">
 
-	<p>Vergessen Sie bitte nicht, sich aus Sicherheitsgründen nach jeder Bestellung aktiv auszuloggen</p>
+	<p>Vergessen Sie bitte nicht, sich aus Sicherheitsgründen aktiv auszuloggen.</p>
 	
        <a class="context" href="logout" 
           tal:attributes="href string:${context/portal_url}/de/logout" 
