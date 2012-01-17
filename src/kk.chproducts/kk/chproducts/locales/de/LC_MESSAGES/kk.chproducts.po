@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kk.chproducts\n"
+"POT-Creation-Date: 2012-01-17 14:17+0000\n"
+"PO-Revision-Date: 2012-01-17 18:18+0100\n"
+"Last-Translator: Serge Davidov <sd@kreativkombinat.de>\n"
+"Language-Team: VW Development Team <cb@vorwaerts-werbung.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: kk.chproducts\n"
+
+#. Default: "Alle"
+#: ./../browser/templates/search_results.pt:25
+msgid "All categories"
+msgstr "Alle Kategorien"
+
+#: ./../profiles/default/types/CSFolder.xml
+msgid "CSFolder"
+msgstr "CSOrdner"
+
+#: ./../profiles/default/types/CSFolder.xml
+#: ./../profiles/default/types/ProductCategory.xml
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: ./../profiles/default/types/CSFolder.xml
+#: ./../profiles/default/types/ProductCategory.xml
+msgid "Folder Listing"
+msgstr "Die Inhalte des Ordners"
+
+#: ./../profiles/default/types/CSFolder.xml
+msgid "Folder with rich description"
+msgstr "Ordner mit der Beschreibung"
+
+#: ./../profiles/default/types/Product.xml
+msgid "Product"
+msgstr "Produkt"
+
+#: ./../profiles/default/types/ProductCategory.xml
+msgid "Product category"
+msgstr "Produktkategorie"
+
+#: ./../profiles/default/types/ProductCategory.xml
+msgid "ProductCategory"
+msgstr "Produktkategorie"
+
+#: ./../browser/templates/search_results.pt:34
+msgid "Search results for <span>${DYNAMIC_CONTENT}</span>"
+msgstr "Suchresultate für <span>${DYNAMIC_CONTENT}</span>"
+
+#: ./../profiles/default/types/CSFolder.xml
+#: ./../profiles/default/types/ProductCategory.xml
+msgid "View"
+msgstr "Ansicht"
+
+#. Default: "Download"
+#: ./../browser/templates/tabular_list.pt:63
+msgid "download"
+msgstr "Download"
+
+#. Default: "File contents"
+#: ./../browser/templates/cspdf.pt:23
+msgid "heading_file_contents"
+msgstr ""
+
+#. Default: "Instruction manual"
+#: ./../browser/templates/plain_list.pt:43
+#: ./../browser/templates/tabular_list.pt:53
+msgid "inst_manual"
+msgstr "Bedienungsanleitung"
+
+#. Default: "Organiser"
+#: ./../browser/templates/tabular_list.pt:39
+msgid "organiser"
+msgstr "Veranstalter"
+
+#. Default: "Parameters"
+#: ./../browser/templates/tabular_list.pt:41
+msgid "parameters"
+msgstr "Parameter"
+
+#. Default: "Safety data sheet"
+#: ./../browser/templates/plain_list.pt:46
+#: ./../browser/templates/tabular_list.pt:56
+msgid "safety_data_sheet"
+msgstr "Sicherheitsdatenblatt"
+
+#. Default: "Title"
+#: ./../browser/templates/tabular_list.pt:40
+msgid "title"
+msgstr "Name"
+

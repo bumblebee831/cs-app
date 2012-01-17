@@ -1,0 +1,100 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2012-01-17 14:17+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: kk.chproducts\n"
+
+#. Default: "Alle"
+#: ./../browser/templates/search_results.pt:25
+msgid "All categories"
+msgstr ""
+
+#: ./../profiles/default/types/CSFolder.xml
+msgid "CSFolder"
+msgstr ""
+
+#: ./../profiles/default/types/CSFolder.xml
+#: ./../profiles/default/types/ProductCategory.xml
+msgid "Edit"
+msgstr ""
+
+#: ./../profiles/default/types/CSFolder.xml
+#: ./../profiles/default/types/ProductCategory.xml
+msgid "Folder Listing"
+msgstr ""
+
+#: ./../profiles/default/types/CSFolder.xml
+msgid "Folder with rich description"
+msgstr ""
+
+#: ./../profiles/default/types/Product.xml
+msgid "Product"
+msgstr ""
+
+#: ./../profiles/default/types/ProductCategory.xml
+msgid "Product category"
+msgstr ""
+
+#: ./../profiles/default/types/ProductCategory.xml
+msgid "ProductCategory"
+msgstr ""
+
+#: ./../browser/templates/search_results.pt:34
+msgid "Search results for <span>${DYNAMIC_CONTENT}</span>"
+msgstr ""
+
+#: ./../profiles/default/types/CSFolder.xml
+#: ./../profiles/default/types/ProductCategory.xml
+msgid "View"
+msgstr ""
+
+#. Default: "Download"
+#: ./../browser/templates/tabular_list.pt:63
+msgid "download"
+msgstr ""
+
+#. Default: "File contents"
+#: ./../browser/templates/cspdf.pt:23
+msgid "heading_file_contents"
+msgstr ""
+
+#. Default: "Instruction manual"
+#: ./../browser/templates/plain_list.pt:43
+#: ./../browser/templates/tabular_list.pt:53
+msgid "inst_manual"
+msgstr ""
+
+#. Default: "Organiser"
+#: ./../browser/templates/tabular_list.pt:39
+msgid "organiser"
+msgstr ""
+
+#. Default: "Parameters"
+#: ./../browser/templates/tabular_list.pt:41
+msgid "parameters"
+msgstr ""
+
+#. Default: "Safety data sheet"
+#: ./../browser/templates/plain_list.pt:46
+#: ./../browser/templates/tabular_list.pt:56
+msgid "safety_data_sheet"
+msgstr ""
+
+#. Default: "Title"
+#: ./../browser/templates/tabular_list.pt:40
+msgid "title"
+msgstr ""
+
