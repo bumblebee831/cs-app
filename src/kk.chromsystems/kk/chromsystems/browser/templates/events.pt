@@ -9,9 +9,7 @@
         <span class="portletTopLeft"></span>
         <a href=""
            tal:attributes="href view/all_events_link"
-           class="tile"
-           i18n:translate="box_events">
-            Upcoming Events
+           class="tile">Events
         </a>
         <span class="portletTopRight"></span>
     </dt>
