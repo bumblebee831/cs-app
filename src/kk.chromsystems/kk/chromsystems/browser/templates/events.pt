@@ -60,7 +60,7 @@
             </span>
     </dd>
     </tal:events>
-
+<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'en'">
     <dd class="portletFooter">
         <a href=""
            class="tile"
@@ -70,5 +70,18 @@
         <span class="portletBottomLeft"></span>
         <span class="portletBottomRight"></span>
     </dd>
+</span>
+
+<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'de'">
+    <dd class="portletFooter">
+        <a href=""
+           class="tile"
+           tal:attributes="href view/all_events_link">
+                Kommende Events&hellip;
+        </a>
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+</span>
 </dl>
 </html>
