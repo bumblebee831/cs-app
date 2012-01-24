@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-01-17 14:17+0000\n"
+"POT-Creation-Date: 2012-01-24 16:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,6 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: kk.chproducts\n"
 
-#. Default: "Alle"
 #: ./../browser/templates/search_results.pt:25
 msgid "All categories"
 msgstr ""
@@ -52,8 +51,9 @@ msgstr ""
 msgid "ProductCategory"
 msgstr ""
 
+#. Default: "Search results for ${keyword_value}"
 #: ./../browser/templates/search_results.pt:34
-msgid "Search results for <span>${DYNAMIC_CONTENT}</span>"
+msgid "Search results for"
 msgstr ""
 
 #: ./../profiles/default/types/CSFolder.xml

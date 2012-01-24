@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kk.chproducts\n"
-"POT-Creation-Date: 2012-01-17 14:17+0000\n"
-"PO-Revision-Date: 2012-01-17 18:18+0100\n"
+"POT-Creation-Date: 2012-01-24 16:01+0000\n"
+"PO-Revision-Date: 2012-01-24 17:06+0100\n"
 "Last-Translator: Serge Davidov <sd@kreativkombinat.de>\n"
 "Language-Team: VW Development Team <cb@vorwaerts-werbung.de>\n"
 "MIME-Version: 1.0\n"
@@ -49,9 +49,10 @@ msgstr "Produktkategorie"
 msgid "ProductCategory"
 msgstr "Produktkategorie"
 
+#. Default: "Search results for ${keyword_value}"
 #: ./../browser/templates/search_results.pt:34
-msgid "Search results for <span>${DYNAMIC_CONTENT}</span>"
-msgstr "Suchresultate für <span>${DYNAMIC_CONTENT}</span>"
+msgid "Search results for ${keyword_value}"
+msgstr "Suchresultate für ${keyword_value}"
 
 #: ./../profiles/default/types/CSFolder.xml
 #: ./../profiles/default/types/ProductCategory.xml
