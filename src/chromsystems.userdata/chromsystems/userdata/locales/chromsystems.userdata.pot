@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-08-08 11:28+0000\n"
+"POT-Creation-Date: 2012-01-24 21:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,96 +17,122 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: chromsystems.userdata\n"
 
-#: ./../userschema.py:30
+#: ./../memberimport.py:124
+msgid "Could not create user:"
+msgstr ""
+
+#: ./../memberimport.py:19
+msgid "File Upload"
+msgstr ""
+
+#: ./../userschema.py:26
 msgid "Frau"
 msgstr ""
 
-#: ./../userschema.py:31
+#: ./../userschema.py:27
 msgid "Herr"
 msgstr ""
 
+#: ./../memberimport.py:42
+msgid "Import"
+msgstr ""
+
+#: ./../memberimport.py:54
+msgid "Imported member records: "
+msgstr ""
+
+#: ./../memberimport.py:34
+msgid "Member Import Form"
+msgstr ""
+
+#: ./../customregistration.py:12
+msgid "Please fill in the registration form details."
+msgstr ""
+
+#: ./../memberimport.py:20
+msgid "Please upload a file in csv format containing the user information to be imported."
+msgstr ""
+
+#: ./../memberimport.py:35
+msgid "Upload existing member information by supplying a csv file."
+msgstr ""
+
+#: ./../memberimport.py:115
+msgid "Username must contain only characters a-z"
+msgstr ""
+
 #. Default: "Registration form"
-#: ./../customregistration.py:15
+#: ./../customregistration.py:11
 msgid "heading_registration_form"
 msgstr ""
 
-#. Default: "Tick this box to indicate that you have found, read and accepted the terms of use for this site. "
-#: ./../userschema.py:86
-msgid "help_accept"
-msgstr ""
-
 #. Default: "If you have any comments concerning your registration, please leave them here."
-#: ./../userschema.py:79
+#: ./../userschema.py:75
 msgid "help_comments"
 msgstr ""
 
 #. Default: "Please enter your customer identification."
-#: ./../userschema.py:46
+#: ./../userschema.py:41
 msgid "help_customer"
 msgstr ""
 
-#. Default: "Accept terms of use"
-#: ./../userschema.py:85
-msgid "label_accept"
-msgstr ""
-
 #. Default: "City"
-#: ./../userschema.py:59
+#: ./../userschema.py:54
 msgid "label_city"
 msgstr ""
 
 #. Default: "Comments"
-#: ./../userschema.py:78
+#: ./../userschema.py:74
 msgid "label_comments"
 msgstr ""
 
 #. Default: "Company"
-#: ./../userschema.py:51
+#: ./../userschema.py:46
 msgid "label_company"
 msgstr ""
 
 #. Default: "Country"
-#: ./../userschema.py:66
+#: ./../userschema.py:61
 msgid "label_country"
 msgstr ""
 
 #. Default: "Customer"
-#: ./../userschema.py:45
+#: ./../userschema.py:40
 msgid "label_customer"
 msgstr ""
 
 #. Default: "Fax number"
-#: ./../userschema.py:74
+#: ./../userschema.py:70
 msgid "label_fax"
 msgstr ""
 
 #. Default: "First name"
-#: ./../userschema.py:37
+#: ./../userschema.py:32
 msgid "label_firstname"
 msgstr ""
 
 #. Default: "Last name"
-#: ./../userschema.py:41
+#: ./../userschema.py:36
 msgid "label_lastname"
 msgstr ""
 
 #. Default: "Telephone number"
-#: ./../userschema.py:70
+#: ./../userschema.py:66
 msgid "label_phone"
 msgstr ""
 
 #. Default: "Salutation"
-#: ./../userschema.py:28
+#: ./../userschema.py:24
 msgid "label_salutation"
 msgstr ""
 
 #. Default: "Street"
-#: ./../userschema.py:55
+#: ./../userschema.py:50
 msgid "label_street"
 msgstr ""
 
 #. Default: "Zipcode"
-#: ./../userschema.py:63
+#: ./../userschema.py:58
 msgid "label_zipcode"
 msgstr ""
 
