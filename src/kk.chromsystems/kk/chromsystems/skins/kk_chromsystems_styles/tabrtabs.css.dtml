@@ -33,7 +33,7 @@ div.pane-container ul.tabs a {
 	display:block;
 	width:.1em;
 	background: url(++resource++kk.chromsystems.images/tabr-right-both.gif) no-repeat right top;
-	padding:5px 9px 5px 6px;
+	padding:5px 6px 5px 3px;
 	text-decoration:none;
 	font-weight:bold;
 	color:#333333;
