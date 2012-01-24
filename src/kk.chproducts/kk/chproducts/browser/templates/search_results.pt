@@ -22,7 +22,7 @@
 		<h2>Bitte wählen Sie</h2>
 			<ul class="tabs">
 				<li id="all" tal:attributes="class python:category and 'normal tab' or 'active tab'">
-						<a href="" tal:attributes="href string:search_results_products?keyword=${keyword}&category=&mode=${mode};" i18n:translate="All categories">Alle</a>
+						<a href="" tal:attributes="href string:search_results_products?keyword=${keyword}&category=&mode=${mode};" i18n:translate="All categories">All categories</a>
 				</li>
 				<tal:loop tal:repeat="result categories">
 				<li class="tab" tal:attributes="id result/category/getId; class python:result['is_active'] and 'active tab' or 'normal tab'">
@@ -31,7 +31,7 @@
 				</tal:loop>
 			</ul>
 			
-			<div i18n:translate="">Search results for <span tal:content="python:', '.join(view.KeywordQuery())" /></div>
+			<div i18n:translate="">Search results for <span i18n:name="keyword_value" tal:replace="python:', '.join(view.KeywordQuery())" /></div>
 			<div metal:use-macro="here/batch_macros/macros/navigation" />
 
 			<ul class="products">
