@@ -19,7 +19,7 @@
 												Batch python:modules['Products.CMFPlone'].Batch;
 												b_start python:request.get('b_start',0);
 												batch python:Batch(results, 20, int(b_start), orphan=1)">
-		<h2>Bitte wählen Sie</h2>
+		<h2 i18n:translate="">Please choose</h2>
 			<ul class="tabs">
 				<li id="all" tal:attributes="class python:category and 'normal tab' or 'active tab'">
 						<a href="" tal:attributes="href string:search_results_products?keyword=${keyword}&category=&mode=${mode};" i18n:translate="All categories">All categories</a>
