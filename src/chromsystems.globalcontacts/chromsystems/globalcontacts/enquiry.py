@@ -88,7 +88,7 @@ class IEnquiry(form.Schema):
         required=False,
     )
     email = schema.TextLine(
-        title=_(u'Email'),
+        title=_(u'E-mail'),
         required=True,
     )
     requested_material = schema.FrozenSet(
@@ -112,7 +112,7 @@ class IEnquiry(form.Schema):
     )
     drug_monitoring = schema.FrozenSet(
         title=_(u"Therapeutic Drug Monitoring"),
-        description=_(u"MassTox(R) TDM Series A-Parameter Sets, "
+        description=_(u"MassTox TDM Series A-Parameter Sets, "
                       u"LC-MS/MS Analysis"),
         value_type=schema.Choice(
         source=RegistrySource(
@@ -219,7 +219,7 @@ class IEnquiry(form.Schema):
 
 
 class ContactGroup(group.Group):
-    label=u"Contact Details"
+    label=u"Personal Data"
     description=u"Enter your contact details below"
     fields=field.Fields(IEnquiry).select(
         'salutation', 'firstname', 'lastname', 'institution', 'street',
