@@ -39,7 +39,7 @@ def notifyOnMemberCreation(event):
 
 
 @grok.subscribe(Interface, IUserInitialLoginInEvent)
-def notifyNewUserLoggedIn(event):
+def notifyNewUserLoggedIn(principal, event):
     portal = getSite()
     portal_url = portal.absolute_url()
     info = {}
