@@ -1,4 +1,5 @@
 from Acquisition import aq_inner
+from Acquisition import aq_parent
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
@@ -30,7 +31,11 @@ class SearchForm(BrowserView):
 
 class SearchResultsView(BrowserView):
     """ search results """
-    __call__ = ViewPageTemplateFile('templates/search_results.pt')
+
+    template = ViewPageTemplateFile('templates/search_results.pt')
+
+    def __call__(self):
+        return self.template()
 
     def KeywordQuery(self):
         keyword = self.request.get("keyword", "")
@@ -70,6 +75,11 @@ class SearchResultsView(BrowserView):
         products = self.context.portal_catalog(**query)
         return products
 
+    def parentinfo(self, item):
+        obj = item.getObject()
+        parent = aq_parent(obj)
+        return parent.absolute_url()
+
     def getActiveCategory(self):
         categories = self.getCategories()
         for cat in categories:
@@ -83,11 +93,12 @@ class SearchResultsView(BrowserView):
                         portal_type="ProductCategory",
                         sort_on="getObjPositionInParent")
         result = []
-        i = 0
-        for cat in categories:
-            is_active = False
-            if cat_uid == cat.UID:
-                is_active = True
-            result.append({"category": cat, "is_active": is_active})
-            i = i+1
+        if cat_uid:
+            i = 0
+            for cat in categories:
+                is_active = False
+                if cat_uid == cat.UID:
+                    is_active = True
+                result.append({"category": cat, "is_active": is_active})
+                i = i+1
         return result

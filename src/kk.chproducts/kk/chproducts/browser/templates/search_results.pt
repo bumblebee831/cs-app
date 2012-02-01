@@ -37,7 +37,9 @@
 			<ul class="products">
 				<tal:loop tal:repeat = "result batch">
 					<li>
-						<a href="" tal:attributes="href string:${result/getPath}" tal:content="result/Title"></a>
+						<a href="" tal:attributes="href string:${result/getPath}" tal:content="result/Title"></a><br />
+						<span class="discreet" tal:content="python:view.parentinfo(result)">Parent</span>
+						
 					</li>
 				</tal:loop>
 			</ul>
