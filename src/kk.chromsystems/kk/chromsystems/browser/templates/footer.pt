@@ -9,7 +9,6 @@
 				<a href="" tal:attributes="href string:${here/portal_url}/de/unternehmen">Unternehmen</a> |
 				<a href="" tal:attributes="href string:${here/portal_url}/de/contact">Kontakt</a> |
 				<a href="" tal:attributes="href string:${here/portal_url}/de/anfahrt">Anfahrt</a> | 
-				<a href="" tal:attributes="href string:${here/portal_url}/de/sitemap">Sitemap</a> |
 				<a href="" tal:attributes="href string:${here/portal_url}/de/shop">Shop</a> |
 				<a href="" tal:attributes="href string:${here/portal_url}/de/impressum">Rechtliches</a>
 			</div>
@@ -20,7 +19,6 @@
 				<a href="" tal:attributes="href string:${here/portal_url}/en/corporate">Corporate</a> |
 				<a href="" tal:attributes="href string:${here/portal_url}/en/contact">Contact</a> |
 				<a href="" tal:attributes="href string:${here/portal_url}/en/anfahrt">Approach</a> |
-				<a href="" tal:attributes="href string:${here/portal_url}/en/sitemap">Sitemap</a> |
 				<a href="" tal:attributes="href string:${here/portal_url}/en/shop">Shop</a> |
 				<a href="" tal:attributes="href string:${here/portal_url}/en/impressum">Legal info</a>
 			</div>
