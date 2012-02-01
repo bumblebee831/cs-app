@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+
+<metal:main fill-slot="main"
+     tal:define="auth nocall:context/acl_users/credentials_cookie_auth|nothing">
+
+    <div id="content-core" tal:condition="python: not auth" i18n:translate="registered_disabled">
+           Cookie authentication has been disabled.
+    </div>
+
+    <div tal:define="ve context/validate_email" tal:omit-tag=""
+         tal:condition="python: auth">
+
+        <h1 class="documentFirstHeading"
+            i18n:translate="heading_welcome">
+            Welcome!
+        </h1>
+
+
+
+        <div id="content-core">
+            <span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'de'">
+			<p>Sie wurden als Benutzer registriert und Ihre Daten wurden erfolgreich an Chromsystems übermittelt. Sie erhalten in Kürze eine E-Mail Benachrichtigung über die Freischaltung Ihres Benutzerkontos. Erst dann können Sie den Service nutzen und sich mit Ihren Daten einloggen.</p>
+			</span>
+
+			<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'en'">
+			<p>You are registered as a user and your data were successfully transmitted to Chromsystems. Soon you will receive an e-mail confirming the activation of your account. After that you can use the service and login with your data.</p>
+			</span>
+
+        </div>
+
+    </div>
+
+</metal:main>
+</body>
+</html>

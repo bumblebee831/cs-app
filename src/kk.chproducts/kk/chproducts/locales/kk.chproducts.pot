@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-01-24 16:01+0000\n"
+"POT-Creation-Date: 2012-01-27 22:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,6 +39,10 @@ msgstr ""
 msgid "Folder with rich description"
 msgstr ""
 
+#: ./../browser/templates/search_results.pt:22
+msgid "Please choose"
+msgstr ""
+
 #: ./../profiles/default/types/Product.xml
 msgid "Product"
 msgstr ""
@@ -51,9 +55,8 @@ msgstr ""
 msgid "ProductCategory"
 msgstr ""
 
-#. Default: "Search results for ${keyword_value}"
 #: ./../browser/templates/search_results.pt:34
-msgid "Search results for"
+msgid "Search results for ${keyword_value}"
 msgstr ""
 
 #: ./../profiles/default/types/CSFolder.xml

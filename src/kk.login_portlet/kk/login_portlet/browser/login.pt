@@ -124,8 +124,13 @@
     </dt>
 
     <dd class="portletItem">
-
+	<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'de'">
 	<p>Vergessen Sie bitte nicht, sich aus Sicherheitsgründen aktiv auszuloggen.</p>
+	</span>
+	
+	<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'en'">
+	<p>For security reasons please remember to log out, before leaving.</p>
+	</span>
 	
        <a class="context" href="logout" 
           tal:attributes="href string:${context/portal_url}/de/logout" 
