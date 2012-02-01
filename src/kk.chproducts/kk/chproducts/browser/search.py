@@ -1,5 +1,6 @@
 from Acquisition import aq_inner
 from Acquisition import aq_parent
+from zope.component import getMultiAdapter
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
@@ -75,10 +76,19 @@ class SearchResultsView(BrowserView):
         products = self.context.portal_catalog(**query)
         return products
 
-    def parentinfo(self, item):
+    def breadcrumbs(self, item):
         obj = item.getObject()
-        parent = aq_parent(obj)
-        return parent.absolute_url()
+        view = getMultiAdapter((obj, self.request), name='breadcrumbs_view')
+        # cut off the item itself
+        breadcrumbs = list(view.breadcrumbs())[:-1]
+        if len(breadcrumbs) == 0:
+            # don't show breadcrumbs if we only have a single element
+            return None
+        if len(breadcrumbs) > 3:
+            # if we have too long breadcrumbs, emit the middle elements
+            empty = {'absolute_url': '', 'Title': unicode('…', 'utf-8')}
+            breadcrumbs = [breadcrumbs[0], empty] + breadcrumbs[-2:]
+        return breadcrumbs
 
     def getActiveCategory(self):
         categories = self.getCategories()
