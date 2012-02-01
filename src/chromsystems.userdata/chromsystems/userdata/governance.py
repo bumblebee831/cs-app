@@ -10,10 +10,10 @@ from plone.app.contentlisting.interfaces import IContentListing
 from kk.chproducts.interfaces import IProduct
 
 
-class DublicateContent(grok.View):
+class DuplicateContent(grok.View):
     grok.context(IContentish)
     grok.require('cmf.ManagePortal')
-    grok.name('cleanup-dublicate-content')
+    grok.name('cleanup-duplicate-content')
 
     def update(self):
         self.has_products = len(self.products()) > 0
