@@ -9,70 +9,42 @@
 
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
-	
-	
-		<div class="search_results" tal:define="results view/doSearch;
-		                                        categories view/getCategories; 
-												keyword python:request.get('keyword', '');
-												category python:request.get('category', '');
-												mode python:request.get('mode', 0);
-												Batch python:modules['Products.CMFPlone'].Batch;
-												b_start python:request.get('b_start',0);
-												batch python:Batch(results, 20, int(b_start), orphan=1)">
-		<h2 i18n:translate="">Please choose</h2>
-			<ul class="tabs">
-				<li id="all" tal:attributes="class python:category and 'normal tab' or 'active tab'">
-						<a href="" tal:attributes="href string:search_results_products?keyword=${keyword}&category=&mode=${mode};" i18n:translate="All categories">All categories</a>
-				</li>
-				<tal:loop tal:repeat="result categories">
-				<li class="tab" tal:attributes="id result/category/getId; class python:result['is_active'] and 'active tab' or 'normal tab'">
-					<a href="" tal:attributes="href string:search_results_products?keyword=${keyword}&category=${result/category/UID}&mode=${mode};" tal:content="result/category/Title"></a>
-				</li>
-				</tal:loop>
-			</ul>
-			
-			<div i18n:translate="">Search results for <span i18n:name="keyword_value" tal:replace="python:', '.join(view.KeywordQuery())" /></div>
-			<div metal:use-macro="here/batch_macros/macros/navigation" />
+    
+    
+        <div class="search_results" tal:define="results view/doSearch;
+                                                categories view/getCategories; 
+                                                keyword python:request.get('keyword', '');
+                                                category python:request.get('category', '');
+                                                mode python:request.get('mode', 0);
+                                                Batch python:modules['Products.CMFPlone'].Batch;
+                                                b_start python:request.get('b_start',0);
+                                                batch python:Batch(results, 20, int(b_start), orphan=1)">
+        <h2 i18n:translate="">Please choose</h2>
+            <ul class="tabs">
+                <li id="all" tal:attributes="class python:category and 'normal tab' or 'active tab'">
+                        <a href="" tal:attributes="href string:search_results_products?keyword=${keyword}&category=&mode=${mode};" i18n:translate="All categories">All categories</a>
+                </li>
+                <tal:loop tal:repeat="result categories">
+                <li class="tab" tal:attributes="id result/category/getId; class python:result['is_active'] and 'active tab' or 'normal tab'">
+                    <a href="" tal:attributes="href string:search_results_products?keyword=${keyword}&category=${result/category/UID}&mode=${mode};" tal:content="result/category/Title"></a>
+                </li>
+                </tal:loop>
+            </ul>
+            
+            <div i18n:translate="">Search results for <span i18n:name="keyword_value" tal:replace="python:', '.join(view.KeywordQuery())" /></div>
+            <div metal:use-macro="here/batch_macros/macros/navigation" />
 
-			<ul class="products">
-				<tal:loop tal:repeat = "result batch">
-					<li>
-						<a href="" tal:attributes="href string:${result/getPath}" tal:content="result/Title"></a>
-						<br />
-						<cite class="documentLocation link-location discreet"
-                                tal:define="breadcrumbs python: view.breadcrumbs(result);
-                                            is_rtl context/@@plone_portal_state/is_rtl;"
-                                tal:condition='breadcrumbs'>
-                              <span i18n:translate="text_searchitem_location">
-                                  Located in
-                              </span>
-                              <span tal:repeat="crumb breadcrumbs"
-                                    tal:attributes="dir python:is_rtl and 'rtl' or 'ltr';">
-                                  <tal:item tal:define="is_last repeat/crumb/end;
-                                                        url crumb/absolute_url;
-                                                        title crumb/Title">
-                                      <a href="#"
-                                         tal:omit-tag="not: url"
-                                         tal:attributes="href url"
-                                         tal:content="title">
-                                          crumb
-                                      </a>
-                                      <span class="breadcrumbSeparator" tal:condition="not: is_last">
-                                          <tal:ltr condition="not: is_rtl">&rsaquo;</tal:ltr>
-                                          <tal:rtl condition="is_rtl">&lsaquo;</tal:rtl>
-                                      </span>
-                                   </tal:item>
-                              </span>
+            <ul class="products">
+                <tal:loop tal:repeat = "result batch">
+                    <li>
+                        <a href="" tal:attributes="href string:${result/getPath}" tal:content="result/Title"></a>
+                    </li>
+                </tal:loop>
+            </ul>
+            <div metal:use-macro="here/batch_macros/macros/navigation" />
 
-                          </cite>
-						
-					</li>
-				</tal:loop>
-			</ul>
-			<div metal:use-macro="here/batch_macros/macros/navigation" />
-
-		</div>
-	</metal:content-core>
+        </div>
+    </metal:content-core>
 </metal:content-core>
 
 </body>
