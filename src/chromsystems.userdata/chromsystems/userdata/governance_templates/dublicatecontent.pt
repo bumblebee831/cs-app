@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="chromsystems.userdata">
+<body>
+
+<metal:main fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+  
+  <table class="listing">
+      <thead>
+          <tr>
+              <th>Titel</th>
+              <th>Status</th>
+              <th>Aktionen</th>
+          </tr>
+      </thead>
+      <tbody tal:condition="view/has_products">
+          <tr tal:repeat="item view/products">
+              <td><h6><a href="" tal:attributes="href item/getURL"
+                    tal:content="item/Title" /></h6>
+                    <cite class="documentLocation link-location discreet"
+                            tal:define="breadcrumbs python: view.breadcrumbs(item);
+                                        is_rtl context/@@plone_portal_state/is_rtl;"
+                            tal:condition='breadcrumbs'>
+                          <span i18n:translate="text_searchitem_location">
+                              Located in
+                          </span>
+                          <span tal:repeat="crumb breadcrumbs"
+                                tal:attributes="dir python:is_rtl and 'rtl' or 'ltr';">
+                              <tal:item tal:define="is_last repeat/crumb/end;
+                                                    url crumb/absolute_url;
+                                                    title crumb/Title">
+                                  <a href="#"
+                                     tal:omit-tag="not: url"
+                                     tal:attributes="href url"
+                                     tal:content="title">
+                                      crumb
+                                  </a>
+                                  <span class="breadcrumbSeparator" tal:condition="not: is_last">
+                                      <tal:ltr condition="not: is_rtl">&rsaquo;</tal:ltr>
+                                      <tal:rtl condition="is_rtl">&lsaquo;</tal:rtl>
+                                  </span>
+                               </tal:item>
+                          </span>
+
+                      </cite>
+              </td>
+              <td tal:content="item/review_state">Review State</td>
+              <td tal:define="url item/getURL">
+                    <a href="" tal:attributes="href python:url+'/edit'"
+                        class="link-overlay">
+                        bearbeiten</a>
+                    <a href="" tal:attributes="href python:url+'/delete_confirmation'">
+                        l&ouml;schen</a>
+              </td>
+          </tr>
+      </tbody>
+ </table>
+    
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+
