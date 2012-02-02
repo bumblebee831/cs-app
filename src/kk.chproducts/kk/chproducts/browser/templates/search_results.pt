@@ -32,7 +32,6 @@
             </ul>
             
             <div i18n:translate="">Search results for <span i18n:name="keyword_value" tal:replace="python:', '.join(view.KeywordQuery())" /></div>
-            <div metal:use-macro="here/batch_macros/macros/navigation" />
 
             <ul class="products">
                 <tal:loop tal:repeat = "result batch">
