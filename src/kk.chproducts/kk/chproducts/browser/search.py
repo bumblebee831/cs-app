@@ -89,12 +89,11 @@ class SearchResultsView(BrowserView):
                         portal_type="ProductCategory",
                         sort_on="getObjPositionInParent")
         result = []
-        if cat_uid:
-            i = 0
-            for cat in categories:
-                is_active = False
-                if cat_uid == cat.UID:
-                    is_active = True
-                result.append({"category": cat, "is_active": is_active})
-                i = i+1
+        i = 0
+        for cat in categories:
+            is_active = False
+            if cat_uid == cat.UID:
+                is_active = True
+            result.append({"category": cat, "is_active": is_active})
+            i = i+1
         return result
