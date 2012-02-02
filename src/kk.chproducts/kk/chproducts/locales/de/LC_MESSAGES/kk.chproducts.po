@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kk.chproducts\n"
-"POT-Creation-Date: 2012-01-27 22:28+0000\n"
-"PO-Revision-Date: 2012-01-28 00:01+0100\n"
+"POT-Creation-Date: 2012-02-02 14:05+0000\n"
+"PO-Revision-Date: 2012-02-02 15:06+0100\n"
 "Last-Translator: Serge Davidov <sd@kreativkombinat.de>\n"
 "Language-Team: VW Development Team <cb@vorwaerts-werbung.de>\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +75,7 @@ msgstr ""
 #: ./../browser/templates/plain_list.pt:43
 #: ./../browser/templates/tabular_list.pt:53
 msgid "inst_manual"
-msgstr "Bedienungsanleitung"
+msgstr "Betriebsanweisung"
 
 #. Default: "Organiser"
 #: ./../browser/templates/tabular_list.pt:39
