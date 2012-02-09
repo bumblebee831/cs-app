@@ -171,7 +171,6 @@
             <element>Programmable Autosampler CLC 200</element>
             <element>HPLC Pump CLC 300</element>
             <element>HPLC Gradient Pump CLC 330</element>
-            <element>UV-VIS Detector CLC 400</element>
             <element>Chromsystems Data System Control and Analysis Software</element>
         </value>
     </record>
