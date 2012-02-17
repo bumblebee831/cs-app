@@ -28,7 +28,7 @@
 			<input type="text" name="q" tal:attributes="value q"/>
 			</div>
 			<div class="form-item submit">
-			<input type="submit" value="SUCHEN"/>
+			<input type="submit" value="Search" i18n:attributes="value" />
 			</div>
 			<input type="hidden" name="search" value="1"/>
 		</form>
