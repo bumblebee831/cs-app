@@ -334,15 +334,19 @@ class EnquiryForm(group.GroupForm, form.Form):
     def contact_info(self):
         context = aq_inner(self.context)
         related_contact = context.contact.to_object
+        custom_headline = context.headline
+        custom_text = context.text
         if related_contact:
             obj = related_contact
+            custom_text = obj.text
+            custom_headline = obj.headline
             info = dict(
                 title=obj.Title(),
                 salutation=obj.salutation,
                 email=obj.email,
                 phone=obj.phone,
-                headline=obj.headline,
-                text=obj.text,
+                headline=custom_headline,
+                text=custom_text,
                 imageTag=self.constructImageTag(obj),
             )
             return info

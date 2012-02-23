@@ -25,7 +25,8 @@
             <tal:block tal:condition="not:contact/text">
                 <h3><span tal:replace="contact/salutation" />
                     <span tal:replace="contact/title" />
-                        is Sales Manager for
+                    <span i18n:translate="">
+                        is Sales Manager for</span>
                     <span tal:replace="context/Title" />
                 </h3>
                 <p i18n:translate="">

@@ -39,6 +39,25 @@ class IContactFormLink(form.Schema):
         source=ObjPathSourceBinder(object_provides=IContact.__identifier__),
         required=True,
     )
+    headline = schema.TextLine(
+        title=_(u"Headline"),
+        description=_(u"Enter headline for the author information. "
+                      u"The country will be appended automatically."),
+        required=False,
+    )
+    text = RichText(
+        title=_(u"Textual Information"),
+        description=_(u"Enter optional contact information that will be used "
+                      u"in the contact view instead of the auto generated "
+                      u"information based on single fields."),
+        required=False,
+    )
+    thank_you = RichText(
+        title=_(u"Thank-you Page Text"),
+        description=_(u"Please enter the specific thank-you text for this "
+                      u"contact that will be displayed on form submission."),
+        required=True,
+    )
 
 
 class ContactFormLink(dexterity.Item):

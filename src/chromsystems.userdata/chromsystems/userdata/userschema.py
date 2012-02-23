@@ -30,21 +30,21 @@ class IEnhancedUserDataSchema(IUserDataSchema):
         )
     firstname = schema.TextLine(
         title=_(u'label_firstname', default=u'First name'),
-        required=False,
+        required=True,
         )
     lastname = schema.TextLine(
         title=_(u'label_lastname', default=u'Last name'),
-        required=False,
+        required=True,
         )
     customer = schema.TextLine(
         title=_(u'label_customer', default=u'Customer'),
         description=_(u'help_customer',
             default=u'Please enter your customer identification.'),
-        required=False,
+        required=True,
         )
     company = schema.TextLine(
         title=_(u'label_company', default=u'Company'),
-        required=False,
+        required=True,
         )
     street = schema.TextLine(
         title=_(u'label_street', default=u'Street'),
@@ -52,7 +52,7 @@ class IEnhancedUserDataSchema(IUserDataSchema):
         )
     city = schema.TextLine(
         title=_(u'label_city', default=u'City'),
-        required=False,
+        required=True,
         )
     zipcode = schema.TextLine(
         title=_(u'label_zipcode', default=u'Zipcode'),
@@ -60,7 +60,7 @@ class IEnhancedUserDataSchema(IUserDataSchema):
     country = schema.Choice(
         title=_(u'label_country', default=u'Country'),
         vocabulary=u"chromsystems.userdata.CountryList",
-        required=False,
+        required=True,
         )
     phone = schema.TextLine(
         title=_(u'label_phone', default=u'Telephone number'),
