@@ -26,7 +26,7 @@
 
         <div id="content-core">
             <span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'de'">
-			<p>Sie sind als Benutzer registriert und Ihre Daten wurden erfolgreich an Chromsystems übermittelt. In Kürze erhalten sie eine E-Mail Benachrichtigung über die Freischaltung Ihres Benutzerkontos. Erst danach können Sie den Service nutzen und sich mit Ihren Daten einloggen. Bitte beachten Sie, dass dieser Service nur für Chromsystems-Kunden verfügbar ist.</p>
+			<p>Sie sind als Benutzer registriert und Ihre Daten wurden erfolgreich an Chromsystems übermittelt. In Kürze erhalten Sie eine E-Mail Benachrichtigung über die Freischaltung Ihres Benutzerkontos. Erst danach können Sie den Service nutzen und sich mit Ihren Daten einloggen.</p>
 			<p>Bitte beachten Sie, dass dieser Service nur für Chromsystems-Kunden verfügbar ist.</p>
 			</span>
 
