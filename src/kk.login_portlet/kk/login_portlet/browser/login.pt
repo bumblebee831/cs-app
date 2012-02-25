@@ -88,15 +88,6 @@
         </form>
     </dd>
 
-    <!--<dd class="portletItem even" tal:condition="view/can_request_password">
-        <a href="mail_password_form"
-           class="tile"
-           tal:attributes="href view/mail_password_form">
-           <tal:block replace="structure context/info_icon.gif"/>
-           <span tal:omit-tag="" i18n:translate="box_forgot_password_option">Forgot your password?</span>
-        </a>
-    </dd>-->
-
 	<dd class="portletFooter">
 
         <span class="portletBottomLeft"></span>
@@ -130,12 +121,21 @@
 	
 	<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'en'">
 	<p>For security reasons please remember to log out, before leaving.</p>
-	</span>
-	
+	</span><br />
+	<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'en'">
        <a class="context" href="logout" 
-          tal:attributes="href string:${context/portal_url}/de/logout" 
-          i18n:translate="logout">Logout</a>
+          tal:attributes="href string:${context/portal_url}/de/logout">Log out</a>
+	</span>
+	<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'de'">
+       <a class="context" href="logout" 
+          tal:attributes="href string:${context/portal_url}/de/logout">Logout</a>
+	</span>
 
+    </dd>
+	<dd class="portletFooter">
+
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
     </dd>
 </dl>
 
