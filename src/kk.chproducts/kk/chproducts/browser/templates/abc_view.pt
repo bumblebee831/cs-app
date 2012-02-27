@@ -30,8 +30,16 @@
 				</tr>
 			</tal:row>
 		</table>
+		<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'de'">
 		<h2>Suchresultate alphabetisch sortiert.</h2>
-		<p>Ein Klick auf den jeweiligen Link bringt Sie zur Trefferliste aus diesen Bereich.</p> 
+		<p>Ein Klick auf den jeweiligen Link bringt Sie zur Trefferliste aus diesen Bereich.</p>
+		</span>
+		
+		<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'en'">
+		<h2>The searchresults are sorted alphabetically.</h2>
+		<p>Clicking on one of the query results will take you to the respective hit list.</p>
+		</span>
+		 
 		<ul class="abc_results">
 			<tal:loop tal:repeat="keyword keywords">
 				<li><a href="" tal:attributes="href string:${here/absolute_url}/search_results_products?keyword=${keyword}&mode=0" tal:content="keyword"/></li>
