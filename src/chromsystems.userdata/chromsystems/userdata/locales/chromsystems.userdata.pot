@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-01-24 21:18+0000\n"
+"POT-Creation-Date: 2012-02-27 19:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,14 +25,6 @@ msgstr ""
 msgid "File Upload"
 msgstr ""
 
-#: ./../userschema.py:26
-msgid "Frau"
-msgstr ""
-
-#: ./../userschema.py:27
-msgid "Herr"
-msgstr ""
-
 #: ./../memberimport.py:42
 msgid "Import"
 msgstr ""
@@ -43,6 +35,14 @@ msgstr ""
 
 #: ./../memberimport.py:34
 msgid "Member Import Form"
+msgstr ""
+
+#: ./../vocabulary.py:32
+msgid "Mr."
+msgstr ""
+
+#: ./../vocabulary.py:31
+msgid "Mrs."
 msgstr ""
 
 #: ./../customregistration.py:12
@@ -67,72 +67,77 @@ msgid "heading_registration_form"
 msgstr ""
 
 #. Default: "If you have any comments concerning your registration, please leave them here."
-#: ./../userschema.py:75
+#: ./../userschema.py:72
 msgid "help_comments"
 msgstr ""
 
 #. Default: "Please enter your customer identification."
-#: ./../userschema.py:41
+#: ./../userschema.py:38
 msgid "help_customer"
 msgstr ""
 
 #. Default: "City"
-#: ./../userschema.py:54
+#: ./../userschema.py:51
 msgid "label_city"
 msgstr ""
 
 #. Default: "Comments"
-#: ./../userschema.py:74
+#: ./../userschema.py:71
 msgid "label_comments"
 msgstr ""
 
 #. Default: "Company"
-#: ./../userschema.py:46
+#: ./../userschema.py:43
 msgid "label_company"
 msgstr ""
 
 #. Default: "Country"
-#: ./../userschema.py:61
+#: ./../userschema.py:58
 msgid "label_country"
 msgstr ""
 
 #. Default: "Customer"
-#: ./../userschema.py:40
+#: ./../userschema.py:37
 msgid "label_customer"
 msgstr ""
 
 #. Default: "Fax number"
-#: ./../userschema.py:70
+#: ./../userschema.py:67
 msgid "label_fax"
 msgstr ""
 
 #. Default: "First name"
-#: ./../userschema.py:32
+#: ./../userschema.py:29
 msgid "label_firstname"
 msgstr ""
 
 #. Default: "Last name"
-#: ./../userschema.py:36
+#: ./../userschema.py:33
 msgid "label_lastname"
 msgstr ""
 
 #. Default: "Telephone number"
-#: ./../userschema.py:66
+#: ./../userschema.py:63
 msgid "label_phone"
 msgstr ""
 
 #. Default: "Salutation"
-#: ./../userschema.py:24
+#: ./../userschema.py:23
 msgid "label_salutation"
 msgstr ""
 
 #. Default: "Street"
-#: ./../userschema.py:50
+#: ./../userschema.py:47
 msgid "label_street"
 msgstr ""
 
 #. Default: "Zipcode"
-#: ./../userschema.py:58
+#: ./../userschema.py:55
 msgid "label_zipcode"
+msgstr ""
+
+#. Default: "Located in"
+#: ./../governance_templates/duplicatecontent.pt:29
+msgid "text_searchitem_location"
 msgstr ""
 

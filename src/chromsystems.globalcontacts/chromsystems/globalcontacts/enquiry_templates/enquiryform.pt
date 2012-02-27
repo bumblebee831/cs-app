@@ -32,7 +32,7 @@
                 <p i18n:translate="">
                     Please fill out the form below to send an enquiry
                 </p>
-                <p i18n:translate="">Your  request will immediately be passed
+                <p i18n:translate="">Your request will immediately be passed
                     over to our regional distributor to  contact you.
                 </p>
             </tal:block>

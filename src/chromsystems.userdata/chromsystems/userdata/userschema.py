@@ -1,7 +1,6 @@
-from zope.interface import Interface, implements
+from zope.interface import implements
 from zope import schema
 #from plone.directives import form
-from z3c.form.browser.radio import RadioWidget
 from chromsystems.userdata import _
 from plone.app.users.userdataschema import IUserDataSchemaProvider
 from plone.app.users.userdataschema import IUserDataSchema
@@ -22,10 +21,8 @@ class IEnhancedUserDataSchema(IUserDataSchema):
     """
     salutation = schema.Choice(
         title=_(u'label_salutation', default=u'Salutation'),
-        values = [
-            _(u'Frau'),
-            _(u'Herr'), ],
-        default=u'Frau',
+        vocabulary=u"chromsystems.userdata.Salutation",
+        default=u'mrs',
         required=True,
         )
     firstname = schema.TextLine(

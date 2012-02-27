@@ -22,3 +22,16 @@ class CountryListVocabulary(object):
 
 grok.global_utility(CountryListVocabulary,
                     name=u"chromsystems.userdata.CountryList")
+
+
+class SalutationVocabulary(object):
+    grok.implements(IVocabularyFactory)
+
+    def __call__(self, context):
+        VALUES = {_(u"Mrs."): 'mrs',
+                  _(u"Mr."): 'mr'}
+        return SimpleVocabulary([SimpleTerm(value, title=title)
+                                for title, value
+                                in VALUES.iteritems()])
+grok.global_utility(SalutationVocabulary,
+                    name=u"chromsystems.userdata.Salutation")

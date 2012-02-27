@@ -10,7 +10,6 @@ from zope.schema.vocabulary import SimpleVocabulary
 from zope.schema.vocabulary import getVocabularyRegistry
 from z3c.form import group, field, button
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
-from z3c.form.browser.radio import RadioWidget
 
 from Acquisition import aq_inner
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -45,9 +44,8 @@ class IEnquiry(form.Schema):
     """
     salutation = schema.Choice(
         title=_(u"Salutation"),
-        values = [
-            _(u'Mrs.'),
-            _(u'Mr.'), ],
+        values=[_(u"Mrs."),
+                    _(u"Mr.")],
         default=u'Mrs.',
         required=True,
     )
@@ -219,27 +217,28 @@ class IEnquiry(form.Schema):
 
 
 class ContactGroup(group.Group):
-    label=u"Personal Data"
-    description=u"Enter your contact details below"
-    fields=field.Fields(IEnquiry).select(
+    label = u"Personal Data"
+    description = u"Enter your contact details below"
+    fields = field.Fields(IEnquiry).select(
         'salutation', 'firstname', 'lastname', 'institution', 'street',
         'postalcode', 'city', 'country', 'phone', 'fax', 'email',
         )
 #fields['salutation'].widgetFactory = RadioWidget
 
+
 class PreferencesGroup(group.Group):
-    label=u"Enter Preferences"
-    description=u"Enter your preferences below"
-    fields=field.Fields(IEnquiry).select(
+    label = u"Enter Preferences"
+    description = u"Enter your preferences below"
+    fields = field.Fields(IEnquiry).select(
         'requested_material', 'message',
         )
     fields['requested_material'].widgetFactory = CheckBoxFieldWidget
 
 
 class InterestsGroup(group.Group):
-    label=u"Area of Interest"
-    description=u"Please select your area of interest"
-    fields=field.Fields(IEnquiry).select(
+    label = u"Area of Interest"
+    description = u"Please select your area of interest"
+    fields = field.Fields(IEnquiry).select(
         'newborn_screening', 'drug_monitoring', 'osteoporosis_diagnosis',
         'alcohol_abuse', 'oxidative_stress_monitoring', 'vitamin_profiling',
         'arteriosclerosis', 'porphyrins_diagnosis',
@@ -329,7 +328,7 @@ class EnquiryForm(group.GroupForm, form.Form):
         IStatusMessage(self.request).addStatusMessage(
             _(u"Your email has been forwarded."),
             type="info")
-        return self.request.response.redirect(context_url+'/@@thank-you')
+        return self.request.response.redirect(context_url + '/@@thank-you')
 
     def contact_info(self):
         context = aq_inner(self.context)
@@ -338,8 +337,10 @@ class EnquiryForm(group.GroupForm, form.Form):
         custom_text = context.text
         if related_contact:
             obj = related_contact
-            custom_text = obj.text
-            custom_headline = obj.headline
+            if obj.text:
+                custom_text = obj.text
+            if obj.headline:
+                custom_headline = obj.headline
             info = dict(
                 title=obj.Title(),
                 salutation=obj.salutation,
