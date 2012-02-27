@@ -63,6 +63,8 @@
 		</form>
     	</div>
 		</span>
+		
+		<!--EN -->
 		<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'en'">
     	<div class="products-search form-keywords">
 			<h2>Select from our data base.</h2>
@@ -82,11 +84,13 @@
 		</form>
 		<ul class="abc-start" tal:define="abc view/getABC">
 			<li tal:repeat="item abc">
-				<a href="" tal:define="group_num python:item[0]" tal:attributes="href string:${here/portal_url}/abc/?g=${group_num}" tal:content="python:item[1][0] + '-' +item[1][-1]">A-D</a>
+				<a href="" tal:define="group_num python:item[0]" tal:attributes="href string:${here/portal_url}/${lang}/abc/?g=${group_num}" tal:content="python:item[1][0] + '-' +item[1][-1]">A-D</a>
 			</li>
 		</ul>    	
     	</div>
 		</span>
+		
+		<!--DE -->
 		<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'de'">
     	<div class="products-search form-keywords">
 			<h2>Wählen Sie aus unserer Übersicht.</h2>
