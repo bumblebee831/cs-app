@@ -8,7 +8,7 @@ from zope import schema
 from z3c.relationfield.schema import RelationChoice
 from plone.formwidget.contenttree import ObjPathSourceBinder
 from plone.formwidget.autocomplete import AutocompleteFieldWidget
-from plone.app.textfiled import RichText
+from plone.app.textfield import RichText
 from chromsystems.globalcontacts.contact import IContact
 from chromsystems.globalcontacts import MessageFactory as _
 

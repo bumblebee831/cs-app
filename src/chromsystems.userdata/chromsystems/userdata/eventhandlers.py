@@ -1,6 +1,7 @@
 from five import grok
 from zope.site.hooks import getSite
 from zope.interface import Interface
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from Products.PluggableAuthService.interfaces.events import (
     IPrincipalCreatedEvent)
@@ -31,6 +32,7 @@ def notifyOnMemberCreation(event):
     info = {}
     info['user'] = event.principal
     info['title'] = portal.Title()
+    body = ViewPageTemplateFile('registration_email.pt')(event, **info)
     message = MESSAGE_TEMPLATE % info
     # send email
     mailhost = getToolByName(portal, 'MailHost')
@@ -47,7 +49,7 @@ def notifyNewUserLoggedIn(principal, event):
     username = user.getId()
     editlink = '/@@usergroup-userprefs?searchstring=%s' % username
     info['user'] = username
-    info['editlink'] = portal_url + editlink 
+    info['editlink'] = portal_url + editlink
     mto = 'service@chromsystems.de'
     envelope_from = 'service@chromsystems.de'
     subject = 'New member %s has authenticated' % username
