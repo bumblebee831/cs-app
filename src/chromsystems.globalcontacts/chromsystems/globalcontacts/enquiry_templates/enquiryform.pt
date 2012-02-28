@@ -27,26 +27,29 @@
             <div class="image-left">
                 <img tal:replace="structure contact/imageTag" />
             </div>
-            <tal:block tal:condition="not:contact/text">
-                <h3><span tal:replace="contact/salutation" />
-                    <span tal:replace="contact/title" />
-                    <span i18n:translate="">
-                        is Sales Manager for</span>
-                    <span tal:replace="context/Title" />
-                </h3>
+            <h3 tal:condition="not:context/headline">
+                <span i18n:translate=""
+                    tal:replace="contact/salutation" />
+                <span tal:replace="contact/title" />
+                <span i18n:translate="">
+                    is Sales Manager for</span>
+                <span tal:replace="context/Title" />
+            </h3>
+            <h3 tal:condition="context/headline"
+                tal:content="context/headline">
+                Custom headline
+            </h3>
+            <tal:block tal:condition="not:context/text">
                 <p i18n:translate="">
                     Please fill out the form below to send an enquiry
                 </p>
-                <p i18n:translate="">Your request will immediately be passed
+                <p i18n:translate="">
+                    Your request will immediately be passed
                     over to our regional distributor to  contact you.
                 </p>
             </tal:block>
-            <tal:block tal:condition="contact/text">
-                <h3 tal:condition="contact/headline">
-                    <span tal:replace="contact/headline" />
-                    <span tal:replace="context/Title" />
-                </h3>
-                <div tal:content="structure contact/text/output" />
+            <tal:block tal:condition="context/text">
+                <div tal:content="structure context/text/output" />
             </tal:block>
                 <p class="pull-right"><span class="required" title="Erforderlich"> ■
                     </span> = required</p>
