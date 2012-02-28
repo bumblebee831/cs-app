@@ -1,0 +1,317 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: chromsystems.globalcontacts\n"
+"POT-Creation-Date: 2012-02-27 19:25+0000\n"
+"PO-Revision-Date: 2012-02-28 14:36+0100\n"
+"Last-Translator: Christoph Boehner <cb@vorwaerts-werbung.de>\n"
+"Language-Team: VW Development Team <cb@vorwaerts-werbung.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: chromsystems.globalcontacts\n"
+
+#: ./../enquiry_templates/enquiryform.pt:23
+msgid "${contact_country} | ${contact_salutation} ${contact_name} | Phone: ${contact_phone}"
+msgstr "${contact_country} | ${contact_salutation} ${contact_name} | Telefon: ${contact_phone}"
+
+#: ./../profiles/default/types/chromsystems.globalcontacts.contactformlink.xml
+msgid "A basic content type holding a reference to related contacts."
+msgstr "Inhaltstyp für Referenzen zu Kontakten"
+
+#: ./../profiles/default/types/chromsystems.globalcontacts.globalcontacts.xml
+msgid "A collection of contact persons."
+msgstr "Adressbuch für Kontaktpersonen"
+
+#: ./../profiles/default/types/chromsystems.globalcontacts.contact.xml
+msgid "A contact person."
+msgstr "Eine Kontaktperson"
+
+#: ./../enquiry.py:318
+msgid "Anfrage von %s %s"
+msgstr "Anfrage von %s %s"
+
+#: ./../contact.py:40
+msgid "BCC Email Adresses"
+msgstr "BCC E-Mail-Adresse"
+
+#: ./../enquiry.py:122
+msgid "Bio-markers for alcohol abuse"
+msgstr "Bio-markers for alcohol abuse"
+
+#: ./../enquiry.py:178
+msgid "Biogenic Amines (Phaeochromocytoma)"
+msgstr "Biogenic Amines (Phaeochromocytoma)"
+
+#: ./../enquiry.py:194
+msgid "Calibration"
+msgstr "Calibration"
+
+#: ./../enquiry.py:73
+msgid "City"
+msgstr "City"
+
+#: ./../enquiry.py:274
+#: ./../profiles/default/types/chromsystems.globalcontacts.contact.xml
+msgid "Contact"
+msgstr "Kontakt"
+
+#: ./../contact.py:20
+msgid "Contact Name"
+msgstr "Kontaktname"
+
+#: ./../profiles/default/types/chromsystems.globalcontacts.contactformlink.xml
+msgid "ContactFormLink"
+msgstr "Kontaktlink"
+
+#: ./../enquiry.py:186
+msgid "Controls"
+msgstr "Controls"
+
+#: ./../enquiry.py:77
+msgid "Country"
+msgstr "Country"
+
+#: ./../vocabulary.py:12
+msgid "Data Sheet"
+msgstr "Data Sheet"
+
+#: ./../contactformlink.py:29
+msgid "Description"
+msgstr "Beschreibung"
+
+#: ./../enquiry.py:154
+msgid "Diagnosis for Porphyrins"
+msgstr "Diagnosis for Porphyrins"
+
+#: ./../enquiry.py:89
+msgid "E-mail"
+msgstr "E-mail"
+
+#: ./../contact.py:35
+msgid "Email"
+msgstr "E-mail"
+
+#: ./../contact.py:21
+msgid "Enter a title for this contact."
+msgstr "Bitte geben SIe den Namen der Kontaktperson ein"
+
+#: ./../contact.py:36
+msgid "Enter email address used in enquiry forms."
+msgstr "Die E-Mail-Adresse für das Anfrageformular"
+
+#: ./../contact.py:52
+#: ./../contactformlink.py:42
+msgid "Enter headline for the author information. The country will be appended automatically."
+msgstr "Eine Überschrift für eine Kontaktperson. Hinweis: diese Überschreibt die automtisch generierten Inhalte und sollte alle gewünschten Informationen beinhalten."
+
+#: ./../contact.py:41
+msgid "Enter optional additional email addresses seperated by commas."
+msgstr "OPtionale weitere E-Mail-Adressen in einer durch Komma getrennten Auflistung."
+
+#: ./../contact.py:58
+#: ./../contactformlink.py:48
+msgid "Enter optional contact information that will be used in the contact view instead of the auto generated information based on single fields."
+msgstr "Geben Sie hier weiterführende Informationen zu dieser Kontakt person ein. Hinweis: dieser Text ersetzt die automatisch generierte Beschreibung komplett und sollte demnach alle relevanten Informationen beinhalten."
+
+#: ./../enquiry.py:85
+msgid "Fax"
+msgstr "Fax"
+
+#: ./../enquiry.py:53
+msgid "First name"
+msgstr "First name"
+
+#: ./../profiles/default/types/chromsystems.globalcontacts.globalcontacts.xml
+msgid "GlobalContacts"
+msgstr "Kontaktordner"
+
+#: ./../enquiry.py:210
+msgid "HPLC Instruments and Software"
+msgstr "HPLC Instruments and Software"
+
+#: ./../contact.py:51
+#: ./../contactformlink.py:41
+msgid "Headline"
+msgstr "Überschrift"
+
+#: ./../enquiry.py:170
+msgid "Hemoglobin Testing"
+msgstr "Hemoglobin Testing"
+
+#: ./../enquiry.py:61
+msgid "Institution"
+msgstr "Institution"
+
+#: ./../vocabulary.py:13
+msgid "Instruction Manual"
+msgstr "Instruction Manual"
+
+#: ./../enquiry.py:57
+msgid "Last name"
+msgstr "Last name"
+
+#: ./../enquiry.py:113
+msgid "MassTox TDM Series A-Parameter Sets, LC-MS/MS Analysis"
+msgstr "MassTox TDM Series A-Parameter Sets, LC-MS/MS Analysis"
+
+#: ./../enquiry.py:130
+msgid "Monitoring Oxidative Stress"
+msgstr "Monitoring Oxidative Stress"
+
+#: ./../contact.py:26
+msgid "Mr"
+msgstr "Herr"
+
+#: ./../enquiry.py:48
+msgid "Mr."
+msgstr "Herr"
+
+#: ./../contact.py:26
+msgid "Mrs"
+msgstr "Frau"
+
+#: ./../enquiry.py:47
+msgid "Mrs."
+msgstr "Frau"
+
+#: ./../enquiry.py:104
+msgid "Newborn Screening"
+msgstr "Newborn Screening"
+
+#: ./../enquiry.py:202
+msgid "Occupational Medicine"
+msgstr "Occupational Medicine"
+
+#: ./../contactformlink.py:30
+msgid "Optional textual description for this item."
+msgstr "Optional textual description for this item."
+
+#: ./../enquiry.py:162
+msgid "Osteoporosis Diagnosis"
+msgstr "Osteoporosis Diagnosis"
+
+#: ./../contact.py:31
+#: ./../enquiry.py:81
+msgid "Phone"
+msgstr "Phone"
+
+#: ./../contact.py:65
+#: ./../contactformlink.py:55
+msgid "Please enter the specific thank-you text for this contact that will be displayed on form submission."
+msgstr "Bitte tragen Sie hier einen eigenen \"Dankeschön\" Text für diesen Kontakt ein, der dann optional nach dem Versand des Formulars angezeigt wird."
+
+#: ./../enquiry_templates/enquiryform.pt:37
+msgid "Please fill out the form below to send an enquiry"
+msgstr "Bitte füllen Sie das nachfolgende Formular aus."
+
+#: ./../enquiry.py:275
+msgid "Please fill out the form to send an enquiry."
+msgstr "Bitte füllen Sie das nachfolgende Formular aus, um eine Anfrage an uns zu stellen."
+
+#: ./../contact.py:46
+msgid "Portrait Image"
+msgstr "Portraitbild"
+
+#: ./../enquiry.py:69
+msgid "Postal Code"
+msgstr "Postal Code"
+
+#: ./../vocabulary.py:14
+msgid "Price/Delivery Information"
+msgstr "Price/Delivery Information"
+
+#: ./../enquiry.py:93
+msgid "Requested Material"
+msgstr "Requested Material"
+
+#: ./../contactformlink.py:36
+msgid "Responsible Contact"
+msgstr "Zuständige Kontaktperson auswählen"
+
+#: ./../enquiry.py:146
+msgid "Risk Factors for Arteriosclerosis"
+msgstr "Risk Factors for Arteriosclerosis"
+
+#: ./../enquiry.py:46
+msgid "Salutation"
+msgstr "Salutation"
+
+#: ./../enquiry.py:293
+msgid "Send now"
+msgstr "Absenden"
+
+#: ./../enquiry.py:65
+msgid "Street"
+msgstr "Street"
+
+#: ./../contact.py:57
+#: ./../contactformlink.py:47
+msgid "Textual Information"
+msgstr "Textual Information"
+
+#: ./../contactformlink_templates/thankyou.pt:18
+msgid "Thank you"
+msgstr "Vielen Dank für Ihr Interesse"
+
+#: ./../contact.py:64
+#: ./../contactformlink.py:54
+msgid "Thank-you Page Text"
+msgstr "Danke-Text"
+
+#: ./../enquiry.py:112
+msgid "Therapeutic Drug Monitoring"
+msgstr "Therapeutic Drug Monitoring"
+
+#: ./../contactformlink.py:24
+msgid "This is most probably a country name."
+msgstr "Hier sollte ein Ländername stehen."
+
+#: ./../contactformlink.py:23
+msgid "Title"
+msgstr "Titel"
+
+#: ./../contact.py:47
+msgid "Upload a portrait of the contact person."
+msgstr "Laden Sie hier das Portrait Bild für die Kontaktperson hoch."
+
+#: ./../enquiry.py:138
+msgid "Vitamin Profiling"
+msgstr "Vitamin Profiling"
+
+#: ./../enquiry.py:100
+msgid "Your Message"
+msgstr "Your Message"
+
+#: ./../enquiry.py:329
+msgid "Your email has been forwarded."
+msgstr "Ihre E-Mail wurde erfolgreich verschickt."
+
+#: ./../contactformlink_templates/thankyou.pt:22
+msgid "Your enquiry has successfully been forwarded to the responsible sales manager."
+msgstr "Ihre Anfrage wurde dem zuständigen Sales Manager zugestellt."
+
+#: ./../enquiry_templates/enquiryform.pt:40
+msgid "Your request will immediately be passed over to our regional distributor to contact you."
+msgstr "Ihre Anfrage wird direkt an unseren regionalen Ansprechpartner weitergeleitet, der Sie umgehend kontaktieren wird."
+
+#: ./../enquiry.py:301
+msgid "cancel"
+msgstr "Abbrechen"
+
+#. Default: "Contact:"
+#: ./../contactformlink_templates/view.pt:20
+msgid "contact"
+msgstr "ist Sales Manager für"
+
+#: ./../enquiry_templates/enquiryform.pt:33
+msgid "is Sales Manager for"
+msgstr "ist Sales Manager für"
+
+#: ./../contact.py:25
+msgid "label_salutation"
+msgstr "Anrede"
+
