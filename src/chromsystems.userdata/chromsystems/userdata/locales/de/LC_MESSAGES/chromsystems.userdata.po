@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: chromsystems.userdata\n"
 "POT-Creation-Date: 2012-02-27 19:25+0000\n"
-"PO-Revision-Date: 2012-01-24 22:19+0100\n"
-"Last-Translator: Serge Davidov <sd@kreativkombinat.de>\n"
+"PO-Revision-Date: 2012-02-27 22:05+0100\n"
+"Last-Translator: Christoph Boehner <cb@vorwaerts-werbung.de>\n"
 "Language-Team: VW Development Team <cb@vorwaerts-werbung.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -16,31 +16,31 @@ msgstr ""
 
 #: ./../memberimport.py:124
 msgid "Could not create user:"
-msgstr ""
+msgstr "Der Benutzer konnte nicht erstellt werden."
 
 #: ./../memberimport.py:19
 msgid "File Upload"
-msgstr ""
+msgstr "Dateiupload"
 
 #: ./../memberimport.py:42
 msgid "Import"
-msgstr ""
+msgstr "Import"
 
 #: ./../memberimport.py:54
 msgid "Imported member records: "
-msgstr ""
+msgstr "Zusammenfassung importierte Benutzerkonten"
 
 #: ./../memberimport.py:34
 msgid "Member Import Form"
-msgstr ""
+msgstr "Benutzer Import"
 
 #: ./../vocabulary.py:32
 msgid "Mr."
-msgstr ""
+msgstr "Herr"
 
 #: ./../vocabulary.py:31
 msgid "Mrs."
-msgstr ""
+msgstr "Frau"
 
 #: ./../customregistration.py:12
 msgid "Please fill in the registration form details."
@@ -48,15 +48,15 @@ msgstr "Bitte füllen Sie das untenstehende Registrierungsformular aus."
 
 #: ./../memberimport.py:20
 msgid "Please upload a file in csv format containing the user information to be imported."
-msgstr ""
+msgstr "Bitte wählen Sie eine Datei, die Benutzerinformationen im csv Format beinhaltet."
 
 #: ./../memberimport.py:35
 msgid "Upload existing member information by supplying a csv file."
-msgstr ""
+msgstr "Upload bestehender Benutzerkonten"
 
 #: ./../memberimport.py:115
 msgid "Username must contain only characters a-z"
-msgstr ""
+msgstr "Der Benutzername darf nur Buchstaben enthalten"
 
 #. Default: "Registration form"
 #: ./../customregistration.py:11

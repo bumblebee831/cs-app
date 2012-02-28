@@ -53,6 +53,7 @@ class IEnhancedUserDataSchema(IUserDataSchema):
         )
     zipcode = schema.TextLine(
         title=_(u'label_zipcode', default=u'Zipcode'),
+        required=True,
         )
     country = schema.Choice(
         title=_(u'label_country', default=u'Country'),
@@ -61,7 +62,7 @@ class IEnhancedUserDataSchema(IUserDataSchema):
         )
     phone = schema.TextLine(
         title=_(u'label_phone', default=u'Telephone number'),
-        required=False,
+        required=True,
         )
     fax = schema.TextLine(
         title=_(u'label_fax', default=u'Fax number'),

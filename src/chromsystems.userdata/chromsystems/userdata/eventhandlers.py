@@ -1,43 +1,30 @@
 from five import grok
 from zope.site.hooks import getSite
 from zope.interface import Interface
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
-from Products.PluggableAuthService.interfaces.events import (
-    IPrincipalCreatedEvent)
 from Products.PlonePAS.interfaces.events import IUserInitialLoginInEvent
 
-MESSAGE_TEMPLATE = """\
-A new user %(user)s has requested membership for %(title)s.
 
-No Action is required on your part. You will be notified upon the users's
-initial login to the site.
-"""
 LOGIN_MESSAGE = """\
 The user %(user)s has logged in for the first time.
+------------
+Name: %(fullname)s
+Customer ID: %(customer)s
+Company: %(company)s
+Address: %(zipcode)s %(city)s, %(street)s
+Country: %(country)s
+Phone: %(phone)s
+Fax: %(fax)s
+------------
+
+Comment:
+%(comment)s
 
 You may want to visit
 %(editlink)s
 to review the user details and configure group membership.
 
 """
-
-
-@grok.subscribe(IPrincipalCreatedEvent)
-def notifyOnMemberCreation(event):
-    portal = getSite()
-    mto = 'service@chromsystems.de'
-    envelope_from = 'service@chromsystems.de'
-    subject = 'New user has registered to chromsystems.de'
-    info = {}
-    info['user'] = event.principal
-    info['title'] = portal.Title()
-    body = ViewPageTemplateFile('registration_email.pt')(event, **info)
-    message = MESSAGE_TEMPLATE % info
-    # send email
-    mailhost = getToolByName(portal, 'MailHost')
-    mailhost.send(message, mto=mto, mfrom=envelope_from,
-                  subject=subject, charset='utf-8')
 
 
 @grok.subscribe(Interface, IUserInitialLoginInEvent)
@@ -47,9 +34,21 @@ def notifyNewUserLoggedIn(principal, event):
     info = {}
     user = event.principal
     username = user.getId()
+    mtool = getToolByName(portal, 'portal_membership')
+    member = mtool.getMemberById(username)
     editlink = '/@@usergroup-userprefs?searchstring=%s' % username
     info['user'] = username
     info['editlink'] = portal_url + editlink
+    info['fullname'] = member.getProperty('fullname', '')
+    info['customer'] = member.getProperty('customer', '')
+    info['company'] = member.getProperty('company', '')
+    info['street'] = member.getProperty('street', '')
+    info['zipcode'] = member.getProperty('zipcode', '')
+    info['city'] = member.getProperty('city', '')
+    info['country'] = member.getProperty('country', '')
+    info['phone'] = member.getProperty('phone', '')
+    info['fax'] = member.getProperty('fax', '')
+    info['comment'] = member.getProperty('comment', '')
     mto = 'service@chromsystems.de'
     envelope_from = 'service@chromsystems.de'
     subject = 'New member %s has authenticated' % username
