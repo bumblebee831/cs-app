@@ -54,7 +54,7 @@ class IContactFormLink(form.Schema):
         title=_(u"Thank-you Page Text"),
         description=_(u"Please enter the specific thank-you text for this "
                       u"contact that will be displayed on form submission."),
-        required=True,
+        required=False,
     )
 
 
