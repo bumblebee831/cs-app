@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: chromsystems.globalcontacts\n"
-"POT-Creation-Date: 2012-02-27 19:25+0000\n"
-"PO-Revision-Date: 2012-02-28 14:36+0100\n"
+"POT-Creation-Date: 2012-02-28 15:21+0000\n"
+"PO-Revision-Date: 2012-02-28 16:27+0100\n"
 "Last-Translator: Christoph Boehner <cb@vorwaerts-werbung.de>\n"
 "Language-Team: VW Development Team <cb@vorwaerts-werbung.de>\n"
 "MIME-Version: 1.0\n"
@@ -204,13 +204,13 @@ msgstr "Phone"
 msgid "Please enter the specific thank-you text for this contact that will be displayed on form submission."
 msgstr "Bitte tragen Sie hier einen eigenen \"Dankeschön\" Text für diesen Kontakt ein, der dann optional nach dem Versand des Formulars angezeigt wird."
 
-#: ./../enquiry_templates/enquiryform.pt:37
-msgid "Please fill out the form below to send an enquiry"
-msgstr "Bitte füllen Sie das nachfolgende Formular aus."
-
 #: ./../enquiry.py:275
 msgid "Please fill out the form to send an enquiry."
 msgstr "Bitte füllen Sie das nachfolgende Formular aus, um eine Anfrage an uns zu stellen."
+
+#: ./../enquiry_templates/enquiryform.pt:43
+msgid "Please submit the completed form to Chromsystems and we will contact you as soon as possible."
+msgstr "Bitte schicken Sie das ausgefüllte Formular an Chromsystems, und wir werden Sie schnellstmöglich kontaktieren."
 
 #: ./../contact.py:46
 msgid "Portrait Image"
@@ -294,10 +294,6 @@ msgstr "Ihre E-Mail wurde erfolgreich verschickt."
 msgid "Your enquiry has successfully been forwarded to the responsible sales manager."
 msgstr "Ihre Anfrage wurde dem zuständigen Sales Manager zugestellt."
 
-#: ./../enquiry_templates/enquiryform.pt:40
-msgid "Your request will immediately be passed over to our regional distributor to contact you."
-msgstr "Ihre Anfrage wird direkt an unseren regionalen Ansprechpartner weitergeleitet, der Sie umgehend kontaktieren wird."
-
 #: ./../enquiry.py:301
 msgid "cancel"
 msgstr "Abbrechen"
@@ -307,9 +303,9 @@ msgstr "Abbrechen"
 msgid "contact"
 msgstr "ist Sales Manager für"
 
-#: ./../enquiry_templates/enquiryform.pt:33
-msgid "is Sales Manager for"
-msgstr "ist Sales Manager für"
+#: ./../enquiry_templates/enquiryform.pt:34
+msgid "is the responsible export sales manager for"
+msgstr "ist Export Sales Manager für"
 
 #: ./../contact.py:25
 msgid "label_salutation"
