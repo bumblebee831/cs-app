@@ -41,7 +41,7 @@ def notifyNewUserLoggedIn(principal, event):
     editlink = '/@@usergroup-userprefs?searchstring=%s' % username
     info['user'] = username
     info['editlink'] = portal_url + editlink
-    info['fistname'] = member.getProperty('firstname', '')
+    info['firstname'] = member.getProperty('firstname', '')
     info['lastname'] = member.getProperty('lastname', '')
     info['customer'] = member.getProperty('customer', '')
     info['company'] = member.getProperty('company', '')
