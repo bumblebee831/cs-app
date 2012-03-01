@@ -10,7 +10,7 @@ from Products.PlonePAS.interfaces.events import IUserInitialLoginInEvent
 LOGIN_MESSAGE = """\
 The user %(user)s has logged in for the first time.
 ------------
-Name: %(fullname)s
+Name: %(firstname)s %(lastname)s
 Customer ID: %(customer)s
 Company: %(company)s
 Address: %(zipcode)s %(city)s, %(street)s
@@ -41,7 +41,8 @@ def notifyNewUserLoggedIn(principal, event):
     editlink = '/@@usergroup-userprefs?searchstring=%s' % username
     info['user'] = username
     info['editlink'] = portal_url + editlink
-    info['fullname'] = member.getProperty('fullname', '')
+    info['fistname'] = member.getProperty('firstname', '')
+    info['lastname'] = member.getProperty('lastname', '')
     info['customer'] = member.getProperty('customer', '')
     info['company'] = member.getProperty('company', '')
     info['street'] = member.getProperty('street', '')
