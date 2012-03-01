@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*
+
 from five import grok
 from zope.site.hooks import getSite
 from zope.interface import Interface
