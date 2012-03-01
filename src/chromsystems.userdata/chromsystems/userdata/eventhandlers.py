@@ -4,6 +4,7 @@ from five import grok
 from zope.site.hooks import getSite
 from zope.interface import Interface
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode
 from Products.PlonePAS.interfaces.events import IUserInitialLoginInEvent
 
 
@@ -41,17 +42,17 @@ def notifyNewUserLoggedIn(principal, event):
     editlink = '/@@usergroup-userprefs?searchstring=%s' % username
     info['user'] = username
     info['editlink'] = portal_url + editlink
-    info['firstname'] = member.getProperty('firstname', '')
-    info['lastname'] = member.getProperty('lastname', '')
-    info['customer'] = member.getProperty('customer', '')
-    info['company'] = member.getProperty('company', '')
-    info['street'] = member.getProperty('street', '')
-    info['zipcode'] = member.getProperty('zipcode', '')
-    info['city'] = member.getProperty('city', '')
-    info['country'] = member.getProperty('country', '')
-    info['phone'] = member.getProperty('phone', '')
-    info['fax'] = member.getProperty('fax', '')
-    info['comment'] = member.getProperty('comment', '')
+    info['firstname'] = safe_unicode(member.getProperty('firstname', ''))
+    info['lastname'] = safe_unicode(member.getProperty('lastname', ''))
+    info['customer'] = safe_unicode(member.getProperty('customer', ''))
+    info['company'] = safe_unicode(member.getProperty('company', ''))
+    info['street'] = safe_unicode(member.getProperty('street', ''))
+    info['zipcode'] = safe_unicode(member.getProperty('zipcode', ''))
+    info['city'] = safe_unicode(member.getProperty('city', ''))
+    info['country'] = safe_unicode(member.getProperty('country', ''))
+    info['phone'] = safe_unicode(member.getProperty('phone', ''))
+    info['fax'] = safe_unicode(member.getProperty('fax', ''))
+    info['comment'] = safe_unicode(member.getProperty('comment', ''))
     mto = 'service@chromsystems.de'
     envelope_from = 'service@chromsystems.de'
     subject = 'New member %s has authenticated' % username
