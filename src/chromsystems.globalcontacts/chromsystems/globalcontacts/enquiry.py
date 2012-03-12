@@ -59,7 +59,7 @@ class IEnquiry(form.Schema):
     )
     institution = schema.TextLine(
         title=_(u"Institution"),
-        required=False,
+        required=True,
     )
     street = schema.TextLine(
         title=_(u"Street"),
@@ -315,7 +315,7 @@ class EnquiryForm(group.GroupForm, form.Form):
         else:
             mto = mailto
         envelope_from = data['email']
-        subject = _(u'Anfrage von %s %s') % (
+        subject = _(u'Request from %s %s') % (
             data['firstname'], data['lastname'])
         options = data
         options['recipientname'] = contactinfo.Title()

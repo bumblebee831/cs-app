@@ -20,6 +20,7 @@ Personal Information:
 <span tal:omit-tag="" tal:content="options/salutation | nothing" /> <span tal:omit-tag="" tal:content="options/firstname | nothing" /> <span tal:omit-tag="" tal:content="options/lastname | nothing" />
 <span tal:omit-tag="" tal:content="options/street" />
 <span tal:omit-tag="" tal:content="options/postalcode" /> <span tal:omit-tag="" tal:content="options/city" />
+<span tal:omit-tag="" tal:content="options/institution | nothing" />
 <span tal:omit-tag="" tal:content="options/country" />
 Phone: <span tal:omit-tag="" tal:content="options/phone" />
 Fax: <span tal:omit-tag="" tal:content="options/fax" />

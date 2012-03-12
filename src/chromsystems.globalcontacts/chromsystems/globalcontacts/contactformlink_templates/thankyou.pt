@@ -10,18 +10,20 @@
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
     
-    <tal:block tal:condition="view/contact">
-        <div tal:content="structure view/thank_you" />
+    <tal:block tal:condition="context/thank_you">
+      <div id="content-core">
+        <div tal:content="structure context/thank_you" />
+      </div>
     </tal:block>
     
-    <tal:block tal:condition="not:view/contact">
+    <tal:block tal:condition="not:context/thank_you">
     <h1 class="documentFirstHeading"
         i18n:translate="">Thank you</h1>
     
     <div id="content-core">
-        <p i18n:translate="">Your enquiry has successfully been forwarded
+        <p i18n:translate="">
+            Your enquiry has successfully been forwarded
             to the responsible sales manager.</p>
-        
         <p><a href="http://www.chromsystems.com">
             www.chromsystems.com</a>
         </p>
