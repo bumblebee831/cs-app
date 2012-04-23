@@ -82,5 +82,14 @@
       directory="templates"
       layer=".interfaces.IThemeSpecific"
       />
+      
+    <!-- Folder contents -->
+    <browser:page
+        for="kk.chproducts.interfaces.ICSFolder"
+        class=".foldercontents.ChFolderContentsView"
+        name="folder_contents"
+        template="templates/folder_contents.pt"
+        permission="cmf.ListFolderContents" 
+        layer=".interfaces.IThemeSpecific" />
 
 </configure>
