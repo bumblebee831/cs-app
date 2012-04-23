@@ -30,7 +30,10 @@ class CSFolderView(BrowserView):
             query['SearchableText'] = q
         results = self.context.portal_catalog(**query);
         return results
-        
+class CSFolderViewDe(CSFolderView):
+    """ cs plain folder view """
+    __call__ = ViewPageTemplateFile('templates/plain_list_de.pt')
+           
 class CSFolderTabularView(CSFolderView):
     """ cs tabular folder view """
     __call__ = ViewPageTemplateFile('templates/tabular_list.pt')

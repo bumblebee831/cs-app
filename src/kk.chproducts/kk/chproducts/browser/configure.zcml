@@ -15,6 +15,12 @@
         class=".csfolder.CSFolderView"
         permission="zope2.View"
         />
+     <browser:page
+        for="..interfaces.ICSFolder"
+        name="view_de"
+        class=".csfolder.CSFolderViewDe"
+        permission="zope2.View"
+        />
       <browser:page
         for="..interfaces.ICSFolder"
         name="tabular_list"
