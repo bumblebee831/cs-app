@@ -16,7 +16,7 @@
                 <span i18n:name="contact_country"
                     tal:replace="context/Title" /> |
                 <span i18n:name="contact_salutation"
-                    tal:content="contact/salutation">Salutation</span>
+                    tal:replace="contact/salutation">Salutation</span>
                 <span i18n:name="contact_name" 
                     tal:replace="contact/title" /> |
                 Phone:
