@@ -12,16 +12,13 @@
     <tal:contact tal:condition="view/contact_info"
         tal:define="contact view/contact_info">
     <fieldset>
-        <legend i18n:translate="">
-                <span i18n:name="contact_country"
-                    tal:replace="context/Title" /> |
-                <span i18n:name="contact_salutation"
-                    tal:replace="contact/salutation">Salutation</span>
-                <span i18n:name="contact_name" 
-                    tal:replace="contact/title" /> |
-                Phone:
-                <span tal:replace="structure contact/phone"
-                    i18n:name="contact_phone" />
+        <legend>
+            <span tal:replace="context/Title" /> |
+            <span i18n:translate=""
+                tal:replace="contact/salutation">Salutation</span>
+            <span tal:replace="contact/title" /> |
+            <span i18n:translate="">Phone:</span>
+            <span tal:replace="structure contact/phone" />
         </legend>
         <div class="field">
             <div class="image-left">
