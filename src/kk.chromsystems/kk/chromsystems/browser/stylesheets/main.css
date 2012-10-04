@@ -794,13 +794,13 @@ table.listing td,
   float: left;
   clear: left;
   text-align: left;
-  width: 50%;
+  width: 40%;
 }
 .footer-right {
   float: right;
   clear: right;
   text-align: right;
-  width: 50%;
+  width: 60%;
   text-transform: uppercase;
 }
 #portal-footer a:link,

@@ -8,19 +8,23 @@
 			<div class="footer-right">
 				<a href="" tal:attributes="href string:${here/portal_url}/de">Home</a> |
 				<a href="" tal:attributes="href string:${here/portal_url}/de/contact">Kontakt</a> |
-				<a href="" tal:attributes="href string:${here/portal_url}/de/anfahrt">Anfahrt</a> | 
 				<a href="" tal:attributes="href string:${here/portal_url}/de/shop">Shop</a> |
-				<a href="" tal:attributes="href string:${here/portal_url}/de/impressum">Rechtliches</a>
+				<a href="" tal:attributes="href string:${here/portal_url}/de/datenschutz">Datenschutz</a> | 
+				<a href="" tal:attributes="href string:${here/portal_url}/de/nutzungsbedingungen">Nutzungsbedingungen</a> | 
+				<a href="" tal:attributes="href string:${here/portal_url}/de/impressum">Impressum</a> | 
+				<a href="" tal:attributes="href string:${here/portal_url}/de/agb">AGB</a>
 			</div>
 		</span>
 		<span tal:condition="python:context.portal_languages.getPreferredLanguage() == 'en'">
 			<div class="footer-left">Copyright &copy; 2011 Chromsystems Instruments &amp; Chemicals GmbH.</div>
 			<div class="footer-right">
 				<a href="" tal:attributes="href string:${here/portal_url}/en">Home</a> |
-				<a href="" tal:attributes="href string:${here/portal_url}/en/contact">Contact</a> |
-				<a href="" tal:attributes="href string:${here/portal_url}/en/anfahrt">Approach</a> |
+				<a href="" tal:attributes="href string:${here/portal_url}/en/contact">Contact</a> | 
 				<a href="" tal:attributes="href string:${here/portal_url}/en/shop">Shop</a> |
-				<a href="" tal:attributes="href string:${here/portal_url}/en/impressum">Legal info</a>
+				<a href="" tal:attributes="href string:${here/portal_url}/en/data-protection">data protection</a> | 
+				<a href="" tal:attributes="href string:${here/portal_url}/en/disclaimer">Disclaimer</a> |
+				<a href="" tal:attributes="href string:${here/portal_url}/en/imprint">Imprint</a> | 
+				<a href="" tal:attributes="href string:${here/portal_url}/en/gtc">GTC</a>
 			</div>
 		</span>
 		<div class="visualClear"><!-- --></div>
