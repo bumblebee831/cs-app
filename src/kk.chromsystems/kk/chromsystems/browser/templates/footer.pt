@@ -24,7 +24,7 @@
 				<a href="" tal:attributes="href string:${here/portal_url}/en/data-protection">data protection</a> | 
 				<a href="" tal:attributes="href string:${here/portal_url}/en/disclaimer">Disclaimer</a> |
 				<a href="" tal:attributes="href string:${here/portal_url}/en/imprint">Imprint</a> | 
-				<a href="" tal:attributes="href string:${here/portal_url}/en/gtc">terms &amp; conditions</a>
+				<a href="" tal:attributes="href string:${here/portal_url}/en/gtc">GTC</a>
 			</div>
 		</span>
 		<div class="visualClear"><!-- --></div>
