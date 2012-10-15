@@ -113,6 +113,9 @@ input.searchPage {
   background: transparent;
   border: 0 solid #ff0000;
 }
+.template-translate_item #portal-column-two {
+  display: none;
+}
 #portal-column-two .visualPadding {
   padding: 0!important;
   margin: 0!important;
