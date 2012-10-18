@@ -21,3 +21,5 @@ var
 *.pyc
 *.pyo
 etc/**/*
+src/collective.topictree
+

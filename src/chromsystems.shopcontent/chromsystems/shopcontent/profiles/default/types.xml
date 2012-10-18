@@ -8,8 +8,8 @@
   -->
 <object name="portal_types" meta_type="Plone Types Tool">
   <!-- -*- extra stuff goes here -*- -->
+  <object name="chromsystems.shopcontent.orderableitem" meta_type="Dexterity FTI" />
   <object name="chromsystems.shopcontent.shopfolder" meta_type="Dexterity FTI" />
   <object name="chromsystems.shopcontent.productrepository" meta_type="Dexterity FTI" />
   <object name="chromsystems.shopcontent.productcollection" meta_type="Dexterity FTI" />
-  <object name="chromsystems.shopcontent.product" meta_type="Dexterity FTI" />
 </object>

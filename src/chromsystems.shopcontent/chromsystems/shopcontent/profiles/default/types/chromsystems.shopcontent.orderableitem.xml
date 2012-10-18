@@ -1,26 +1,25 @@
 <?xml version="1.0"?>
-<object name="chromsystems.shopcontent.product"
+<object name="chromsystems.shopcontent.orderableitem"
    meta_type="Dexterity FTI"
    i18n:domain="chromsystems.shopcontent" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
   <!-- Basic metadata -->
-  <property name="title" i18n:translate="">Product</property>
+  <property name="title" i18n:translate="">OrderableItem</property>
   <property name="description"
-    i18n:translate="">A basic orderable product</property>
+    i18n:translate="">A single orderable item</property>
   <property name="icon_expr">string:${portal_url}/document_icon.png</property>
-  <property name="factory">chromsystems.shopcontent.product</property>
-  <property name="global_allow">False</property>
+  <property name="factory">chromsystems.shopcontent.orderableitem</property>
+  <property name="global_allow">True</property>
   <property name="filter_content_types">False</property>  
   <property name="allowed_content_types" />
   <property name="allow_discussion">False</property>
 
   <!-- schema and class used for content items -->
-  <property name="schema">chromsystems.shopcontent.product.IProduct</property> 
-  <property name="klass">chromsystems.shopcontent.product.Product</property>
+  <property name="schema">chromsystems.shopcontent.orderableitem.IOrderableItem</property> 
+  <property name="klass">chromsystems.shopcontent.orderableitem.OrderableItem</property>
 
   <property name="behaviors">
      <element value="plone.app.content.interfaces.INameFromTitle" />
-     <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
    </property>
 
   <!-- View information -->

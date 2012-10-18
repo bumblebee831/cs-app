@@ -7,19 +7,23 @@
       i18n:domain="chromsystems.shopcontent">
 <body>
 
-<metal:main fill-slot="content-core">
-  <metal:content-core define-macro="content-core">
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
 
-   <a href="" class="pull-right"
+  <article id="orderable-item-view">
+    <header class="page-header">
+      <a href="" class="pull-right"
         tal:define="parent plone_view/getParentObject"
         tal:attributes="href parent/absolute_url">Back to Overview</a>
-
-  <div tal:define="items context/@@folderListing">
-    <div tal:repeat="item items" class="media">
-      <h2><a href="" tal:attributes="href item/getURL"
-          tal:content="item/Title" /></h2>
+      <h1><span tal:replace="context/Title" />
+        <small tal:content="context/product_id" /></h1>
+    </header>
+    <div class="alert alert-warning">
+      <h4>Warning</h4>
+      <p>This orderable item does not have any incoming references and
+        is currently unused</p>
     </div>
-  </div>
+  </article>
     
   </metal:content-core>
 </metal:main>

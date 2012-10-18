@@ -23,17 +23,25 @@ from chromsystems.shopcontent import MessageFactory as _
 
 # Interface class; used to define content-type schema.
 
-class IProduct(form.Schema, IImageScaleTraversable):
+class IOrderableItem(form.Schema, IImageScaleTraversable):
     """
-    A basic orderable product
+    A single orderable item
     """
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=True,
+    )
+    product_id = schema.TextLine(
+        title=_(u"Product ID"),
+        required=True,
+    )
 
 
-class Product(dexterity.Item):
-    grok.implements(IProduct)
+class OrderableItem(dexterity.Item):
+    grok.implements(IOrderableItem)
 
 
 class View(grok.View):
-    grok.context(IProduct)
+    grok.context(IOrderableItem)
     grok.require('zope2.View')
     grok.name('view')
