@@ -22,4 +22,6 @@ var
 *.pyo
 etc/**/*
 src/collective.topictree
+src/kk.tiles
+src/vwc.toolbar
 
