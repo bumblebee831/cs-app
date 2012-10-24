@@ -1,15 +1,16 @@
-from plone.app.content.browser.foldercontents import FolderContentsView, FolderContentsTable
-from Acquisition import aq_parent, aq_inner
-from Products.ATContentTypes.interface import IATTopic
-from plone.app.content.browser.tableview import Table, TableKSSView
+from plone.app.content.browser.foldercontents import FolderContentsView
+from plone.app.content.browser.foldercontents import FolderContentsTable
+from Acquisition import aq_inner
+from plone.app.content.browser.tableview import Table
+
 
 class ChFolderContentsView(FolderContentsView):
 
     def contents_table(self):
         table = ChFolderContentsTable(aq_inner(self.context), self.request)
         return table.render()
-       
-       
+
+
 class ChFolderContentsTable(FolderContentsTable):
 
     def __init__(self, context, request, contentFilter={}):
