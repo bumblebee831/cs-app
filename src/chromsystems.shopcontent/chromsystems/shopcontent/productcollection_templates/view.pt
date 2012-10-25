@@ -24,6 +24,10 @@
         </div>
       </tal:block>
     </div>
+    <section tal:condition="context/headlines">
+      <h2>Headline</h2>
+      <code tal:content="context/headlines" />
+    </section>
   </article>
     
   </metal:content-core>

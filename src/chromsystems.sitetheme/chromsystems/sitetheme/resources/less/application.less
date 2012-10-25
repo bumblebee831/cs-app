@@ -39,6 +39,20 @@ body > header {
     }
 }
 
+.tile {
+  border: 1px solid @grayLight;
+  padding: @paddingSmall;
+  background: @grayLighter;
+  margin-bottom: @baseLineHeight / 2;
+  &.sortable {
+    cursor: move;
+  }
+  &.dragging {
+    background-color: @errorBackground;
+    border-color:@errorBorder;
+  }
+}
+
 // Some eample styles for portlets
 
 .portlet {
