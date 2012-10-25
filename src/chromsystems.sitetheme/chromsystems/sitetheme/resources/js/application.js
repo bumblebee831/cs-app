@@ -12,6 +12,9 @@
         $('div.sortable')
             .drag("start", function (ev, dd) {
                 $(this).addClass('dragging');
+                return $(this).clone()
+                    .css("opacity", '.75')
+                    .appendTo(this.parentNode);
             })
             .drag(function (ev, dd) {
                 var drop = dd.drop[0],
@@ -25,6 +28,7 @@
             })
             .drag("end", function (ev, dd) {
                 $(this).removeClass('dragging');
+                $(dd.proxy).remove();
                 alert('Dropped element' + $(this).attr('class'));
             })
             .drop("init", function (ev, dd) {
