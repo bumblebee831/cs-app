@@ -17,6 +17,10 @@
                     .appendTo(this.parentNode);
             })
             .drag(function (ev, dd) {
+                $(dd.proxy).css({
+                    top: dd.offsetY,
+                    left: dd.offsetX
+                });
                 var drop = dd.drop[0],
                 method = $.data(drop || {}, "drop+reorder");
                 if (drop && (drop != dd.current || method != dd.method)) {
@@ -29,7 +33,9 @@
             .drag("end", function (ev, dd) {
                 $(this).removeClass('dragging');
                 $(dd.proxy).remove();
-                alert('Dropped element' + $(this).attr('class'));
+                $('#btn-cancel').fadeOut('slow', function () {
+                    $('#btn-save').fadeIn('slow');
+                });
             })
             .drop("init", function (ev, dd) {
                 return !(this == dd.drag);

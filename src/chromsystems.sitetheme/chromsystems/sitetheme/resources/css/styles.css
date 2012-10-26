@@ -5415,6 +5415,9 @@ input.standalone {
   box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   border-color: #c5c5c5;
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
 }
 input.context [class^="icon-"],
 input.standalone [class^="icon-"],
@@ -5664,6 +5667,9 @@ input.standalone {
   box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   border-color: #c5c5c5;
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
 }
 input.context [class^="icon-"],
 input.standalone [class^="icon-"],
@@ -6379,19 +6385,29 @@ table.grid th {
 .visualClear {
   clear: both;
 }
+body {
+  background: url(../img/bg.gif) repeat-x 0 0 #f3f3f3;
+}
 .make-some-noise {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQAQMAAAC032DuAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMACHhIRQoAAAN7SURBVCiRAXADj/wAAkQJcM1mLQnAjAAb4sEhBjkWRBpWAIKF/FlkjVDJKKgA0KxA5QFOFWKpQgBG5PjjxiiDVJtnAHD5UwQVQstA7u8AOAYIMPmwiKga2gBooyeQA+jdVxiNABAIYGkr3lgTDBsAXQBAcGFmEGFEXQAwUgJEk6SsEMjDAApsetkgJK9PKJQAfDApaQUONGIDEgAKpcRsXsojEuY1ACYN4xSjdyGRVLcAsCBxpEiAUIkwYgBGLNoX24Yj9iJRAGMGy8gopJFOQvkAEZgtO9HAJC+9WACKQEJCwJGqpRoIAKYmUxdgMdl89AIApMRLQ/2pQLVbBQBDTLPsYJCDUEjoAHzhwoxoCKB4DAgAAN6ASuQFERMyvQCzWAJoFpkGjFsGAGLQnTrBTH4zIKIAFGUFG3UALzJDiwCmsCEwxUDwgFgIAFi/LtLBIAUJNBEAE4TENLhU8TjOCgAtAYILmwxnJrBoAAhNyenNNwViQFkANAFOhHKUo84QUAD0DRiji8DNOMJqADHrmeMWgFAgRrQAmIm9A9EhEGSBSgAulqWIGymRfxpwAH0DAAQSAnKWgdQASeJNibLEQzNOZwBzyCNrQnAEFoQoAAxMomBElggSqkgAAwFV5OAQZJ28ZwCCFaFCjSWxAObRAB8AJgRUj4BKIygApBGgk0MCkUMxFADVwIDCBY+OdMWgAG1xdOROdABshSMACAFX0QKD4hVCgwB2Mh6ZnAco8kNpAHsI4C8RY9CIiewAqyAZg6UNgAz7mgBkAxCbD25svIhqACgzbQNxciGqYNQAkARc2iVSMJ2lZADNJknADN80kC5jAOOUE5OONKUAsA0ARQLA1ABqDAEQCACIlnFgRPrqeUQyAKkAOV/GAUgi1RAAeAIX22Pv4uTlJABvEiKL1OBOaIWIAEsoNPRyRGQcMM0AQmzLIn0jGg0gNAAqsAQfVSb/NB1UAAi0AywKJQUIjCoA85ksYPNtqJExcQAYgoDzhYBwbWAdAKsgPswqlOqHbJMAUQlvpxLB1UzAGABpyxQ0mCs81wNXACHgmQEVxF1T9FUA8jrxkbDXWRJhoQBgoSwOksFRSSibACNkCSFowJxiMBYA4ek2cwRDk1DM8wCQCsQXTxHsamgRAEGGIlVQmcLwKhUAG+wigJjtKYW0HQC0OKRNEGFqXIOAbRpCReUGtgIAAAAASUVORK5CYII=);
 }
 body > header {
   margin-bottom: 20px;
 }
+body > header #header {
+  padding: 20px 0 0;
+}
+body > header #header #logo {
+  display: block;
+  text-indent: -33333px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: url(../img/logo.jpg) no-repeat 0 0 transparent;
+  width: 320px;
+  height: 38px;
+}
 body > header #toolbar + nav {
   margin-top: 40px;
-}
-body > header #toolbar + nav .navbar-inner {
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
 }
 body > header #main-nav .selected > a,
 body > header #main-nav .selected > a:hover,
@@ -6403,18 +6419,64 @@ body > header #main-nav .selected > a:focus {
   -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
 }
-.tile {
+#content {
+  background: #ffffff;
   border: 1px solid #999999;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  padding: 20px;
+}
+#sidebar {
+  background: #ffffff;
+  border: 1px solid #999999;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+#btn-save {
+  display: none;
+}
+.tile {
+  border: 1px solid #ccc;
   padding: 2px 10px;
-  background: #eeeeee;
-  margin-bottom: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  background: #efefef;
+}
+.tile.tile-header {
+  background: #ffffff;
+}
+.tile p {
+  margin-top: 10px;
 }
 .tile.sortable {
   cursor: move;
 }
+.tile.sortable:hover {
+  background: #f5f5f5;
+  border: 1px solid #f89406;
+}
 .tile.dragging {
   background-color: #f2dede;
-  border-color: #eed3d7;
+  border: 2px solid #9d261d;
+}
+.tile .tile-handle {
+  background: #f5f5f5;
+  border-left: 1px solid #999999;
+  padding: 2px 10px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.tile .tile-content {
+  padding: 3px 10px;
+}
+.btn {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
 }
 .portlet .portletHeader {
   font-size: 20px;

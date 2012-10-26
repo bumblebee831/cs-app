@@ -24,22 +24,28 @@
         <div class="span6">
           <h3>Layout order</h3>
           <div class="tile sortable">
+            <div class="handle pull-left">
+              ⣿
+            </div>
             <h4>01 Item</h4>
           </div>
           <div class="tile sortable">
-            <h4>02 Item</h4>
+            <h4><i class="icon-reorder"></i> 02 Item</h4>
           </div>
           <div class="tile sortable">
-            <h4>03 Item</h4>
+            <div class="tile-handle pull-left">
+              <i class="icon-reorder"></i>
+            </div>
+            <div class="tile-content">03 Item</div>
           </div>
           <div class="tile sortable">
-            <h4>04 Item</h4>
+            <p>04 Item</p>
           </div>
           <div class="tile sortable">
-            <h4>05 Item</h4>
+            <h5><small>05987</small> Item</h5>
           </div>
           <div class="tile sortable">
-            <h4>06 Item</h4>
+            <h6>06 Item</h6>
           </div>
         </div>
         <div class="span6">
