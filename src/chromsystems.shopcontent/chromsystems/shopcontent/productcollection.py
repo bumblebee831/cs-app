@@ -7,6 +7,7 @@ from plone.z3cform.textlines import TextLinesFieldWidget
 from z3c.relationfield.schema import RelationList, RelationChoice
 from plone.formwidget.contenttree import ObjPathSourceBinder
 from plone.formwidget.autocomplete import AutocompleteMultiFieldWidget
+from plone.formwidget.autocomplete import AutocompleteFieldWidget
 
 from chromsystems.shopcontent.orderableitem import IOrderableItem
 
@@ -17,14 +18,14 @@ class IProductCollection(form.Schema):
     """
     A collection of orderable products
     """
-    #form.widget(relatedProducts=AutocompleteMultiFieldWidget)
+    form.widget(relatedProducts=AutocompleteMultiFieldWidget)
     relatedProducts = RelationList(
         title=_(u"Related Products"),
         default=[],
         value_type=RelationChoice(
             title=_(u"Related"),
             source=ObjPathSourceBinder(
-                object_provides=IOrderableItem.__identifier__)
+                object_provides=IOrderableItem.__identifier__,)
         ),
         required=False,
     )
