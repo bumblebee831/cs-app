@@ -1,7 +1,7 @@
-Index: /Products/Archetypes/skins/archetypes/widgets/keyword.pt
-===================================================================
---- Products/Archetypes/skins/archetypes/widgets/keyword.pt	(revision 13688)
-+++ Products/Archetypes/skins/archetypes/widgets/keyword.pt	(working copy)
+diff --git Products/Archetypes/skins/archetypes/widgets/keyword.pt b/Products/Archetypes/skins/archetypes/widgets/keyword.pt
+index 1d9e806..3b6fd49 100644
+--- Products/Archetypes/skins/archetypes/widgets/keyword.pt
++++ Products/Archetypes/skins/archetypes/widgets/keyword.pt
 @@ -30,7 +30,9 @@
                          allowedKeywords python: context.collectKeywords(fieldName, field.accessor, widget.vocab_source);
                          site_props context/portal_properties/site_properties|nothing;
@@ -10,7 +10,7 @@ Index: /Products/Archetypes/skins/archetypes/widgets/keyword.pt
 +                        allowRolesToAddKeywords site_props/allowRolesToAddKeywords|nothing;
 +                        selectionview context/@@at_selection_widget;
 +                        selection python:selectionview.getSelected(allowedKeywords, contentKeywords);">
-
+             
                      <div tal:condition="allowedKeywords" id="existingTagsSection">
                          <tal:comment tal:replace="nothing">
 @@ -69,7 +71,7 @@
