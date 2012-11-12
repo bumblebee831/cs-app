@@ -10,6 +10,6 @@
   <!-- -*- extra stuff goes here -*- -->
   <object name="chromsystems.shopcontent.orderableitem" meta_type="Dexterity FTI" />
   <object name="chromsystems.shopcontent.shopfolder" meta_type="Dexterity FTI" />
-  <object name="chromsystems.shopcontent.productrepository" meta_type="Dexterity FTI" />
-  <object name="chromsystems.shopcontent.productcollection" meta_type="Dexterity FTI" />
+  <object name="chromsystems.shopcontent.itemrepository" meta_type="Dexterity FTI" />
+  <object name="chromsystems.shopcontent.itemcollection" meta_type="Dexterity FTI" />
 </object>
