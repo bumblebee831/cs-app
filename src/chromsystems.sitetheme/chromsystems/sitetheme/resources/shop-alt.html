@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>chromsystems Theme, based on Twitter Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="less/styles.less" rel="stylesheet/less" type="text/css">
+    <!-- Responsive styles - enable if necessary -->
+    <!--<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">-->
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <script type="text/javascript" src="http://cdn.jquerytools.org/1.2.6/all/jquery.tools.min.js"></script>
+    <script type="text/javascript" src="js/less-1.3.0.min.js"></script>
+  </head>
+
+  <body class="shop-alt fade in">
+
+    <header id="topbar">
+      <div class="navbar navbar-static-top navbar-inverse" id="actionbar">
+        <div class="navbar-inner">
+          <div class="xxcontainer">
+            <div class="nav-collapse collapse">
+                <ul class="nav pull-right">
+                  <li class="divider-vertical"></li>
+                  <li class="active"><a href="#about"><i class="icon-dashboard icon-megatron"></i><br />Dashboard</a></li>
+                  <li class="divider-vertical"></li>
+                  <li><a href="#contact"><i class="icon-file icon-megatron"></i><br />Orderable Items</a></li>
+                  <li class="divider-vertical"></li>
+                  <li><a href="#contact"><i class="icon-inbox icon-megatron"></i><br />Item Collections</a></li>
+                  <li class="divider-vertical"></li>
+                  <li><a href="#contact"><i class="icon-eye-open icon-megatron"></i><br />View</a></li>
+                  <li class="divider-vertical"></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="page-wrapper">
+      <header id="sidepanel">
+        <h3>Dashboard</h3>
+        <p class="muted">The dashboard allows you to manage al aspects of the shop content
+          and review latest changes.</p>
+        <div class="panel-small">
+          <h5>Statistics</h5>
+          <p><span class="label">32</span> Orderable Items</p>
+          <p><span class="label">32</span> Item Collections</p>
+        </div>
+        <div class="panel-small">
+          <h5>Actions</h5>
+          <p><a href="" class="btn btn-primary">Add Orderable Item</a></p>
+          <p><a href="" class="btn btn-primary">Add Item Collection</a></p>
+        </div>
+      </header>
+      <section class="container-fluid">
+      <div id="content">
+        <h1>Dashboard <small>Shop</small></h1>
+        <p class="lead">Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+        <hr>
+        <div class="row-fluid">
+        <div class="span6">
+          <h2><i class="icon-file"></i> Orderable Items</h2>
+          <p>Manage single orderable items that consist of a title and 
+            a product id and will be referenced by item collections.</p>
+            <a href="/add" class="btn btn-primary"
+              tal:attributes="href python:context_url + '/@@dashboard-items'">
+              Manage Items</a>
+        </div>
+        <div class="span6">
+          <h2><i class="icon-inbox"></i> Item Collections</h2>
+          <p>Mange Item collections, aka products, that are searchable and
+            consist of orderable items</p>
+          <a href="" class="btn btn-primary"
+            tal:attributes="href python:context_url + '/@@dashboard-collections'">
+            Manage item collections</a>
+        </div>
+      </div>
+      </div>
+      </section> <!-- /container -->
+    </section>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/application.js"></script>
+
+  </body>
+</html>

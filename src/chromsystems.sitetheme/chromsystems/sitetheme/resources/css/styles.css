@@ -6396,9 +6396,110 @@ body > header #main-nav .selected > a:focus {
   -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
 }
+body > header #editbar-wrapper + #navbar,
 body > header #toolbar + #header,
 body > header #toolbar + #navbar {
   margin-top: 40px;
+}
+body.shop-alt {
+  height: 100%;
+}
+body.shop-alt #topbar {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 124px;
+  height: 100%;
+}
+body.shop-alt #topbar .navbar {
+  height: 100%;
+  overflow: visible;
+  margin-bottom: 20px;
+  color: #777777;
+  *position: relative;
+  *z-index: 2;
+}
+body.shop-alt #topbar .navbar .divider-vertical {
+  width: 120px;
+  height: 0px;
+  margin: 9px 0px;
+  border: 0px solid #f2f2f2;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #ffffff;
+  border-top-color: #111111;
+  border-bottom-color: #222222;
+}
+body.shop-alt #topbar .navbar .nav {
+  position: relative;
+  left: 0;
+  display: block;
+  float: none;
+  margin: 0 10px 0 0;
+}
+body.shop-alt #topbar .navbar .nav li {
+  text-align: center;
+  float: none;
+}
+body.shop-alt #topbar .navbar .nav > li > a {
+  padding: 15px 10px;
+  font-size: 11.9px;
+}
+body.shop-alt #topbar .navbar-inner {
+  height: 100%;
+  padding: 20px 0;
+  background-color: #111111;
+  background-image: -moz-linear-gradient(left, #222222, #111111);
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#222222), to(#111111));
+  background-image: -webkit-linear-gradient(left, #222222, #111111);
+  background-image: -o-linear-gradient(left, #222222, #111111);
+  background-image: linear-gradient(to right, #222222, #111111);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=1);
+  border: 1px solid #252525;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  *zoom: 1;
+}
+body.shop-alt #topbar .navbar-inner:before,
+body.shop-alt #topbar .navbar-inner:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+body.shop-alt #topbar .navbar-inner:after {
+  clear: both;
+}
+body.shop-alt #page-wrapper {
+  padding-left: 120px;
+  margin: 0px;
+}
+body.shop-alt #page-wrapper #sidepanel {
+  position: fixed;
+  left: 124px;
+  top: 0px;
+  width: 200px;
+  padding: 40px 20px;
+  height: 100%;
+  border-right: 1px solid #999999;
+  -webkit-box-shadow: inset 1px -1px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 1px -1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 1px -1px 1px rgba(0, 0, 0, 0.5);
+  background: #eeeeee;
+}
+body.shop-alt #page-wrapper #sidepanel p {
+  font-size: 11.9px;
+}
+body.shop-alt #page-wrapper #content {
+  border: 0px;
+  background: transparent;
+  padding-left: 240px;
+}
+body.shop-alt .icon-megatron {
+  font-size: 43.75px;
 }
 #content {
   background: #ffffff;
