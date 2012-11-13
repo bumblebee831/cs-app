@@ -9,6 +9,13 @@
             // enhancement.
             return;
         }
+        $('form[data-appui="ajaxsubmit"]').on('submit', function (e) {
+            e.preventDefault();
+            var name = $('#item-title').val();
+            var htmlString = '<div class="tile tile-header sortable"><h5>' + name + '</h5></div>';
+            $(htmlString).hide().prependTo("#dropbox").fadeIn("slow");
+            $(this)[0].reset();
+        });
         $('div.sortable')
             .drag("start", function (ev, dd) {
                 $(this).addClass('dragging');

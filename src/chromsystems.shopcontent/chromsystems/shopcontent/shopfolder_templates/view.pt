@@ -14,32 +14,30 @@
     <header class="page-header">
       <h1>Dashboard <small>Shop</small></h1>
     </header>
-    <section id="content-core">
+    <section id="content-core"
+      tal:define="context_url context/absolute_url">
       <div class="row-fluid">
         <div class="span6">
           <h2><i class="icon-file"></i> Orderable Items</h2>
           <p>Manage single orderable items that consist of a title and 
-            a product id.</p>
-            <a href="/add" class="btn btn-primary">
-              Add Item</a>
+            a product id and will be referenced by item collections.</p>
+            <a href="/add" class="btn btn-primary"
+              tal:attributes="href python:context_url + '/@@dashboard-items'">
+              Manage Items</a>
         </div>
         <div class="span6">
           <h2><i class="icon-inbox"></i> Item Collections</h2>
           <p>Mange Item collections, aka products, that are searchable and
             consist of orderable items</p>
-          <a href="" class="btn btn-primary">
-            Add item collection</a>
+          <a href="" class="btn btn-primary"
+            tal:attributes="href python:context_url + '/@@dashboard-collections'">
+            Manage item collections</a>
         </div>
       </div>
     </section>
   </section>
   <hr>
-  <div tal:define="items context/@@folderListing">
-    <div tal:repeat="item items" class="media">
-      <h2><a href="" tal:attributes="href item/getURL"
-          tal:content="item/Title" /></h2>
-    </div>
-  </div>
+
     
   </metal:content-core>
 </metal:main>

@@ -241,12 +241,14 @@
               </div>
             </div>
             <div class="span4">
-              <form class="form-inline">
-              <input type="text" class="input-large" placeholder="New Headline">
+              <form class="form-inline" action="." method="post"
+                data-appui="ajaxsubmit">
+              <input type="text" id="item-title" class="input-large" placeholder="New Headline">
               <input type="submit" class="btn btn-primary"
                 name="form.button.AddNew"
                 value="Add" />
               </form>
+              <div class="xdroparea" id="dropbox">
               <div class="tile tile-header sortable">
                 <h5>MassTox® TDM BASIC-Kit A:</h5>
               </div>
@@ -261,6 +263,7 @@
               </div>
               <div class="tile tile-header sortable">
                 <h5>MassTox® TDM PARAMETER-Sets</h5>
+              </div>
               </div>
             </div>
           </div>
