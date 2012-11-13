@@ -13,8 +13,8 @@ class IOrderableItem(form.Schema, IImageScaleTraversable):
     """
     A single orderable item
     """
-    product_id = schema.TextLine(
-        title=_(u"Product ID"),
+    productCode = schema.TextLine(
+        title=_(u"Product Code"),
         required=True,
     )
 

@@ -7,9 +7,33 @@
       i18n:domain="chromsystems.shopcontent">
 <body>
 
-<metal:main fill-slot="content-core">
-  <metal:content-core define-macro="content-core">
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
 
+  <section class="dashboard" id="dashboard-shop">
+    <header class="page-header">
+      <h1>Dashboard <small>Shop</small></h1>
+    </header>
+    <section id="content-core">
+      <div class="row-fluid">
+        <div class="span6">
+          <h2><i class="icon-file"></i> Orderable Items</h2>
+          <p>Manage single orderable items that consist of a title and 
+            a product id.</p>
+            <a href="/add" class="btn btn-primary">
+              Add Item</a>
+        </div>
+        <div class="span6">
+          <h2><i class="icon-inbox"></i> Item Collections</h2>
+          <p>Mange Item collections, aka products, that are searchable and
+            consist of orderable items</p>
+          <a href="" class="btn btn-primary">
+            Add item collection</a>
+        </div>
+      </div>
+    </section>
+  </section>
+  <hr>
   <div tal:define="items context/@@folderListing">
     <div tal:repeat="item items" class="media">
       <h2><a href="" tal:attributes="href item/getURL"

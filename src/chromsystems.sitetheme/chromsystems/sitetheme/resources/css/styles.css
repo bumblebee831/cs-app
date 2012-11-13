@@ -5391,9 +5391,9 @@ input.standalone {
   box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   border-color: #c5c5c5;
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 input.context [class^="icon-"],
 input.standalone [class^="icon-"],
@@ -5643,9 +5643,9 @@ input.standalone {
   box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   border-color: #c5c5c5;
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 input.context [class^="icon-"],
 input.standalone [class^="icon-"],
@@ -5772,11 +5772,9 @@ dl.portalMessage dd {
   white-space: nowrap;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #999999;
-  padding-left: 9px;
-  padding-right: 9px;
-  -webkit-border-radius: 9px;
-  -moz-border-radius: 9px;
-  border-radius: 9px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 #plone-contentmenu-workflow .state-private-important,
 #plone-contentmenu-workflow .state-visible-important,
@@ -6398,7 +6396,8 @@ body > header #main-nav .selected > a:focus {
   -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
 }
-body > header #toolbar + #header {
+body > header #toolbar + #header,
+body > header #toolbar + #navbar {
   margin-top: 40px;
 }
 #content {
@@ -6408,6 +6407,10 @@ body > header #toolbar + #header {
   -moz-border-radius: 8px;
   border-radius: 8px;
   padding: 20px;
+}
+body.section-shop #content {
+  background: transparent;
+  border: none;
 }
 #sidebar {
   background: #ffffff;
@@ -6485,10 +6488,28 @@ body > header #toolbar + #header {
 .tile .tile-content {
   padding: 3px 10px;
 }
+.panel {
+  border: 1px solid #ffffff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #eeeeee;
+}
+.panel .panel-header {
+  background: #ffffff;
+  padding: 1px 6px;
+  border: 1px solid #555555;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-left-radius: 4px;
+}
 .btn {
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 .portlet .portletHeader {
   font-size: 20px;
