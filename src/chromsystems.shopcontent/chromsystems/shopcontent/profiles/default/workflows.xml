@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object name="portal_workflow">
+ <bindings>
+    <!-- Bind nothing for these content types -->
+    <type type_id="chromsystems.shopcontent.orderableitem"/>
+ </bindings>
+</object>

@@ -1,0 +1,76 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="chromsystems.shopcontent">
+<body>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
+
+  <section id="collections-dashboard">
+    <header class="page-header">
+      <div class="shop-dashboard-header">
+        <h1>Item Collections <small>Dashboard</small></h1>
+      </div>
+      <p class="lead">
+        Add and edit item collections (the items must exist before they can be added
+        to a collection).
+      </p>
+    </header>
+    <section id="collection-add-form">
+      <form class="form-inline"
+        action="."
+        method="post">
+        <div class="row-fluid">
+          <div class="span8">
+            <input class="input-block-level"
+              type="text" placeholder="Item collection title">
+          </div>
+          <div class="span4">
+            <input class="btn btn-large btn-primary"
+              type="submit"
+              value="Add new">
+          </div>
+        </div>
+      </form>
+    </section>
+    <div id="content-core">
+      <section class="panel">
+        <header class="panel-header">
+          <h4>Item Collections</h4>
+        </header>
+        <div class="panel-content">
+          <tal:block tal:condition="view/has_collections">
+            <div class="tile" tal:repeat="item view/item_collections">
+              <div class="row-fluid">
+                <div class="span2" id="plone-contentmenu-workflow">
+                    <span class="state-published">Published</span>
+                </div>
+                <div class="span9">
+                    <p><strong tal:content="item/Title">Mobile Phase 1, 1000 ml</strong></p>
+                </div>
+                <div class="span1">
+                    <div class="tile-handle">
+                      <i class="icon-edit"></i>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </tal:block>
+          <p class="text-error" tal:condition="not:view/has_collections">
+            There are no item collections available yet.
+          </p>
+        </div>
+      </section>
+    </div>
+  </section>
+    
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+
