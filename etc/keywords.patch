@@ -1,4 +1,4 @@
-diff --git Products/Archetypes/skins/archetypes/widgets/keyword.pt b/Products/Archetypes/skins/archetypes/widgets/keyword.pt
+diff --git Products/Archetypes/skins/archetypes/widgets/keyword.pt Products/Archetypes/skins/archetypes/widgets/keyword.pt
 index 1d9e806..3b6fd49 100644
 --- Products/Archetypes/skins/archetypes/widgets/keyword.pt
 +++ Products/Archetypes/skins/archetypes/widgets/keyword.pt
