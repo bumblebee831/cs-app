@@ -1,7 +1,7 @@
-diff --git a/Products/Archetypes/skins/archetypes/widgets/keyword.pt b/Products/Archetypes/skins/archetypes/widgets/keyword.pt
+diff --git Products/Archetypes/skins/archetypes/widgets/keyword.pt Products/Archetypes/skins/archetypes/widgets/keyword.pt
 index 0d05397..d705618 100644
---- a/Products/Archetypes/skins/archetypes/widgets/keyword.pt
-+++ b/Products/Archetypes/skins/archetypes/widgets/keyword.pt
+--- Products/Archetypes/skins/archetypes/widgets/keyword.pt
++++ Products/Archetypes/skins/archetypes/widgets/keyword.pt
 @@ -30,7 +30,9 @@
                          allowedKeywords python: context.collectKeywords(fieldName, field.accessor, widget.vocab_source);
                          site_props context/portal_properties/site_properties|nothing;
