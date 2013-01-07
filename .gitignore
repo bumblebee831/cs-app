@@ -21,3 +21,4 @@ var
 *.pyc
 *.pyo
 etc/**/*
+.DS_Store
