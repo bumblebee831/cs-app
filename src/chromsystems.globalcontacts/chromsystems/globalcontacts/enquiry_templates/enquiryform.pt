@@ -45,8 +45,7 @@
             <tal:block tal:condition="context/text">
                 <div tal:content="structure context/text/output" />
             </tal:block>
-                <p class="pull-right"><span class="required" title="Erforderlich"> ■
-                    </span> = required</p>
+                <p class="pull-right"><span class="required" title="Erforderlich">&nbsp;</span> = required</p>
         </div>
     </fieldset>
     </tal:contact>
