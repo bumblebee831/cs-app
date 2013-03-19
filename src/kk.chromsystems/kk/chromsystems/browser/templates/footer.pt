@@ -8,7 +8,7 @@
 			<div class="footer-right">
 				<a href="" tal:attributes="href string:${here/portal_url}/de">Home</a> |
 				<a href="" tal:attributes="href string:${here/portal_url}/de/kontakt">Kontakt</a> |
-				<a href="" tal:attributes="href string:${here/portal_url}/de/shop">Shop</a> |
+				<a href="" tal:attributes="href string:http://shop.chromsystems.de/">Shop</a> |
 				<a href="" tal:attributes="href string:${here/portal_url}/de/datenschutz">Datenschutz</a> | 
 				<a href="" tal:attributes="href string:${here/portal_url}/de/nutzungsbedingungen">Nutzungsbedingungen</a> | 
 				<a href="" tal:attributes="href string:${here/portal_url}/de/impressum">Impressum</a> | 
